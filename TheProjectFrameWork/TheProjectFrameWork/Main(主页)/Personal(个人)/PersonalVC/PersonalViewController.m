@@ -10,7 +10,7 @@
 #import "PersonalCollectionViewCell.h"
 #import "PersonalHeadCollectionReusableView.h"
 #import "LoginViewController.h"
-#define KCollectionViewItemmCount 4
+#define KCollectionViewItemmCount 5
 #define KCollectionItemHegiht 100
 
 static NSString * PersonalCollectionViewIdentifier = @"PersonalCollectionViewCell";
@@ -18,12 +18,17 @@ static NSString * PersonalCollectionViewHeadIndetifier = @"PersonalHeadCollectio
 @interface PersonalViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,PersonalHeadCollectionReusableViewDelegate>
 /** 个人collectionView*/
 @property (weak, nonatomic) IBOutlet UICollectionView *personalCenterCollectionView;
+/** 存储图片 */
 @property (strong, nonatomic)  NSMutableArray *dataArray;
+/** 存储名字 */
+@property (strong, nonatomic)  NSMutableArray *testContentDataArray;
+
 @end
 @implementation PersonalViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self loadDataSource];
     [self personalCollectionViewRegister];
     self.navigationController.toolbar.backgroundColor =[UIColor redColor];
     self.navigationController.navigationBar.translucent = YES;
@@ -48,9 +53,15 @@ static NSString * PersonalCollectionViewHeadIndetifier = @"PersonalHeadCollectio
     [self.personalCenterCollectionView registerNib:nib forCellWithReuseIdentifier:PersonalCollectionViewIdentifier];
     [self.personalCenterCollectionView registerNib:[UINib nibWithNibName:PersonalCollectionViewHeadIndetifier bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:PersonalCollectionViewHeadIndetifier];
 }
+/**
+ *  设置数据源
+ */
 -(void)loadDataSource{
     self.dataArray = [NSMutableArray array];
-    NSArray * array =@[@"wait_after_icon",@"wait_comment_icon",@"wait_money_icon",@"wait_product_icon"];
+    self.testContentDataArray  =[NSMutableArray array];
+    NSArray * array =@[@"wait_money_icon",@"wait_product_icon",@"wait_comment_icon",@"wait_after_icon",@"my_privilege_icon"];
+    NSArray * nameArray = @[@"待付款",@"待收货",@"待评价",@"返修/退货",@"我的订单"];
+    [self.testContentDataArray addObjectsFromArray:nameArray];
     [self.dataArray addObjectsFromArray:array];
     
     
@@ -67,7 +78,7 @@ static NSString * PersonalCollectionViewHeadIndetifier = @"PersonalHeadCollectio
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     PersonalCollectionViewCell*cell = [collectionView dequeueReusableCellWithReuseIdentifier:PersonalCollectionViewIdentifier forIndexPath:indexPath];
     cell.contentLogoImageView.image = [UIImage imageNamed:self.dataArray[indexPath.row]];
-    cell.contentDetialLabel.text = self.dataArray[indexPath.row];
+    cell.contentDetialLabel.text = self.testContentDataArray[indexPath.row];
     return cell;
     
 }

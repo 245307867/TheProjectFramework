@@ -3,12 +3,13 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--发现-->
         <scene sceneID="qwj-br-Xqo">
             <objects>
-                <viewController id="Vs5-Kc-hVj" sceneMemberID="viewController">
+                <viewController id="Vs5-Kc-hVj" customClass="FoundViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="K38-bn-lH7"/>
                         <viewControllerLayoutGuide type="bottom" id="FbR-yZ-Z0L"/>
@@ -16,12 +17,98 @@
                     <view key="view" contentMode="scaleToFill" id="jcW-qu-nfA">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ZN-Ot-OSv">
+                                <rect key="frame" x="0.0" y="64" width="600" height="100"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Tp8-Bs-oif">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="5W0-j7-LIu">
+                                            <size key="itemSize" width="50" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="FOn-aU-mlJ">
+                                                <rect key="frame" x="0.0" y="57" width="50" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="Vs5-Kc-hVj" id="tQA-lY-Z5U"/>
+                                            <outlet property="delegate" destination="Vs5-Kc-hVj" id="UrM-lN-AF9"/>
+                                        </connections>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Tp8-Bs-oif" secondAttribute="bottom" id="DhZ-r9-v1R"/>
+                                    <constraint firstAttribute="trailing" secondItem="Tp8-Bs-oif" secondAttribute="trailing" id="LEC-AF-xkM"/>
+                                    <constraint firstItem="Tp8-Bs-oif" firstAttribute="leading" secondItem="5ZN-Ot-OSv" secondAttribute="leading" id="dcd-Tj-TjA"/>
+                                    <constraint firstItem="Tp8-Bs-oif" firstAttribute="top" secondItem="5ZN-Ot-OSv" secondAttribute="top" id="eT2-Wc-83p"/>
+                                    <constraint firstAttribute="height" constant="100" id="gsF-Hj-7D2"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JeB-jx-dQc">
+                                <rect key="frame" x="0.0" y="164" width="600" height="436"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0Hy-ib-cPX">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="436"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="Vs5-Kc-hVj" id="3PI-Z5-5MK"/>
+                                            <outlet property="delegate" destination="Vs5-Kc-hVj" id="FfQ-gd-ror"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="0Hy-ib-cPX" firstAttribute="centerY" secondItem="JeB-jx-dQc" secondAttribute="centerY" id="1KL-YB-c2K"/>
+                                    <constraint firstItem="0Hy-ib-cPX" firstAttribute="centerX" secondItem="JeB-jx-dQc" secondAttribute="centerX" id="4Mf-Eb-2YZ"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="0Hy-ib-cPX" secondAttribute="bottom" id="59E-Xo-j9W"/>
+                                    <constraint firstItem="0Hy-ib-cPX" firstAttribute="leading" secondItem="JeB-jx-dQc" secondAttribute="leadingMargin" id="5ZD-66-6UA"/>
+                                    <constraint firstItem="0Hy-ib-cPX" firstAttribute="leading" secondItem="JeB-jx-dQc" secondAttribute="leading" id="68y-dU-BkI"/>
+                                    <constraint firstItem="0Hy-ib-cPX" firstAttribute="top" secondItem="JeB-jx-dQc" secondAttribute="top" id="cre-14-RGy"/>
+                                    <constraint firstItem="0Hy-ib-cPX" firstAttribute="top" secondItem="JeB-jx-dQc" secondAttribute="topMargin" id="e3Y-nh-61D"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="0Hy-ib-cPX" secondAttribute="trailing" id="kRH-Dn-qEw"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="59E-Xo-j9W"/>
+                                        <exclude reference="5ZD-66-6UA"/>
+                                        <exclude reference="e3Y-nh-61D"/>
+                                        <exclude reference="kRH-Dn-qEw"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="JeB-jx-dQc" firstAttribute="centerX" secondItem="jcW-qu-nfA" secondAttribute="centerX" id="1Ug-tb-MKR"/>
+                            <constraint firstItem="5ZN-Ot-OSv" firstAttribute="top" secondItem="K38-bn-lH7" secondAttribute="bottom" id="2Nf-yf-LuU"/>
+                            <constraint firstItem="JeB-jx-dQc" firstAttribute="top" secondItem="5ZN-Ot-OSv" secondAttribute="bottom" id="8ii-Mm-HEE"/>
+                            <constraint firstItem="FbR-yZ-Z0L" firstAttribute="top" secondItem="JeB-jx-dQc" secondAttribute="bottom" id="Abn-aP-VLv"/>
+                            <constraint firstItem="JeB-jx-dQc" firstAttribute="leading" secondItem="jcW-qu-nfA" secondAttribute="leading" id="EYK-Ut-9pQ"/>
+                            <constraint firstAttribute="trailing" secondItem="5ZN-Ot-OSv" secondAttribute="trailing" id="R8e-Ty-pIP"/>
+                            <constraint firstItem="5ZN-Ot-OSv" firstAttribute="leading" secondItem="jcW-qu-nfA" secondAttribute="leading" id="saW-Mr-blb"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="发现" id="lIM-0k-mSF">
                         <barButtonItem key="leftBarButtonItem" image="ico_camera_7_gray" id="bye-mh-GGg"/>
                         <barButtonItem key="rightBarButtonItem" image="HomePage_Message" id="4iK-NO-dkF"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="foundDetailTableView" destination="0Hy-ib-cPX" id="9xe-TD-tW1"/>
+                        <outlet property="foundheadCollectionView" destination="Tp8-Bs-oif" id="buz-lp-NUp"/>
+                        <outlet property="foundheadView" destination="5ZN-Ot-OSv" id="wfe-vX-9eL"/>
+                        <outlet property="headViewHeight" destination="gsF-Hj-7D2" id="UK7-SM-1es"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5aX-L8-X9t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

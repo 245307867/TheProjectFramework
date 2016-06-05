@@ -7,8 +7,12 @@
 //
 
 #import "ShoppingViewController.h"
+#import "ShoppingCartTableViewCell.h"
 
-@interface ShoppingViewController ()
+static NSString * cellIdentifier = @"ShoppingCartTableViewCell";
+@interface ShoppingViewController ()<UITableViewDelegate,UITableViewDataSource>
+/** 购物车列表 */
+@property (weak, nonatomic) IBOutlet UITableView *shoppingCartTableView;
 
 @end
 
@@ -16,6 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setAutomaticallyAdjustsScrollViewInsets:NO];
     // Do any additional setup after loading the view.
 }
 
@@ -24,6 +29,27 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark --UITableViewDelegate && UITableViewDataSource
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 2;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 10;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    ShoppingCartTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (!cell) {
+        cell = [[[NSBundle mainBundle] loadNibNamed:cellIdentifier owner:nil options:nil] firstObject];
+    }
+    [cell goodsLoadShoppingCartWithModel:nil andIndexPath:indexPath];
+    return cell;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 120;
+}
 /*
 #pragma mark - Navigation
 

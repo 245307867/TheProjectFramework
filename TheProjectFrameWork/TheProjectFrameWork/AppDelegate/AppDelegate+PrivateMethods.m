@@ -39,6 +39,7 @@
     UIStoryboard * shoppingCartStoryBoard = [UIStoryboard storyboardWithName:@"ShoppingCart" bundle:nil];
     UINavigationController *shoppingCartNaV = [shoppingCartStoryBoard instantiateInitialViewController];
     shoppingCartNaV.tabBarItem.title = @"购物车";
+    shoppingCartNaV.tabBarItem.badgeValue = @"11";
     shoppingCartNaV.tabBarItem.image = [UIImage imageNamed:@"tabBar_cart_normal"];
     shoppingCartNaV.tabBarItem.selectedImage = [UIImage imageNamed:@"tabBar_cart_press"];
 
@@ -46,7 +47,6 @@
     UIStoryboard * personalStoryBoard = [UIStoryboard storyboardWithName:@"Personal" bundle:nil];
     UINavigationController * personalNaV = [personalStoryBoard instantiateInitialViewController];
     personalNaV.tabBarItem.title = @"个人";
-    personalNaV.tabBarItem.badgeValue = @"1";
     personalNaV.tabBarItem.image = [UIImage imageNamed:@"tabBar_myJD_normal"];
     personalNaV.tabBarItem.selectedImage = [UIImage imageNamed:@"tabBar_myJD_press"];
 
