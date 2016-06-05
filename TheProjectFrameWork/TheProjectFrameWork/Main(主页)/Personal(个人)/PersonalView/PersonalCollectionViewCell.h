@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface PersonalCollectionViewCell : UICollectionViewCell
+/** 内容详情 */
+@property (weak, nonatomic) IBOutlet UILabel *contentDetialLabel;
+/** 内容logo */
+@property (weak, nonatomic) IBOutlet UIImageView *contentLogoImageView;
 
 @end

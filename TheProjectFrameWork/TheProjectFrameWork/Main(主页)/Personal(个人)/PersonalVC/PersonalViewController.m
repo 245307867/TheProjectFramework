@@ -10,15 +10,15 @@
 #import "PersonalCollectionViewCell.h"
 #import "PersonalHeadCollectionReusableView.h"
 #import "LoginViewController.h"
-#define KCollectionViewItemmCount 5
+#define KCollectionViewItemmCount 4
 #define KCollectionItemHegiht 100
 
-const static NSString * PersonalCollectionViewIdentifier = @"PersonalCollectionViewCell";
-const static NSString * PersonalCollectionViewHeadIndetifier = @"PersonalHeadCollectionReusableView";
+static NSString * PersonalCollectionViewIdentifier = @"PersonalCollectionViewCell";
+static NSString * PersonalCollectionViewHeadIndetifier = @"PersonalHeadCollectionReusableView";
 @interface PersonalViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,PersonalHeadCollectionReusableViewDelegate>
 /** 个人collectionView*/
 @property (weak, nonatomic) IBOutlet UICollectionView *personalCenterCollectionView;
-
+@property (strong, nonatomic)  NSMutableArray *dataArray;
 @end
 @implementation PersonalViewController
 
@@ -34,6 +34,10 @@ const static NSString * PersonalCollectionViewHeadIndetifier = @"PersonalHeadCol
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
+
 /**
  *  注册collectionView
  */
@@ -43,6 +47,13 @@ const static NSString * PersonalCollectionViewHeadIndetifier = @"PersonalHeadCol
     UINib * nib = [UINib nibWithNibName:PersonalCollectionViewIdentifier bundle:[NSBundle mainBundle]];
     [self.personalCenterCollectionView registerNib:nib forCellWithReuseIdentifier:PersonalCollectionViewIdentifier];
     [self.personalCenterCollectionView registerNib:[UINib nibWithNibName:PersonalCollectionViewHeadIndetifier bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:PersonalCollectionViewHeadIndetifier];
+}
+-(void)loadDataSource{
+    self.dataArray = [NSMutableArray array];
+    NSArray * array =@[@"wait_after_icon",@"wait_comment_icon",@"wait_money_icon",@"wait_product_icon"];
+    [self.dataArray addObjectsFromArray:array];
+    
+    
 }
 #pragma mark --UICollectionViewDelegate &&UICollectionViewDataSource
 
@@ -55,7 +66,8 @@ const static NSString * PersonalCollectionViewHeadIndetifier = @"PersonalHeadCol
 }
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     PersonalCollectionViewCell*cell = [collectionView dequeueReusableCellWithReuseIdentifier:PersonalCollectionViewIdentifier forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor greenColor];
+    cell.contentLogoImageView.image = [UIImage imageNamed:self.dataArray[indexPath.row]];
+    cell.contentDetialLabel.text = self.dataArray[indexPath.row];
     return cell;
     
 }
