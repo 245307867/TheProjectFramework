@@ -1,0 +1,16 @@
+platform:ios, ‘8.0’
+pod 'AFNetworking'
+pod 'SDWebImage'
+pod 'JSONModel'
+pod 'UMengSocial'
+pod 'MagicalRecord'
+pod 'MBProgressHUD', '~> 0.8'
+pod 'Reachability', '~> 3.2'
+pod 'ImagePlayerView'
+pod 'SDCycleScrollView'
+
+
+
+
+
+

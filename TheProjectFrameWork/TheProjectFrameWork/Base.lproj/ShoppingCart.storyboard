@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TC8-3i-2qO">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--购物车-->
+        <scene sceneID="Gce-04-fz5">
+            <objects>
+                <viewController id="GKu-LG-pOK" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gdF-fb-PFb"/>
+                        <viewControllerLayoutGuide type="bottom" id="LB5-VO-sxs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sam-dj-O8E">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="购物车" id="2xo-Xv-IOX">
+                        <barButtonItem key="rightBarButtonItem" image="my_message_btn_n" id="OFr-tf-iQI"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZYv-np-hLc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1078" y="228"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="HWu-yH-EdC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TC8-3i-2qO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qht-Ug-kJx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="GKu-LG-pOK" kind="relationship" relationship="rootViewController" id="gER-7h-KIG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GL9-8P-TEv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="266" y="228"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="my_message_btn_n" width="20" height="20"/>
+    </resources>
+</document>

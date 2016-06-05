@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bXC-fE-8mO">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+    </dependencies>
+    <scenes>
+        <!--我的-->
+        <scene sceneID="DQd-kB-2rF">
+            <objects>
+                <viewController id="xCl-xq-5N9" customClass="PersonalViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fW0-Vf-qWk"/>
+                        <viewControllerLayoutGuide type="bottom" id="Agg-A9-AUJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bR5-Je-sT7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="i4q-RD-PMz">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="cd0-Z3-HB8">
+                                    <size key="itemSize" width="80" height="60"/>
+                                    <size key="headerReferenceSize" width="50" height="100"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="FHW-Qp-Ot9">
+                                        <rect key="frame" x="0.0" y="164" width="80" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="80" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" red="0.50196081399917603" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="AMe-vk-cFt">
+                                    <rect key="frame" x="0.0" y="64" width="600" height="100"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="xCl-xq-5N9" id="CQh-xW-bqK"/>
+                                    <outlet property="delegate" destination="xCl-xq-5N9" id="rIX-fQ-TOz"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95686274510000002" green="0.91143246359999996" blue="0.078460336310000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="i4q-RD-PMz" firstAttribute="leading" secondItem="bR5-Je-sT7" secondAttribute="leading" id="9Rk-mu-rZY"/>
+                            <constraint firstAttribute="trailing" secondItem="i4q-RD-PMz" secondAttribute="trailing" id="9wo-ey-zby"/>
+                            <constraint firstItem="Agg-A9-AUJ" firstAttribute="top" secondItem="i4q-RD-PMz" secondAttribute="bottom" id="BRi-o1-QC6"/>
+                            <constraint firstItem="i4q-RD-PMz" firstAttribute="top" secondItem="fW0-Vf-qWk" secondAttribute="bottom" constant="-64" id="Bn0-Qm-Uxb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="我的" id="EkF-MO-sFL">
+                        <rightBarButtonItems>
+                            <barButtonItem image="my_message_btn_n" id="S3e-D3-6nh"/>
+                            <barButtonItem image="my_more_btn_n" id="oOR-Y0-3sb"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="personalCenterCollectionView" destination="i4q-RD-PMz" id="MmW-Ya-W2S"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0ho-Dy-ctF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="860" y="234"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="okF-Qw-S5F">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bXC-fE-8mO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7fK-CT-QaE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xCl-xq-5N9" kind="relationship" relationship="rootViewController" id="OZj-uc-xgn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OC0-6i-4C6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="48" y="234"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="my_message_btn_n" width="20" height="20"/>
+        <image name="my_more_btn_n" width="20" height="20"/>
+    </resources>
+</document>

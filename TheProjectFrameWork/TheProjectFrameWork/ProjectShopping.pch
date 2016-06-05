@@ -1,0 +1,29 @@
+//
+//  ProjectShopping.pch
+//  TheProjectFrameWork
+//
+//  Created by maple on 16/6/3.
+//  Copyright © 2016年 MapleDongSen. All rights reserved.
+//
+
+#ifndef ProjectShopping_pch
+#define ProjectShopping_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+/*
+ *Macros
+ */
+#import "BaseMacros.h"
+#import "AppMacros.h"
+#import "Enumeration.h"
+#import "UrlMacros.h"
+
+/*
+ *CocoaPods
+ */
+#import "ImagePlayerView.h"
+#import "AFNetworking.h"
+
+
+#endif /* ProjectShopping_pch */
