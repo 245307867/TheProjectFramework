@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F503E9CC1D051A7B001CB721 /* NetWork+BodyAndCookie.m in Sources */ = {isa = PBXBuildFile; fileRef = F503E9CB1D051A7B001CB721 /* NetWork+BodyAndCookie.m */; };
 		F5737D3A1D02EBC10004168F /* HometableHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5737D391D02EBC10004168F /* HometableHeadView.xib */; };
 		F5935DCA1D011B39008622D4 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5935DC81D011B39008622D4 /* BaseViewController.m */; };
 		F5935DCD1D011B50008622D4 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5935DCC1D011B50008622D4 /* BaseView.m */; };
@@ -74,6 +75,8 @@
 		15D6FA724434788B8FDB107F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		6458B3BE86A1BEB7A2E095CE /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C2D98CDD2CA494B4924BEB87 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F503E9CA1D051A7B001CB721 /* NetWork+BodyAndCookie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NetWork+BodyAndCookie.h"; sourceTree = "<group>"; };
+		F503E9CB1D051A7B001CB721 /* NetWork+BodyAndCookie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NetWork+BodyAndCookie.m"; sourceTree = "<group>"; };
 		F5737D391D02EBC10004168F /* HometableHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HometableHeadView.xib; sourceTree = "<group>"; };
 		F5935DC71D011B39008622D4 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		F5935DC81D011B39008622D4 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
@@ -612,6 +615,8 @@
 			children = (
 				F5935E551D028B0D008622D4 /* NetWork.h */,
 				F5935E561D028B0D008622D4 /* NetWork.m */,
+				F503E9CA1D051A7B001CB721 /* NetWork+BodyAndCookie.h */,
+				F503E9CB1D051A7B001CB721 /* NetWork+BodyAndCookie.m */,
 			);
 			path = NetWork;
 			sourceTree = "<group>";
@@ -1020,6 +1025,7 @@
 			files = (
 				F5935DD01D011B6A008622D4 /* BaseModel.m in Sources */,
 				F5935E371D0161E8008622D4 /* NSString+Validation.m in Sources */,
+				F503E9CC1D051A7B001CB721 /* NetWork+BodyAndCookie.m in Sources */,
 				F5935E341D015F06008622D4 /* UIImagePickerController+PublishMethods.m in Sources */,
 				F5935DCA1D011B39008622D4 /* BaseViewController.m in Sources */,
 				F5935DCD1D011B50008622D4 /* BaseView.m in Sources */,
