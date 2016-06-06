@@ -14,7 +14,7 @@ static NSString * cellIdentifier = @"HomeTableViewCell";
 
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource,SDCycleScrollViewDelegate>
 /** 首页表格 */
-@property (weak, nonatomic) IBOutlet UITableView *homeTableView;
+@property(strong,nonatomic)UITableView * homeTableView;
 
 @end
 
@@ -22,12 +22,15 @@ static NSString * cellIdentifier = @"HomeTableViewCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationController.navigationBarHidden = YES;
-    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
-    self.navigationController.navigationBar.tintColor = nil;
-    self.navigationController.navigationBar. alpha = 0;
-    self.navigationController.navigationBar.translucent = NO;
-    
+    [self addBtnNavBarButton];
+    [self loadHeadView];
+    // Do any additional setup after loading the view.
+}
+
+/**
+ *  加载头部视图
+ */
+-(void)loadHeadView{
     NSArray *imagesURLStrings = @[
                                   @"http://img30.360buyimg.com/mobilecms/s480x180_jfs/t1402/221/421883372/88115/8cc2231a/55815835N35a44559.jpg",
                                   @"http://img30.360buyimg.com/mobilecms/s480x180_jfs/t976/208/1221678737/91179/5d7143d5/5588e849Na2c20c1a.jpg",
@@ -39,28 +42,89 @@ static NSString * cellIdentifier = @"HomeTableViewCell";
                                   @"http://img30.360buyimg.com/mobilecms/s480x180_jfs/t898/15/1262262696/95281/57d1f12f/558baeb4Nbfd44d3a.jpg"
                                   ];
     // 网络加载 --- 创建不带标题的图片轮播器
-    SDCycleScrollView * imagePlayerScrollerView  = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, KScreenBoundWidth, 180) imageURLStringsGroup:nil];
+    SDCycleScrollView * imagePlayerScrollerView  = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0,-64, KScreenBoundWidth, 180) imageURLStringsGroup:nil];
     imagePlayerScrollerView.infiniteLoop = YES;
     imagePlayerScrollerView.delegate = self;
     imagePlayerScrollerView.placeholderImage=[UIImage imageNamed:@"cell_00"];
     imagePlayerScrollerView.pageControlStyle = SDCycleScrollViewPageContolStyleClassic;
     imagePlayerScrollerView.autoScrollTimeInterval = 2.0; // 轮播时间间隔，默认1.0秒，可自定义
     imagePlayerScrollerView.imageURLStringsGroup = imagesURLStrings;
+    self.homeTableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    self.homeTableView.delegate = self;
+    self.homeTableView.dataSource = self;
+    self.homeTableView.backgroundColor = [UIColor clearColor];
+    self.homeTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.homeTableView setTableHeaderView:imagePlayerScrollerView];
+    [self.view addSubview:self.homeTableView];
     self.automaticallyAdjustsScrollViewInsets = NO;
-    // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+/**
+ *  设置navigationBar
+ */
+- (void)addBtnNavBarButton{
+
+    CGRect barRect = self.navigationController.navigationBar.bounds;
+    UIButton *leftbutton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [leftbutton setFrame:CGRectMake(0, 0, barRect.size.height, barRect.size.height)];
+    leftbutton.layer.masksToBounds = YES;
+    leftbutton.layer.cornerRadius = barRect.size.height/2.0;
+    [leftbutton setImage:[UIImage imageNamed:@"ico_camera_7"] forState:UIControlStateNormal];
+    [leftbutton setBackgroundColor:[UIColor clearColor]];
+    [leftbutton addTarget:self action:@selector(scanthecode) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *leftitem = [[UIBarButtonItem alloc] initWithCustomView:leftbutton];
+    self.navigationItem.leftBarButtonItem = leftitem;
+    
+    UIButton *rightbutton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [rightbutton setFrame:CGRectMake(0, 0, barRect.size.height, barRect.size.height)];
+    rightbutton.layer.masksToBounds = YES;
+    rightbutton.layer.cornerRadius = barRect.size.height/2.0;
+    [rightbutton setImage:[UIImage imageNamed:@"HomePage_Message"] forState:UIControlStateNormal];
+    [rightbutton setBackgroundColor:[UIColor clearColor]];
+    [rightbutton addTarget:self action:@selector(sendMessgae) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *rightitem = [[UIBarButtonItem alloc] initWithCustomView:rightbutton];
+    self.navigationItem.rightBarButtonItem = rightitem;
+    
+    [self.navigationController.navigationBar lt_setBackgroundColor:[[UIColor whiteColor] colorWithAlphaComponent:0]];
+}
+-(void)setTypeNavigationBar{
+    CGRect barRect = self.navigationController.navigationBar.bounds;
+    UIButton *leftbutton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [leftbutton setFrame:CGRectMake(0, 0, barRect.size.height, barRect.size.height)];
+    leftbutton.layer.masksToBounds = YES;
+    leftbutton.layer.cornerRadius = barRect.size.height/2.0;
+    [leftbutton setImage:[UIImage imageNamed:@"ico_camera_7_gray"] forState:UIControlStateNormal];
+    [leftbutton setBackgroundColor:[UIColor clearColor]];
+    [leftbutton addTarget:self action:@selector(scanthecode) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *leftitem = [[UIBarButtonItem alloc] initWithCustomView:leftbutton];
+    self.navigationItem.leftBarButtonItem = leftitem;
+    
+    UIButton *rightbutton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [rightbutton setFrame:CGRectMake(0, 0, barRect.size.height, barRect.size.height)];
+    rightbutton.layer.masksToBounds = YES;
+    rightbutton.layer.cornerRadius = barRect.size.height/2.0;
+    [rightbutton setImage:[UIImage imageNamed:@"my_message_btn_n"] forState:UIControlStateNormal];
+    [rightbutton setBackgroundColor:[UIColor clearColor]];
+    [rightbutton addTarget:self action:@selector(sendMessgae) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *rightitem = [[UIBarButtonItem alloc] initWithCustomView:rightbutton];
+    self.navigationItem.rightBarButtonItem = rightitem;
+    
+    [self.navigationController.navigationBar lt_setBackgroundColor:[[UIColor whiteColor] colorWithAlphaComponent:1]];
+}
+/**
+ *  扫描二维码
+ */
+-(void)scanthecode{
+    
+}
+/**
+ *  发送消息
+ */
+-(void)sendMessgae{
+    
 }
 
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
 
-
-}
 #pragma mark --ImagePlayerViewDelegate
 -(NSInteger)numberOfItems{
     return 6;
@@ -105,6 +169,17 @@ static NSString * cellIdentifier = @"HomeTableViewCell";
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return KScreenBoundHeight;
+}
+#pragma mark --UIScrollViewDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if(self.homeTableView.contentOffset.y>200) {
+        [self setTypeNavigationBar];
+    }
+    else
+    {
+        [self addBtnNavBarButton];
+    }
 }
 
 

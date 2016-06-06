@@ -8,48 +8,60 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="PersonalHeadCollectionReusableView">
-            <rect key="frame" x="0.0" y="0.0" width="437" height="103"/>
+            <rect key="frame" x="0.0" y="0.0" width="488" height="210"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="my_unlogin_bg" translatesAutoresizingMaskIntoConstraints="NO" id="G4t-JP-ln5">
-                    <rect key="frame" x="0.0" y="0.0" width="437" height="103"/>
+                    <rect key="frame" x="0.0" y="0.0" width="488" height="210"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unlogin_head_h" translatesAutoresizingMaskIntoConstraints="NO" id="fcy-Fj-Nvz">
+                    <rect key="frame" x="30" y="60" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="FpJ-4O-s7z"/>
+                        <constraint firstAttribute="width" constant="60" id="Fx0-l6-Maf"/>
+                        <constraint firstAttribute="width" constant="40" id="Tme-0h-Umh"/>
+                        <constraint firstAttribute="height" constant="60" id="UBF-vu-Gw5"/>
+                        <constraint firstAttribute="width" constant="60" id="v4z-U6-P7K"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="Fx0-l6-Maf"/>
+                            <exclude reference="Tme-0h-Umh"/>
+                            <exclude reference="UBF-vu-Gw5"/>
+                        </mask>
+                    </variation>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kJt-AP-NRq">
-                    <rect key="frame" x="60" y="10" width="60" height="50"/>
+                    <rect key="frame" x="100" y="60" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="N3c-Va-GIo"/>
+                        <constraint firstAttribute="width" constant="60" id="hhO-PM-hpr"/>
+                    </constraints>
                     <state key="normal" title="登陆注册">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="hhO-PM-hpr"/>
+                        </mask>
+                    </variation>
                     <connections>
                         <action selector="loginButtonClicked:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="aHF-dE-y19"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unlogin_head_h" translatesAutoresizingMaskIntoConstraints="NO" id="fcy-Fj-Nvz">
-                    <rect key="frame" x="5" y="10" width="50" height="50"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="50" id="Fx0-l6-Maf"/>
-                        <constraint firstAttribute="height" constant="50" id="UBF-vu-Gw5"/>
-                    </constraints>
-                </imageView>
             </subviews>
-            <color key="backgroundColor" red="1" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="kJt-AP-NRq" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="10" id="3Hn-7n-mMC"/>
-                <constraint firstItem="kJt-AP-NRq" firstAttribute="leading" secondItem="fcy-Fj-Nvz" secondAttribute="trailing" constant="5" id="8bL-xP-Ley"/>
-                <constraint firstItem="fcy-Fj-Nvz" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="10" id="Ajv-Nd-RGA"/>
-                <constraint firstItem="G4t-JP-ln5" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="OZQ-I1-55J"/>
-                <constraint firstAttribute="bottom" secondItem="G4t-JP-ln5" secondAttribute="bottom" id="QLY-bE-h8M"/>
-                <constraint firstItem="kJt-AP-NRq" firstAttribute="height" secondItem="fcy-Fj-Nvz" secondAttribute="height" id="W39-vX-Ddy"/>
-                <constraint firstItem="G4t-JP-ln5" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="cLY-ux-NUY"/>
-                <constraint firstItem="fcy-Fj-Nvz" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="5" id="eb0-lV-aa6"/>
-                <constraint firstAttribute="trailing" secondItem="G4t-JP-ln5" secondAttribute="trailing" id="ko4-7L-2aA"/>
-                <constraint firstItem="G4t-JP-ln5" firstAttribute="leading" secondItem="fcy-Fj-Nvz" secondAttribute="trailing" id="umd-pz-riq"/>
+                <constraint firstAttribute="trailing" secondItem="G4t-JP-ln5" secondAttribute="trailing" id="2n1-mM-9yt"/>
+                <constraint firstAttribute="bottom" secondItem="G4t-JP-ln5" secondAttribute="bottom" id="4H2-9R-dRZ"/>
+                <constraint firstItem="kJt-AP-NRq" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="60" id="5hr-D9-aXa"/>
+                <constraint firstItem="kJt-AP-NRq" firstAttribute="height" secondItem="fcy-Fj-Nvz" secondAttribute="height" id="H5l-jV-y3y"/>
+                <constraint firstItem="fcy-Fj-Nvz" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="30" id="NoS-Fi-lvh"/>
+                <constraint firstItem="kJt-AP-NRq" firstAttribute="leading" secondItem="fcy-Fj-Nvz" secondAttribute="trailing" constant="10" id="PAF-Ox-Dq5"/>
+                <constraint firstItem="fcy-Fj-Nvz" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="60" id="SD0-C8-DzZ"/>
+                <constraint firstItem="G4t-JP-ln5" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="ec4-RC-fQ2"/>
+                <constraint firstItem="G4t-JP-ln5" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="hme-Mc-a93"/>
             </constraints>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="umd-pz-riq"/>
-                </mask>
-            </variation>
-            <point key="canvasLocation" x="229.5" y="287.5"/>
+            <point key="canvasLocation" x="255" y="341"/>
         </collectionReusableView>
     </objects>
     <resources>

@@ -50,6 +50,7 @@
 		F5E699AF1D055AD4007F0298 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5E699AD1D055AD4007F0298 /* SearchViewController.xib */; };
 		F5E699B31D055B19007F0298 /* SearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E699B21D055B19007F0298 /* SearchView.m */; };
 		F5E699B51D055B30007F0298 /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5E699B41D055B30007F0298 /* SearchView.xib */; };
+		F5E699B81D056ED7007F0298 /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E699B71D056ED7007F0298 /* UINavigationBar+Awesome.m */; };
 		F5FA47EE1D03E01D0083D5FE /* ClassficationDetailCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5FA47E01D03E01D0083D5FE /* ClassficationDetailCollectionViewCell.m */; };
 		F5FA47EF1D03E01D0083D5FE /* ClassficationDetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5FA47E11D03E01D0083D5FE /* ClassficationDetailCollectionViewCell.xib */; };
 		F5FA47F01D03E01D0083D5FE /* ClassficationHeadCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5FA47E41D03E01D0083D5FE /* ClassficationHeadCollectionReusableView.m */; };
@@ -160,6 +161,8 @@
 		F5E699B11D055B19007F0298 /* SearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchView.h; sourceTree = "<group>"; };
 		F5E699B21D055B19007F0298 /* SearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchView.m; sourceTree = "<group>"; };
 		F5E699B41D055B30007F0298 /* SearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
+		F5E699B61D056ED7007F0298 /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Awesome.h"; sourceTree = "<group>"; };
+		F5E699B71D056ED7007F0298 /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Awesome.m"; sourceTree = "<group>"; };
 		F5FA47DF1D03E01D0083D5FE /* ClassficationDetailCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassficationDetailCollectionViewCell.h; sourceTree = "<group>"; };
 		F5FA47E01D03E01D0083D5FE /* ClassficationDetailCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassficationDetailCollectionViewCell.m; sourceTree = "<group>"; };
 		F5FA47E11D03E01D0083D5FE /* ClassficationDetailCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassficationDetailCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -488,6 +491,8 @@
 		F5935E131D013626008622D4 /* UINavagationController */ = {
 			isa = PBXGroup;
 			children = (
+				F5E699B61D056ED7007F0298 /* UINavigationBar+Awesome.h */,
+				F5E699B71D056ED7007F0298 /* UINavigationBar+Awesome.m */,
 			);
 			path = UINavagationController;
 			sourceTree = "<group>";
@@ -1109,6 +1114,7 @@
 				F5935E3A1D016371008622D4 /* NSString+Calculate.m in Sources */,
 				F5E070991D02DED5006D467A /* HomeTableViewCell.m in Sources */,
 				F5FA48101D03F6A30083D5FE /* FoundTableViewCell.m in Sources */,
+				F5E699B81D056ED7007F0298 /* UINavigationBar+Awesome.m in Sources */,
 				F5FA47F21D03E01D0083D5FE /* ClassfiactionHeadTypeImageCollectionReusableView.m in Sources */,
 				F5E6999F1D054994007F0298 /* ClassificationTitleView.m in Sources */,
 				F5935E421D0165AE008622D4 /* AppDelegate+PrivateMethods.m in Sources */,

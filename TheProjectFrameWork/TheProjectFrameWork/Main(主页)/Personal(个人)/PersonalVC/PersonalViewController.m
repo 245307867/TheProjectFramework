@@ -30,9 +30,6 @@ static NSString * PersonalCollectionViewHeadIndetifier = @"PersonalHeadCollectio
     [super viewDidLoad];
     [self loadDataSource];
     [self personalCollectionViewRegister];
-    self.navigationController.toolbar.backgroundColor =[UIColor redColor];
-    self.navigationController.navigationBar.translucent = YES;
-
     // Do any additional setup after loading the view.
 }
 - (void)didReceiveMemoryWarning {
@@ -52,6 +49,8 @@ static NSString * PersonalCollectionViewHeadIndetifier = @"PersonalHeadCollectio
     UINib * nib = [UINib nibWithNibName:PersonalCollectionViewIdentifier bundle:[NSBundle mainBundle]];
     [self.personalCenterCollectionView registerNib:nib forCellWithReuseIdentifier:PersonalCollectionViewIdentifier];
     [self.personalCenterCollectionView registerNib:[UINib nibWithNibName:PersonalCollectionViewHeadIndetifier bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:PersonalCollectionViewHeadIndetifier];
+    [self.navigationController.navigationBar lt_setBackgroundColor:[[UIColor whiteColor] colorWithAlphaComponent:0]];
+
 }
 /**
  *  设置数据源
@@ -101,6 +100,7 @@ static NSString * PersonalCollectionViewHeadIndetifier = @"PersonalHeadCollectio
         PersonalHeadCollectionReusableView * headerView=[collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:PersonalCollectionViewHeadIndetifier forIndexPath:indexPath];
         headerView.backgroundColor = [UIColor blueColor];
         headerView.delegate =self;
+        headerView.frame = CGRectMake(0, -64, KScreenBoundWidth, 200);
         [headerView personalWithsection:indexPath.section];
         return headerView;
     }

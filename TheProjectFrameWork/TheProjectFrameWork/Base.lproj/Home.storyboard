@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--首页-->
+        <!--Home View Controller-->
         <scene sceneID="STm-wv-2f8">
             <objects>
                 <viewController id="ygp-O7-wEe" customClass="HomeViewController" sceneMemberID="viewController">
@@ -16,33 +16,8 @@
                     <view key="view" contentMode="scaleToFill" id="CQR-7A-fgV">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="Zwh-k0-oGG">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="64" width="400" height="736"/>
-                                </variation>
-                                <connections>
-                                    <outlet property="dataSource" destination="ygp-O7-wEe" id="hFP-4V-TAE"/>
-                                    <outlet property="delegate" destination="ygp-O7-wEe" id="pLD-3E-h6s"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="Zwh-k0-oGG" firstAttribute="top" secondItem="98m-4R-dMe" secondAttribute="bottom" id="6Du-Dn-uE8"/>
-                            <constraint firstItem="Zwh-k0-oGG" firstAttribute="leading" secondItem="CQR-7A-fgV" secondAttribute="leading" id="6pX-Dm-dED"/>
-                            <constraint firstItem="fqG-LJ-ShK" firstAttribute="top" secondItem="Zwh-k0-oGG" secondAttribute="bottom" id="K2j-ei-gSb"/>
-                            <constraint firstAttribute="trailing" secondItem="Zwh-k0-oGG" secondAttribute="trailing" id="f0N-aP-WA4"/>
-                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="首页" id="egd-s4-cJ5">
-                        <barButtonItem key="leftBarButtonItem" image="ico_camera_7_gray" style="plain" id="5dH-rG-YcK"/>
-                        <barButtonItem key="rightBarButtonItem" image="HomePage_Message" id="Kvj-ri-tTE"/>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="homeTableView" destination="Zwh-k0-oGG" id="Xw3-Va-jB1"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="egd-s4-cJ5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UcZ-qu-jni" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -51,7 +26,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Cye-Sr-YA4">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="kMW-ff-qDI" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kMW-ff-qDI" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4T0-fh-gk1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -70,8 +45,4 @@
             <point key="canvasLocation" x="-61" y="209"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="HomePage_Message" width="27" height="27"/>
-        <image name="ico_camera_7_gray" width="27" height="27"/>
-    </resources>
 </document>

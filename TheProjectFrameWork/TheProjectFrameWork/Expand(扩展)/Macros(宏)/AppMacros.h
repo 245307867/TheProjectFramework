@@ -11,6 +11,7 @@
 
 //
 #define kRootViewController [UIApplication sharedApplication].delegate.window.rootViewController
+#define RGBCOLOR(r, g, b) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1.0]
 
 // Tabbar高度
 #define KTabBarHeight 49
