@@ -108,6 +108,7 @@
                         <outlet property="foundheadCollectionView" destination="Tp8-Bs-oif" id="buz-lp-NUp"/>
                         <outlet property="foundheadView" destination="5ZN-Ot-OSv" id="wfe-vX-9eL"/>
                         <outlet property="headViewHeight" destination="gsF-Hj-7D2" id="UK7-SM-1es"/>
+                        <outlet property="topToSuperView" destination="eT2-Wc-83p" id="CFE-Rx-ytb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5aX-L8-X9t" userLabel="First Responder" sceneMemberID="firstResponder"/>

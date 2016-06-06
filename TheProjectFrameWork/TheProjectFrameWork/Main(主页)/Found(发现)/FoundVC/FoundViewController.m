@@ -13,7 +13,10 @@
 static NSString * cellIdentifier = @"FoundTableViewCell";
 static NSString * itemIdentifier = @"FoundCollectionViewCell";
 @interface FoundViewController ()<UITableViewDataSource,UITableViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+/** headView 高度 */
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *headViewHeight;
+/** 顶部高度 */
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topToSuperView;
 /** 发现头部视图 */
 @property (weak, nonatomic) IBOutlet UIView *foundheadView;
 /** 发现头部collectionView */
@@ -78,16 +81,18 @@ static NSString * itemIdentifier = @"FoundCollectionViewCell";
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
     if (self.foundDetailTableView.contentOffset.y > 108) {
         [UIView setAnimationCurve:UIViewAnimationCurveLinear];
-        [UIView animateWithDuration:1 animations:^{
-            self.headViewHeight.constant =0;
+        [UIView animateWithDuration:5 animations:^{
+            self.headViewHeight.constant = 208-self.foundDetailTableView.contentOffset.y;
+            [self viewIfLoaded];
         } completion:^(BOOL finished) {
             
         }];
     }
     if (self.foundDetailTableView.contentOffset.y<108) {
         [UIView setAnimationCurve:UIViewAnimationCurveLinear];
-        [UIView animateWithDuration:1 animations:^{
+        [UIView animateWithDuration:5 animations:^{
             self.headViewHeight.constant =100;
+            [self viewIfLoaded];
         } completion:^(BOOL finished) {
             
         }];
