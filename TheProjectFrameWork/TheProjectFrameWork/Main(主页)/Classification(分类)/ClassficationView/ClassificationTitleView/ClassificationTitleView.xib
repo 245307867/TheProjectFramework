@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ClassificationTitleView">
+            <rect key="frame" x="0.0" y="0.0" width="298" height="46"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wareInfo_more_search" translatesAutoresizingMaskIntoConstraints="NO" id="J34-fZ-i7E">
+                    <rect key="frame" x="0.0" y="0.0" width="30" height="46"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="8E0-7G-izQ"/>
+                    </constraints>
+                </imageView>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="海尔优惠卷免费领取" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="KK3-se-rkM">
+                    <rect key="frame" x="30" y="0.0" width="238" height="46"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sww-Vj-VVQ">
+                    <rect key="frame" x="268" y="0.0" width="30" height="46"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="ovG-vY-Cw5"/>
+                    </constraints>
+                    <state key="normal" image="audio_nav_icon"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Sww-Vj-VVQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="79e-hY-fNo"/>
+                <constraint firstAttribute="bottom" secondItem="J34-fZ-i7E" secondAttribute="bottom" id="8T4-0y-EG0"/>
+                <constraint firstAttribute="bottom" secondItem="Sww-Vj-VVQ" secondAttribute="bottom" id="8dt-dI-9MB"/>
+                <constraint firstAttribute="trailing" secondItem="Sww-Vj-VVQ" secondAttribute="trailing" id="Elt-3W-neB"/>
+                <constraint firstItem="KK3-se-rkM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="K0q-MG-s5q"/>
+                <constraint firstItem="J34-fZ-i7E" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="UPo-m9-VXR"/>
+                <constraint firstItem="KK3-se-rkM" firstAttribute="leading" secondItem="J34-fZ-i7E" secondAttribute="trailing" id="eIj-FV-dOc"/>
+                <constraint firstItem="Sww-Vj-VVQ" firstAttribute="leading" secondItem="KK3-se-rkM" secondAttribute="trailing" id="lV6-IH-3qq"/>
+                <constraint firstItem="J34-fZ-i7E" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="rsl-Vg-G3X"/>
+                <constraint firstAttribute="bottom" secondItem="KK3-se-rkM" secondAttribute="bottom" id="uBR-QC-Skr"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="recordButton" destination="Sww-Vj-VVQ" id="01h-mY-N0J"/>
+                <outlet property="searchContentTextField" destination="KK3-se-rkM" id="9gG-Ub-7am"/>
+                <outlet property="searchImageView" destination="J34-fZ-i7E" id="yQF-c9-6fN"/>
+            </connections>
+            <point key="canvasLocation" x="8" y="-253"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="audio_nav_icon" width="13" height="18"/>
+        <image name="wareInfo_more_search" width="20" height="20"/>
+    </resources>
+</document>

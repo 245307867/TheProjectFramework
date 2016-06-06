@@ -11,6 +11,7 @@
 #import "ClassficationDetailCollectionViewCell.h"
 #import "ClassficationHeadCollectionReusableView.h"
 #import "ClassfiactionHeadTypeImageCollectionReusableView.h"
+#import "ClassificationTitleView.h"
 
 /** MenuCell  */
 static NSString * cellIdentifier = @"ClassficationMenuTableViewCell";
@@ -21,7 +22,7 @@ static NSString * headViewRecommendedIndetifier = @"ClassfiactionHeadTypeImageCo
 /** HeadView */
 static NSString * headViewIndentifier = @"ClassficationHeadCollectionReusableView";
 
-@interface ClassificationViewController ()<UITableViewDelegate,UITableViewDataSource,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,ClassficationHeadCollectionReusableViewDelegate>
+@interface ClassificationViewController ()<UITableViewDelegate,UITableViewDataSource,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,ClassficationHeadCollectionReusableViewDelegate,ClassificationTitleViewDelegate>
 /** 菜单列表tableView */
 @property (weak, nonatomic) IBOutlet UITableView *classficationMenutableView;
 /** 详情collectionView */
@@ -34,6 +35,7 @@ static NSString * headViewIndentifier = @"ClassficationHeadCollectionReusableVie
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self registerCollectionView];
+    [self loadNavagationBar];
     // Do any additional setup after loading the view.
 }
 
@@ -42,13 +44,21 @@ static NSString * headViewIndentifier = @"ClassficationHeadCollectionReusableVie
     // Dispose of any resources that can be recreated.
 }
 /**
+ *  加载导航栏
+ */
+-(void)loadNavagationBar{
+    ClassificationTitleView * view =[ClassificationTitleView TitleViewCreatWithFrame:CGRectMake(0, 0, KScreenBoundWidth-10, 40)];
+    view.delegate = self;
+    self.navigationItem.titleView = view;
+}
+/**
  *  注册collectionView
  */
+
 -(void)registerCollectionView{
     self.classficationMenutableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
     self.classficationDetailCollectionView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.15];
     self.classficationDetailCollectionView.backgroundView.backgroundColor  = [UIColor whiteColor];
-
     //注册collectionViewCell
     [self.classficationDetailCollectionView registerNib:[UINib nibWithNibName:itemIndetifier bundle:nil] forCellWithReuseIdentifier:itemIndetifier];
     //注册collectionViewCellHeadViewTypeImage
@@ -56,6 +66,11 @@ static NSString * headViewIndentifier = @"ClassficationHeadCollectionReusableVie
     //注册collectionViewCellHeadView
     [self.classficationDetailCollectionView registerNib:[UINib nibWithNibName:headViewIndentifier bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headViewIndentifier];
 }
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+}
+
 
 #pragma mark --UITableViewDelegate&&UITableViewDataSource
 
@@ -74,9 +89,11 @@ static NSString * headViewIndentifier = @"ClassficationHeadCollectionReusableVie
     
     return cell;
 }
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [self.classficationDetailCollectionView reloadData];
 }
+
 #pragma mark--UICollectionViewDataSource&&UICollectionViewDelegate
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
@@ -103,12 +120,10 @@ static NSString * headViewIndentifier = @"ClassficationHeadCollectionReusableVie
             ClassficationHeadCollectionReusableView * headerView=[collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:headViewIndentifier forIndexPath:indexPath];
             [headerView loadClassficationHeadViewWithSection:indexPath.section];
             headerView.delegate = self;
-            headerView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.1];
             return headerView;
         }
         else{
             ClassfiactionHeadTypeImageCollectionReusableView * headView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:headViewRecommendedIndetifier forIndexPath:indexPath];
-            headView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.1];
             return headView;
             
         }
@@ -131,11 +146,18 @@ static NSString * headViewIndentifier = @"ClassficationHeadCollectionReusableVie
     }
 }
 
-
 #pragma mark --ClassficationHeadCollectionReusableViewDelegate
 -(void)ClassficationHeadCollectionReusableViewDeatialistClickWithseciton:(NSInteger)section{
     NSLog(@"%ld",(long)section);
 }
+
+#pragma mark --ClassificationTitleViewDelegate
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    return YES;
+}
+
+
 
 
 @end

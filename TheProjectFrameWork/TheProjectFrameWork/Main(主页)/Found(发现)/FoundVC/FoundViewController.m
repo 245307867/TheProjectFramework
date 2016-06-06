@@ -24,6 +24,7 @@ static NSString * itemIdentifier = @"FoundCollectionViewCell";
 /** 发现详情 */
 @property (weak, nonatomic) IBOutlet UITableView *foundDetailTableView;
 @property(strong,nonatomic) NSMutableArray * testDataArray;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end
 
@@ -31,17 +32,48 @@ static NSString * itemIdentifier = @"FoundCollectionViewCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setAutomaticallyAdjustsScrollViewInsets:NO];
-    self.testDataArray = [NSMutableArray array];
-    [self.foundheadCollectionView registerNib:[UINib nibWithNibName:itemIdentifier bundle:nil] forCellWithReuseIdentifier:itemIdentifier];
-    NSArray * array =@[@"wait_money_icon",@"wait_product_icon",@"wait_comment_icon",@"wait_after_icon",@"my_privilege_icon"];
-    [self.testDataArray addObjectsFromArray:array];
+    [self loadNavagationBar];
+    [self loadDataSource];
 
     // Do any additional setup after loading the view.
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+-(void)loadNavagationBar{
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ico_camera_7_gray"] style:UIBarButtonItemStyleDone target:self action:@selector(scanthecode)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"HomePage_Message"] style:UIBarButtonItemStyleDone target:self action:@selector(sendMessgae)];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"bigShadow.png"] forBarMetrics:UIBarMetricsDefault];
+
+    [self setAutomaticallyAdjustsScrollViewInsets:NO];
+
+}
+-(void)scanthecode{
+    
+}
+-(void)sendMessgae{
+    
+}
+- (UIImage *)imageWithColor:(UIColor *)color
+{
+    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
+}
+-(void)loadDataSource{
+    self.testDataArray = [NSMutableArray array];
+    [self.foundheadCollectionView registerNib:[UINib nibWithNibName:itemIdentifier bundle:nil] forCellWithReuseIdentifier:itemIdentifier];
+    NSArray * array =@[@"wait_money_icon",@"wait_product_icon",@"wait_comment_icon",@"wait_after_icon",@"my_privilege_icon"];
+    [self.testDataArray addObjectsFromArray:array];
 }
 #pragma mark--UITableViewDataSource &&UITableViewDelegate 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -79,23 +111,13 @@ static NSString * itemIdentifier = @"FoundCollectionViewCell";
 }
 #pragma mark --UIScrollViewDelegate
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    if (self.foundDetailTableView.contentOffset.y > 108) {
-        [UIView setAnimationCurve:UIViewAnimationCurveLinear];
-        [UIView animateWithDuration:5 animations:^{
-            self.headViewHeight.constant = 208-self.foundDetailTableView.contentOffset.y;
-            [self viewIfLoaded];
-        } completion:^(BOOL finished) {
-            
-        }];
+    if (self.foundDetailTableView.contentOffset.y > 208) {
+        self.headViewHeight.constant = 308-self.foundDetailTableView.contentOffset.y;
+        [self viewIfLoaded];
     }
-    if (self.foundDetailTableView.contentOffset.y<108) {
-        [UIView setAnimationCurve:UIViewAnimationCurveLinear];
-        [UIView animateWithDuration:5 animations:^{
-            self.headViewHeight.constant =100;
-            [self viewIfLoaded];
-        } completion:^(BOOL finished) {
-            
-        }];
+    if (self.foundDetailTableView.contentOffset.y<208) {
+        self.headViewHeight.constant =100;
+        [self viewIfLoaded];
     }
 
 }

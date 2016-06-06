@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--发现-->
+        <!--Found View Controller-->
         <scene sceneID="qwj-br-Xqo">
             <objects>
                 <viewController id="Vs5-Kc-hVj" customClass="FoundViewController" sceneMemberID="viewController">
@@ -99,19 +99,43 @@
                             <constraint firstItem="5ZN-Ot-OSv" firstAttribute="leading" secondItem="jcW-qu-nfA" secondAttribute="leading" id="saW-Mr-blb"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="发现" id="lIM-0k-mSF">
-                        <barButtonItem key="leftBarButtonItem" image="ico_camera_7_gray" id="bye-mh-GGg"/>
-                        <barButtonItem key="rightBarButtonItem" image="HomePage_Message" id="4iK-NO-dkF"/>
+                    <navigationItem key="navigationItem" id="lIM-0k-mSF">
+                        <nil key="title"/>
+                        <view key="titleView" contentMode="scaleToFill" id="jeY-17-zHG">
+                            <rect key="frame" x="180" y="5.5" width="240" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <searchBar contentMode="redraw" fixedFrame="YES" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="scf-wX-Nsg">
+                                    <rect key="frame" x="0.0" y="-6" width="240" height="44"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="Vs5-Kc-hVj" id="1O5-AS-Loc"/>
+                                    </connections>
+                                </searchBar>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
                     </navigationItem>
                     <connections>
                         <outlet property="foundDetailTableView" destination="0Hy-ib-cPX" id="9xe-TD-tW1"/>
                         <outlet property="foundheadCollectionView" destination="Tp8-Bs-oif" id="buz-lp-NUp"/>
                         <outlet property="foundheadView" destination="5ZN-Ot-OSv" id="wfe-vX-9eL"/>
                         <outlet property="headViewHeight" destination="gsF-Hj-7D2" id="UK7-SM-1es"/>
+                        <outlet property="searchBar" destination="scf-wX-Nsg" id="sLF-aU-qUT"/>
+                        <outlet property="searchDisplayController" destination="M1W-8h-8hf" id="u4n-81-GWx"/>
                         <outlet property="topToSuperView" destination="eT2-Wc-83p" id="CFE-Rx-ytb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5aX-L8-X9t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="M1W-8h-8hf">
+                    <connections>
+                        <outlet property="delegate" destination="Vs5-Kc-hVj" id="Mp3-t5-W0K"/>
+                        <outlet property="searchBar" destination="scf-wX-Nsg" id="zva-Ye-w0v"/>
+                        <outlet property="searchContentsController" destination="Vs5-Kc-hVj" id="xmN-tm-Gn5"/>
+                        <outlet property="searchResultsDataSource" destination="Vs5-Kc-hVj" id="8ZN-SC-3Uy"/>
+                        <outlet property="searchResultsDelegate" destination="Vs5-Kc-hVj" id="3x5-zM-5dr"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="985" y="18"/>
         </scene>
@@ -120,9 +144,10 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VLj-2s-stL" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="P2O-4E-iR2">
+                    <navigationBar key="navigationBar" alpha="0.0" contentMode="scaleToFill" id="P2O-4E-iR2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -134,8 +159,4 @@
             <point key="canvasLocation" x="173" y="18"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="HomePage_Message" width="27" height="27"/>
-        <image name="ico_camera_7_gray" width="27" height="27"/>
-    </resources>
 </document>

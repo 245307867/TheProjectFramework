@@ -1,19 +1,15 @@
 //
-//  BaseView.m
+//  SearchView.m
 //  TheProjectFrameWork
 //
-//  Created by maple on 16/6/3.
+//  Created by maple on 16/6/6.
 //  Copyright © 2016年 MapleDongSen. All rights reserved.
 //
 
-#import "BaseView.h"
+#import "SearchView.h"
 
-@implementation BaseView
+@implementation SearchView
 
-+(id)loadView{
-    id view  = [[[NSBundle mainBundle] loadNibNamed:[[self class] description] owner:nil options:nil]firstObject];
-    return view;
-}
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

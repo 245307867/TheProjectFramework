@@ -91,6 +91,7 @@
     return YES;
 }
 - (BOOL)textFieldShouldClear:(UITextField *)textField{
+    [self setUserLoginButton];
         return YES;
 }
 

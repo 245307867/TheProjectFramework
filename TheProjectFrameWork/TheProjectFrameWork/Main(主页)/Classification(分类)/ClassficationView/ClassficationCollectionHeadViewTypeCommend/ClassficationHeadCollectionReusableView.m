@@ -19,7 +19,9 @@
 }
 
 - (IBAction)detialListButtonClicked:(UIButton *)sender {
-    [self.delegate ClassficationHeadCollectionReusableViewDeatialistClickWithseciton:self.section];
+    if ([self.delegate respondsToSelector:@selector(ClassficationHeadCollectionReusableViewDeatialistClickWithseciton:)]) {
+        [self.delegate ClassficationHeadCollectionReusableViewDeatialistClickWithseciton:self.section];
+    }
 }
 
 @end

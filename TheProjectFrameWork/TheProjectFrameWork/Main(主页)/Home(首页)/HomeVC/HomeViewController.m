@@ -22,6 +22,11 @@ static NSString * cellIdentifier = @"HomeTableViewCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationController.navigationBarHidden = YES;
+    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+    self.navigationController.navigationBar.tintColor = nil;
+    self.navigationController.navigationBar. alpha = 0;
+    self.navigationController.navigationBar.translucent = NO;
     
     NSArray *imagesURLStrings = @[
                                   @"http://img30.360buyimg.com/mobilecms/s480x180_jfs/t1402/221/421883372/88115/8cc2231a/55815835N35a44559.jpg",
@@ -51,6 +56,11 @@ static NSString * cellIdentifier = @"HomeTableViewCell";
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+
+
+}
 #pragma mark --ImagePlayerViewDelegate
 -(NSInteger)numberOfItems{
     return 6;

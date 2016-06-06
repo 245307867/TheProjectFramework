@@ -29,7 +29,6 @@
 		F5935E3A1D016371008622D4 /* NSString+Calculate.m in Sources */ = {isa = PBXBuildFile; fileRef = F5935E391D016371008622D4 /* NSString+Calculate.m */; };
 		F5935E411D0165AE008622D4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F5935E3E1D0165AE008622D4 /* AppDelegate.m */; };
 		F5935E421D0165AE008622D4 /* AppDelegate+PrivateMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = F5935E401D0165AE008622D4 /* AppDelegate+PrivateMethods.m */; };
-		F5935E491D0170BF008622D4 /* ShopPingCart.m in Sources */ = {isa = PBXBuildFile; fileRef = F5935E481D0170BF008622D4 /* ShopPingCart.m */; };
 		F5935E4D1D0172C9008622D4 /* PersonalCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5935E4B1D0172C9008622D4 /* PersonalCollectionViewCell.m */; };
 		F5935E4E1D0172C9008622D4 /* PersonalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5935E4C1D0172C9008622D4 /* PersonalCollectionViewCell.xib */; };
 		F5935E521D0176CD008622D4 /* PersonalHeadCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5935E501D0176CD008622D4 /* PersonalHeadCollectionReusableView.m */; };
@@ -43,6 +42,14 @@
 		F5E070991D02DED5006D467A /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E070941D02DED5006D467A /* HomeTableViewCell.m */; };
 		F5E0709A1D02DED5006D467A /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5E070951D02DED5006D467A /* HomeTableViewCell.xib */; };
 		F5E0709B1D02DED5006D467A /* HometableHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E070981D02DED5006D467A /* HometableHeadView.m */; };
+		F5E6999F1D054994007F0298 /* ClassificationTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E6999E1D054994007F0298 /* ClassificationTitleView.m */; };
+		F5E699A11D0549AB007F0298 /* ClassificationTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5E699A01D0549AB007F0298 /* ClassificationTitleView.xib */; };
+		F5E699A31D054F77007F0298 /* BaseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5E699A21D054F77007F0298 /* BaseView.xib */; };
+		F5E699AA1D055AB8007F0298 /* ShopPingCart.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E699A71D055AB8007F0298 /* ShopPingCart.m */; };
+		F5E699AE1D055AD4007F0298 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E699AC1D055AD4007F0298 /* SearchViewController.m */; };
+		F5E699AF1D055AD4007F0298 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5E699AD1D055AD4007F0298 /* SearchViewController.xib */; };
+		F5E699B31D055B19007F0298 /* SearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E699B21D055B19007F0298 /* SearchView.m */; };
+		F5E699B51D055B30007F0298 /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5E699B41D055B30007F0298 /* SearchView.xib */; };
 		F5FA47EE1D03E01D0083D5FE /* ClassficationDetailCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5FA47E01D03E01D0083D5FE /* ClassficationDetailCollectionViewCell.m */; };
 		F5FA47EF1D03E01D0083D5FE /* ClassficationDetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5FA47E11D03E01D0083D5FE /* ClassficationDetailCollectionViewCell.xib */; };
 		F5FA47F01D03E01D0083D5FE /* ClassficationHeadCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5FA47E41D03E01D0083D5FE /* ClassficationHeadCollectionReusableView.m */; };
@@ -116,8 +123,6 @@
 		F5935E3E1D0165AE008622D4 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F5935E3F1D0165AE008622D4 /* AppDelegate+PrivateMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+PrivateMethods.h"; sourceTree = "<group>"; };
 		F5935E401D0165AE008622D4 /* AppDelegate+PrivateMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+PrivateMethods.m"; sourceTree = "<group>"; };
-		F5935E471D0170BF008622D4 /* ShopPingCart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopPingCart.h; sourceTree = "<group>"; };
-		F5935E481D0170BF008622D4 /* ShopPingCart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopPingCart.m; sourceTree = "<group>"; };
 		F5935E4A1D0172C9008622D4 /* PersonalCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalCollectionViewCell.h; sourceTree = "<group>"; };
 		F5935E4B1D0172C9008622D4 /* PersonalCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalCollectionViewCell.m; sourceTree = "<group>"; };
 		F5935E4C1D0172C9008622D4 /* PersonalCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -143,6 +148,18 @@
 		F5E070971D02DED5006D467A /* HometableHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HometableHeadView.h; sourceTree = "<group>"; };
 		F5E070981D02DED5006D467A /* HometableHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HometableHeadView.m; sourceTree = "<group>"; };
 		F5E070A01D02E3E7006D467A /* Enumeration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Enumeration.h; sourceTree = "<group>"; };
+		F5E6999D1D054994007F0298 /* ClassificationTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassificationTitleView.h; sourceTree = "<group>"; };
+		F5E6999E1D054994007F0298 /* ClassificationTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassificationTitleView.m; sourceTree = "<group>"; };
+		F5E699A01D0549AB007F0298 /* ClassificationTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassificationTitleView.xib; sourceTree = "<group>"; };
+		F5E699A21D054F77007F0298 /* BaseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseView.xib; sourceTree = "<group>"; };
+		F5E699A61D055AB8007F0298 /* ShopPingCart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopPingCart.h; sourceTree = "<group>"; };
+		F5E699A71D055AB8007F0298 /* ShopPingCart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopPingCart.m; sourceTree = "<group>"; };
+		F5E699AB1D055AD4007F0298 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		F5E699AC1D055AD4007F0298 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		F5E699AD1D055AD4007F0298 /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		F5E699B11D055B19007F0298 /* SearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchView.h; sourceTree = "<group>"; };
+		F5E699B21D055B19007F0298 /* SearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchView.m; sourceTree = "<group>"; };
+		F5E699B41D055B30007F0298 /* SearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
 		F5FA47DF1D03E01D0083D5FE /* ClassficationDetailCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassficationDetailCollectionViewCell.h; sourceTree = "<group>"; };
 		F5FA47E01D03E01D0083D5FE /* ClassficationDetailCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassficationDetailCollectionViewCell.m; sourceTree = "<group>"; };
 		F5FA47E11D03E01D0083D5FE /* ClassficationDetailCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassficationDetailCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -227,7 +244,6 @@
 				F5935DE61D011F8A008622D4 /* Shopping(购物) */,
 				F5935DD11D011CB7008622D4 /* Home(首页) */,
 				F5935DD21D011CB7008622D4 /* Login(登陆) */,
-				F5935DD31D011CB7008622D4 /* Model(数据) */,
 				F5935DD41D011CB7008622D4 /* Public(公共类) */,
 				F5935DC41D011B39008622D4 /* Base(基类) */,
 			);
@@ -334,6 +350,7 @@
 			children = (
 				F5935DCB1D011B50008622D4 /* BaseView.h */,
 				F5935DCC1D011B50008622D4 /* BaseView.m */,
+				F5E699A21D054F77007F0298 /* BaseView.xib */,
 			);
 			path = BaseView;
 			sourceTree = "<group>";
@@ -358,18 +375,12 @@
 			path = "Login(登陆)";
 			sourceTree = "<group>";
 		};
-		F5935DD31D011CB7008622D4 /* Model(数据) */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Model(数据)";
-			sourceTree = "<group>";
-		};
 		F5935DD41D011CB7008622D4 /* Public(公共类) */ = {
 			isa = PBXGroup;
 			children = (
-				F5935E431D0165DD008622D4 /* ShopPingManager */,
-				F5935E3B1D016542008622D4 /* UserInfoManger */,
+				F5E699B01D055B03007F0298 /* PublicView */,
+				F5E699A41D055AB8007F0298 /* Manager */,
+				F5E699A91D055AB8007F0298 /* PublicVC */,
 			);
 			path = "Public(公共类)";
 			sourceTree = "<group>";
@@ -582,13 +593,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		F5935E3B1D016542008622D4 /* UserInfoManger */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UserInfoManger;
-			sourceTree = "<group>";
-		};
 		F5935E3C1D01658B008622D4 /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -599,15 +603,6 @@
 				F5935E401D0165AE008622D4 /* AppDelegate+PrivateMethods.m */,
 			);
 			path = AppDelegate;
-			sourceTree = "<group>";
-		};
-		F5935E431D0165DD008622D4 /* ShopPingManager */ = {
-			isa = PBXGroup;
-			children = (
-				F5935E471D0170BF008622D4 /* ShopPingCart.h */,
-				F5935E481D0170BF008622D4 /* ShopPingCart.m */,
-			);
-			path = ShopPingManager;
 			sourceTree = "<group>";
 		};
 		F5935E541D0289FB008622D4 /* NetWork */ = {
@@ -719,6 +714,7 @@
 		F5DB3D581D02B633001A64D0 /* ClassficationView */ = {
 			isa = PBXGroup;
 			children = (
+				F5E6999C1D05493A007F0298 /* ClassificationTitleView */,
 				F5FA47DE1D03E01D0083D5FE /*  ClassficationCollectionViewCell */,
 				F5FA47E21D03E01D0083D5FE /* ClassficationCollectionHeadViewTypeCommend */,
 				F5FA47E61D03E01D0083D5FE /* ClassficationCollectionViewHeadViewTypeImage */,
@@ -767,6 +763,61 @@
 				F5E070A01D02E3E7006D467A /* Enumeration.h */,
 			);
 			path = "Enumeration(枚举)";
+			sourceTree = "<group>";
+		};
+		F5E6999C1D05493A007F0298 /* ClassificationTitleView */ = {
+			isa = PBXGroup;
+			children = (
+				F5E6999D1D054994007F0298 /* ClassificationTitleView.h */,
+				F5E6999E1D054994007F0298 /* ClassificationTitleView.m */,
+				F5E699A01D0549AB007F0298 /* ClassificationTitleView.xib */,
+			);
+			path = ClassificationTitleView;
+			sourceTree = "<group>";
+		};
+		F5E699A41D055AB8007F0298 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				F5E699A51D055AB8007F0298 /* ShopPingManager */,
+				F5E699A81D055AB8007F0298 /* UserInfoManger */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		F5E699A51D055AB8007F0298 /* ShopPingManager */ = {
+			isa = PBXGroup;
+			children = (
+				F5E699A61D055AB8007F0298 /* ShopPingCart.h */,
+				F5E699A71D055AB8007F0298 /* ShopPingCart.m */,
+			);
+			path = ShopPingManager;
+			sourceTree = "<group>";
+		};
+		F5E699A81D055AB8007F0298 /* UserInfoManger */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UserInfoManger;
+			sourceTree = "<group>";
+		};
+		F5E699A91D055AB8007F0298 /* PublicVC */ = {
+			isa = PBXGroup;
+			children = (
+				F5E699AB1D055AD4007F0298 /* SearchViewController.h */,
+				F5E699AC1D055AD4007F0298 /* SearchViewController.m */,
+				F5E699AD1D055AD4007F0298 /* SearchViewController.xib */,
+			);
+			path = PublicVC;
+			sourceTree = "<group>";
+		};
+		F5E699B01D055B03007F0298 /* PublicView */ = {
+			isa = PBXGroup;
+			children = (
+				F5E699B11D055B19007F0298 /* SearchView.h */,
+				F5E699B21D055B19007F0298 /* SearchView.m */,
+				F5E699B41D055B30007F0298 /* SearchView.xib */,
+			);
+			path = PublicView;
 			sourceTree = "<group>";
 		};
 		F5FA47DE1D03E01D0083D5FE /*  ClassficationCollectionViewCell */ = {
@@ -955,6 +1006,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5FA48111D03F6A30083D5FE /* FoundTableViewCell.xib in Resources */,
+				F5E699A11D0549AB007F0298 /* ClassificationTitleView.xib in Resources */,
 				F5935E4E1D0172C9008622D4 /* PersonalCollectionViewCell.xib in Resources */,
 				F5FA47FA1D03ECA50083D5FE /* ShoppingCartTableViewCell.xib in Resources */,
 				F5935DE41D011F2D008622D4 /* ShoppingCart.storyboard in Resources */,
@@ -971,6 +1023,9 @@
 				F5935E2E1D015206008622D4 /* Classification.storyboard in Resources */,
 				F5935E2B1D0151E8008622D4 /* Found.storyboard in Resources */,
 				F5935DD81D011EC0008622D4 /* Home.storyboard in Resources */,
+				F5E699B51D055B30007F0298 /* SearchView.xib in Resources */,
+				F5E699AF1D055AD4007F0298 /* SearchViewController.xib in Resources */,
+				F5E699A31D054F77007F0298 /* BaseView.xib in Resources */,
 				F5935DE11D011F0B008622D4 /* Personal.storyboard in Resources */,
 				F5E0709A1D02DED5006D467A /* HomeTableViewCell.xib in Resources */,
 			);
@@ -1026,6 +1081,7 @@
 				F5935DD01D011B6A008622D4 /* BaseModel.m in Sources */,
 				F5935E371D0161E8008622D4 /* NSString+Validation.m in Sources */,
 				F503E9CC1D051A7B001CB721 /* NetWork+BodyAndCookie.m in Sources */,
+				F5E699B31D055B19007F0298 /* SearchView.m in Sources */,
 				F5935E341D015F06008622D4 /* UIImagePickerController+PublishMethods.m in Sources */,
 				F5935DCA1D011B39008622D4 /* BaseViewController.m in Sources */,
 				F5935DCD1D011B50008622D4 /* BaseView.m in Sources */,
@@ -1042,9 +1098,10 @@
 				F5FA47F01D03E01D0083D5FE /* ClassficationHeadCollectionReusableView.m in Sources */,
 				F5FA48051D03F64D0083D5FE /* FoundViewController.m in Sources */,
 				F5FA47F91D03ECA50083D5FE /* ShoppingCartTableViewCell.m in Sources */,
-				F5935E491D0170BF008622D4 /* ShopPingCart.m in Sources */,
 				F5935E4D1D0172C9008622D4 /* PersonalCollectionViewCell.m in Sources */,
 				F5935E521D0176CD008622D4 /* PersonalHeadCollectionReusableView.m in Sources */,
+				F5E699AA1D055AB8007F0298 /* ShopPingCart.m in Sources */,
+				F5E699AE1D055AD4007F0298 /* SearchViewController.m in Sources */,
 				F5DB3D5B1D02B633001A64D0 /* ClassificationViewController.m in Sources */,
 				F5935E071D013005008622D4 /* HUDManager.m in Sources */,
 				F5DB3D4F1D02B23A001A64D0 /* RegisterViewController.m in Sources */,
@@ -1053,6 +1110,7 @@
 				F5E070991D02DED5006D467A /* HomeTableViewCell.m in Sources */,
 				F5FA48101D03F6A30083D5FE /* FoundTableViewCell.m in Sources */,
 				F5FA47F21D03E01D0083D5FE /* ClassfiactionHeadTypeImageCollectionReusableView.m in Sources */,
+				F5E6999F1D054994007F0298 /* ClassificationTitleView.m in Sources */,
 				F5935E421D0165AE008622D4 /* AppDelegate+PrivateMethods.m in Sources */,
 				F5935E281D0137AC008622D4 /* HomeViewController.m in Sources */,
 			);

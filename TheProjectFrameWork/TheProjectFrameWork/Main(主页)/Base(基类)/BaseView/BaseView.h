@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface BaseView : UIView
-
++(id)loadView;
 @end

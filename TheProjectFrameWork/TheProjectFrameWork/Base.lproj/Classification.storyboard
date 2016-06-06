@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ffx-M1-TBs">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ffx-M1-TBs">
                                 <rect key="frame" x="244" y="105" width="240" height="128"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="n9s-dF-D9s">
                                     <size key="itemSize" width="100" height="100"/>
@@ -109,47 +109,33 @@
                     <navigationItem key="navigationItem" id="NmK-h2-YCB">
                         <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" image="ico_camera_7_gray" id="djE-Eb-Tsi"/>
-                        <view key="titleView" contentMode="scaleToFill" id="X2r-Ny-UXm">
-                            <rect key="frame" x="122" y="5.5" width="356" height="33"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <searchBar contentMode="redraw" misplaced="YES" searchBarStyle="prominent" text="" placeholder="音频神卷满1999减500" showsSearchResultsButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bAj-8H-ut7">
-                                    <rect key="frame" x="0.0" y="0.0" width="356" height="33"/>
-                                    <color key="backgroundColor" red="0.60000002384185791" green="0.60000002384185791" blue="0.60000002384185791" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                    <scopeButtonTitles>
-                                        <string>Title</string>
-                                        <string>Title</string>
-                                    </scopeButtonTitles>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                            <integer key="value" value="5"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                        <rect key="frame" x="0.0" y="0.0" width="272" height="33"/>
-                                    </variation>
-                                </searchBar>
-                            </subviews>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstItem="bAj-8H-ut7" firstAttribute="top" secondItem="X2r-Ny-UXm" secondAttribute="top" id="DQe-io-5Ub"/>
-                                <constraint firstAttribute="bottom" secondItem="bAj-8H-ut7" secondAttribute="bottom" id="cBY-mC-wL1"/>
-                                <constraint firstItem="bAj-8H-ut7" firstAttribute="leading" secondItem="X2r-Ny-UXm" secondAttribute="leading" id="i1S-yb-2c2"/>
-                                <constraint firstAttribute="trailing" secondItem="bAj-8H-ut7" secondAttribute="trailing" id="rbg-9T-h4j"/>
-                            </constraints>
-                        </view>
                         <barButtonItem key="rightBarButtonItem" image="HomePage_Message" id="NjJ-uh-tAy"/>
                     </navigationItem>
                     <connections>
                         <outlet property="classficationDetailCollectionView" destination="ffx-M1-TBs" id="TqB-Aw-aET"/>
                         <outlet property="classficationMenutableView" destination="vcu-4E-Kwc" id="Dqz-RL-6Cw"/>
+                        <outlet property="searchDisplayController" destination="sQi-Ny-wJe" id="rLd-1I-fHN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RB6-gx-euz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="gNb-8L-lmR">
+                    <connections>
+                        <outlet property="delegate" destination="QyF-jN-gaY" id="7tl-5r-azd"/>
+                        <outlet property="searchContentsController" destination="QyF-jN-gaY" id="YBZ-Gk-1qC"/>
+                        <outlet property="searchResultsDataSource" destination="QyF-jN-gaY" id="rrC-z0-c4h"/>
+                        <outlet property="searchResultsDelegate" destination="QyF-jN-gaY" id="XNf-rA-6g6"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="sQi-Ny-wJe">
+                    <connections>
+                        <outlet property="delegate" destination="QyF-jN-gaY" id="PCY-cD-xF1"/>
+                        <outlet property="searchContentsController" destination="QyF-jN-gaY" id="C62-xZ-V6c"/>
+                        <outlet property="searchResultsDataSource" destination="QyF-jN-gaY" id="awe-or-ria"/>
+                        <outlet property="searchResultsDelegate" destination="QyF-jN-gaY" id="3BC-YN-AHe"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1016" y="-15"/>
+            <point key="canvasLocation" x="1015.5" y="-15"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DRY-bP-nlr">
