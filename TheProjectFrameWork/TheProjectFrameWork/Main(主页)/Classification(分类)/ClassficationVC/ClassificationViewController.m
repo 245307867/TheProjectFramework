@@ -43,6 +43,7 @@ static NSString * headViewIndentifier = @"ClassficationHeadCollectionReusableVie
  */
 
 -(void)registerCollectionView{
+    self.automaticallyAdjustsScrollViewInsets = NO;
     self.classficationMenutableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
     self.classficationDetailCollectionView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.15];
     self.classficationDetailCollectionView.backgroundView.backgroundColor  = [UIColor whiteColor];

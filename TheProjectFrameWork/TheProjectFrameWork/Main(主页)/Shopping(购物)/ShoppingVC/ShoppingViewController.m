@@ -31,7 +31,7 @@ static NSString * cellIdentifier = @"ShoppingCartTableViewCell";
 
 #pragma mark --UITableViewDelegate && UITableViewDataSource
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 2;
+    return 1;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -48,7 +48,7 @@ static NSString * cellIdentifier = @"ShoppingCartTableViewCell";
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 120;
+    return 100;
 }
 /*
 #pragma mark - Navigation
