@@ -19,10 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ZN-Ot-OSv">
-                                <rect key="frame" x="0.0" y="64" width="600" height="100"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="60"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Tp8-Bs-oif">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="5W0-j7-LIu">
                                             <size key="itemSize" width="50" height="50"/>
@@ -32,10 +32,9 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="FOn-aU-mlJ">
-                                                <rect key="frame" x="0.0" y="57" width="50" height="50"/>
+                                                <rect key="frame" x="0.0" y="64" width="0.0" height="0.0"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
@@ -53,14 +52,14 @@
                                     <constraint firstAttribute="trailing" secondItem="Tp8-Bs-oif" secondAttribute="trailing" id="LEC-AF-xkM"/>
                                     <constraint firstItem="Tp8-Bs-oif" firstAttribute="leading" secondItem="5ZN-Ot-OSv" secondAttribute="leading" id="dcd-Tj-TjA"/>
                                     <constraint firstItem="Tp8-Bs-oif" firstAttribute="top" secondItem="5ZN-Ot-OSv" secondAttribute="top" id="eT2-Wc-83p"/>
-                                    <constraint firstAttribute="height" constant="100" id="gsF-Hj-7D2"/>
+                                    <constraint firstAttribute="height" constant="60" id="gsF-Hj-7D2"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JeB-jx-dQc">
-                                <rect key="frame" x="0.0" y="164" width="600" height="436"/>
+                                <rect key="frame" x="0.0" y="124" width="600" height="476"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0Hy-ib-cPX">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="436"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="476"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="dataSource" destination="Vs5-Kc-hVj" id="3PI-Z5-5MK"/>

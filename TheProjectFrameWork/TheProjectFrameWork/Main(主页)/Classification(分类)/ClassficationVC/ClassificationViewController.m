@@ -11,7 +11,6 @@
 #import "ClassficationDetailCollectionViewCell.h"
 #import "ClassficationHeadCollectionReusableView.h"
 #import "ClassfiactionHeadTypeImageCollectionReusableView.h"
-#import "ClassificationTitleView.h"
 
 /** MenuCell  */
 static NSString * cellIdentifier = @"ClassficationMenuTableViewCell";
@@ -22,7 +21,7 @@ static NSString * headViewRecommendedIndetifier = @"ClassfiactionHeadTypeImageCo
 /** HeadView */
 static NSString * headViewIndentifier = @"ClassficationHeadCollectionReusableView";
 
-@interface ClassificationViewController ()<UITableViewDelegate,UITableViewDataSource,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,ClassficationHeadCollectionReusableViewDelegate,ClassificationTitleViewDelegate>
+@interface ClassificationViewController ()<UITableViewDelegate,UITableViewDataSource,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,ClassficationHeadCollectionReusableViewDelegate>
 /** 菜单列表tableView */
 @property (weak, nonatomic) IBOutlet UITableView *classficationMenutableView;
 /** 详情collectionView */
@@ -35,22 +34,10 @@ static NSString * headViewIndentifier = @"ClassficationHeadCollectionReusableVie
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self registerCollectionView];
-    [self loadNavagationBar];
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-/**
- *  加载导航栏
- */
--(void)loadNavagationBar{
-    ClassificationTitleView * view =[ClassificationTitleView TitleViewCreatWithFrame:CGRectMake(0, 0, KScreenBoundWidth-10, 40)];
-    view.delegate = self;
-    self.navigationItem.titleView = view;
-}
+
 /**
  *  注册collectionView
  */
@@ -151,11 +138,6 @@ static NSString * headViewIndentifier = @"ClassficationHeadCollectionReusableVie
     NSLog(@"%ld",(long)section);
 }
 
-#pragma mark --ClassificationTitleViewDelegate
-- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
-{
-    return YES;
-}
 
 
 

@@ -14,13 +14,13 @@
                 <rect key="frame" x="0.0" y="0.0" width="271" height="208"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NbC-Af-WQQ">
-                        <rect key="frame" x="0.0" y="104" width="271" height="104"/>
+                        <rect key="frame" x="0.0" y="104" width="271" height="99"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I0Z-5o-U7u">
-                        <rect key="frame" x="0.0" y="0.0" width="271" height="104"/>
+                        <rect key="frame" x="0.0" y="5" width="271" height="99"/>
                     </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -29,9 +29,9 @@
                 <constraint firstItem="I0Z-5o-U7u" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="6O9-vU-Uyd"/>
                 <constraint firstAttribute="trailing" secondItem="NbC-Af-WQQ" secondAttribute="trailing" id="CXq-v5-Thd"/>
                 <constraint firstAttribute="trailing" secondItem="I0Z-5o-U7u" secondAttribute="trailing" id="DTC-vI-aOx"/>
-                <constraint firstItem="I0Z-5o-U7u" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="KeF-6O-hZL"/>
+                <constraint firstItem="I0Z-5o-U7u" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="KeF-6O-hZL"/>
                 <constraint firstItem="NbC-Af-WQQ" firstAttribute="height" secondItem="I0Z-5o-U7u" secondAttribute="height" id="LWZ-16-mpS"/>
-                <constraint firstAttribute="bottom" secondItem="NbC-Af-WQQ" secondAttribute="bottom" id="Tfs-Gu-z2i"/>
+                <constraint firstAttribute="bottom" secondItem="NbC-Af-WQQ" secondAttribute="bottom" constant="5" id="Tfs-Gu-z2i"/>
                 <constraint firstItem="NbC-Af-WQQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="h4Q-3Z-Fw4"/>
                 <constraint firstItem="NbC-Af-WQQ" firstAttribute="top" secondItem="I0Z-5o-U7u" secondAttribute="bottom" id="ra2-Xo-fFI"/>
             </constraints>

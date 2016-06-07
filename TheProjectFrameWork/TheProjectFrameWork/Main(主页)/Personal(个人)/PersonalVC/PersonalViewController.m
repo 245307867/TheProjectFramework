@@ -45,6 +45,7 @@ static NSString * PersonalCollectionViewHeadIndetifier = @"PersonalHeadCollectio
  */
 -(void)personalCollectionViewRegister{
     //设置collectionView可以滚动
+    self.automaticallyAdjustsScrollViewInsets = NO;
     self.personalCenterCollectionView.alwaysBounceVertical = YES;
     UINib * nib = [UINib nibWithNibName:PersonalCollectionViewIdentifier bundle:[NSBundle mainBundle]];
     [self.personalCenterCollectionView registerNib:nib forCellWithReuseIdentifier:PersonalCollectionViewIdentifier];
@@ -91,7 +92,7 @@ static NSString * PersonalCollectionViewHeadIndetifier = @"PersonalHeadCollectio
         return CGSizeZero;
     }
     else{
-        return CGSizeMake(KScreenBoundWidth, KCollectionItemHegiht);
+        return CGSizeMake(KScreenBoundWidth, 200);
     }
 }
 //TODO: collectionView 区头视图 区尾视图
@@ -100,7 +101,7 @@ static NSString * PersonalCollectionViewHeadIndetifier = @"PersonalHeadCollectio
         PersonalHeadCollectionReusableView * headerView=[collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:PersonalCollectionViewHeadIndetifier forIndexPath:indexPath];
         headerView.backgroundColor = [UIColor blueColor];
         headerView.delegate =self;
-        headerView.frame = CGRectMake(0, -64, KScreenBoundWidth, 200);
+        headerView.frame = CGRectMake(0, 0, KScreenBoundWidth, 200);
         [headerView personalWithsection:indexPath.section];
         return headerView;
     }
