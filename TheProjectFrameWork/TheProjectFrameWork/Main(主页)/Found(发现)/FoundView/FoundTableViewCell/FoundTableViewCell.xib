@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -15,22 +16,21 @@
                 <rect key="frame" x="0.0" y="0.0" width="413" height="212.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wAN-ug-RwJ">
-                        <rect key="frame" x="206.5" y="8" width="198.5" height="196.5"/>
-                        <string key="text">618 某东 欢迎您购物到某某货物618 某东 欢迎您购物到某某货物618 某东 欢迎您购物到某某货物618 某东 欢迎您购物到某某货物618 某东 欢迎您购物到某某货物618 某东 欢迎您购物到某某货物618 某东 欢迎您购物到某某货物618 某东 欢迎您购物到某某货物</string>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dvU-ae-9xP">
+                        <rect key="frame" x="8" y="8" width="132.5" height="196.5"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="618 某东 欢迎您购物到某某货物618 某东 欢迎您购物到某某货物" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wAN-ug-RwJ">
+                        <rect key="frame" x="140" y="8" width="265" height="196.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dvU-ae-9xP">
-                        <rect key="frame" x="8" y="8" width="199" height="196.5"/>
-                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottomMargin" secondItem="wAN-ug-RwJ" secondAttribute="bottom" id="3bE-98-FWv"/>
                     <constraint firstItem="wAN-ug-RwJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="5DM-fC-xnH"/>
                     <constraint firstItem="dvU-ae-9xP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="P1P-eh-kMT"/>
-                    <constraint firstItem="wAN-ug-RwJ" firstAttribute="width" secondItem="dvU-ae-9xP" secondAttribute="width" id="R3k-4p-7PW"/>
+                    <constraint firstItem="wAN-ug-RwJ" firstAttribute="width" secondItem="dvU-ae-9xP" secondAttribute="width" multiplier="2:1" id="R3k-4p-7PW"/>
                     <constraint firstItem="dvU-ae-9xP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="VVd-k1-A3i"/>
                     <constraint firstAttribute="trailingMargin" secondItem="wAN-ug-RwJ" secondAttribute="trailing" id="b4A-ZH-GWp"/>
                     <constraint firstItem="wAN-ug-RwJ" firstAttribute="leading" secondItem="dvU-ae-9xP" secondAttribute="trailing" id="bj4-AF-q6Z"/>

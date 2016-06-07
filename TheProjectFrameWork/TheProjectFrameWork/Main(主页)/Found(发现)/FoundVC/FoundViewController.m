@@ -90,6 +90,7 @@ static NSString * itemIdentifier = @"FoundCollectionViewCell";
     if (!cell) {
         cell = [[[NSBundle mainBundle ]loadNibNamed:cellIdentifier owner:nil options:nil] firstObject];
     }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.foundCellImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"MENU_0_0_%ld",indexPath.row]];
     return cell;
 }
