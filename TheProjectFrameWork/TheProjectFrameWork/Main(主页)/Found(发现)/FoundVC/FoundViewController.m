@@ -9,10 +9,12 @@
 #import "FoundViewController.h"
 #import "FoundTableViewCell.h"
 #import "FoundCollectionViewCell.h"
+#import "SearchViewController.h"
 
 static NSString * cellIdentifier = @"FoundTableViewCell";
 static NSString * itemIdentifier = @"FoundCollectionViewCell";
-@interface FoundViewController ()<UITableViewDataSource,UITableViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@interface FoundViewController ()<UITableViewDataSource,UITableViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UISearchBarDelegate,UISearchDisplayDelegate>
+
 /** headView 高度 */
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *headViewHeight;
 /** 顶部高度 */
@@ -23,7 +25,9 @@ static NSString * itemIdentifier = @"FoundCollectionViewCell";
 @property (weak, nonatomic) IBOutlet UICollectionView *foundheadCollectionView;
 /** 发现详情 */
 @property (weak, nonatomic) IBOutlet UITableView *foundDetailTableView;
+/** 测试数据数组 */
 @property(strong,nonatomic) NSMutableArray * testDataArray;
+/** 搜索bar */
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end
@@ -34,6 +38,7 @@ static NSString * itemIdentifier = @"FoundCollectionViewCell";
     [super viewDidLoad];
     [self loadNavagationBar];
     [self loadDataSource];
+
 
     // Do any additional setup after loading the view.
 }
@@ -46,8 +51,8 @@ static NSString * itemIdentifier = @"FoundCollectionViewCell";
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ico_camera_7_gray"] style:UIBarButtonItemStyleDone target:self action:@selector(scanthecode)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"HomePage_Message"] style:UIBarButtonItemStyleDone target:self action:@selector(sendMessgae)];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"bigShadow.png"] forBarMetrics:UIBarMetricsDefault];
-
     [self setAutomaticallyAdjustsScrollViewInsets:NO];
+    self.searchBar.delegate = self;
 
 }
 -(void)scanthecode{
@@ -121,6 +126,48 @@ static NSString * itemIdentifier = @"FoundCollectionViewCell";
         [self viewIfLoaded];
     }
 
+}
+
+#pragma mark --
+
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar{
+    SearchViewController * search = [[SearchViewController alloc] init];
+    CATransition * animation = [CATransition animation];
+    
+    animation.duration = 1;    //  时间
+    /**  type：动画类型
+     *  pageCurl       向上翻一页
+     *  pageUnCurl     向下翻一页
+     *  rippleEffect   水滴
+     *  suckEffect     收缩
+     *  cube           方块
+     *  oglFlip        上下翻转
+     */
+    animation.type = @"suckEffect";
+    
+    /**  type：页面转换类型
+     *  kCATransitionFade       淡出
+     *  kCATransitionMoveIn     覆盖
+     *  kCATransitionReveal     底部显示
+     *  kCATransitionPush       推出
+     */
+    animation.type = kCATransitionFade;
+    
+    //PS：type 更多效果请 搜索： CATransition
+    
+    /**  subtype：出现的方向
+     *  kCATransitionFromRight       右
+     *  kCATransitionFromLeft        左
+     *  kCATransitionFromTop         上
+     *  kCATransitionFromBottom      下
+     */
+    animation.subtype = kCATransitionFromTop;
+    
+    [self.view.window.layer addAnimation:animation forKey:nil];                   //  添加动作
+    [self presentViewController:search animated:NO completion:^{
+        
+    }];
+    return YES;
 }
 
 

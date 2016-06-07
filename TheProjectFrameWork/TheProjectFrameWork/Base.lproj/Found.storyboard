@@ -105,15 +105,18 @@
                             <rect key="frame" x="180" y="5.5" width="240" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <searchBar contentMode="redraw" fixedFrame="YES" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="scf-wX-Nsg">
-                                    <rect key="frame" x="0.0" y="-6" width="240" height="44"/>
+                                <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="海尔优惠券正在疯抢中" translatesAutoresizingMaskIntoConstraints="NO" id="wtI-lV-isJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="33"/>
                                     <textInputTraits key="textInputTraits"/>
-                                    <connections>
-                                        <outlet property="delegate" destination="Vs5-Kc-hVj" id="1O5-AS-Loc"/>
-                                    </connections>
                                 </searchBar>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="wtI-lV-isJ" firstAttribute="leading" secondItem="jeY-17-zHG" secondAttribute="leading" id="4xO-nI-nPF"/>
+                                <constraint firstAttribute="trailing" secondItem="wtI-lV-isJ" secondAttribute="trailing" id="FsO-lg-O5Y"/>
+                                <constraint firstAttribute="bottom" secondItem="wtI-lV-isJ" secondAttribute="bottom" id="eSX-NT-NbO"/>
+                                <constraint firstItem="wtI-lV-isJ" firstAttribute="top" secondItem="jeY-17-zHG" secondAttribute="top" id="rJn-am-kcr"/>
+                            </constraints>
                         </view>
                     </navigationItem>
                     <connections>
@@ -121,21 +124,11 @@
                         <outlet property="foundheadCollectionView" destination="Tp8-Bs-oif" id="buz-lp-NUp"/>
                         <outlet property="foundheadView" destination="5ZN-Ot-OSv" id="wfe-vX-9eL"/>
                         <outlet property="headViewHeight" destination="gsF-Hj-7D2" id="UK7-SM-1es"/>
-                        <outlet property="searchBar" destination="scf-wX-Nsg" id="sLF-aU-qUT"/>
-                        <outlet property="searchDisplayController" destination="M1W-8h-8hf" id="u4n-81-GWx"/>
+                        <outlet property="searchBar" destination="wtI-lV-isJ" id="fXK-Ka-dc6"/>
                         <outlet property="topToSuperView" destination="eT2-Wc-83p" id="CFE-Rx-ytb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5aX-L8-X9t" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="M1W-8h-8hf">
-                    <connections>
-                        <outlet property="delegate" destination="Vs5-Kc-hVj" id="Mp3-t5-W0K"/>
-                        <outlet property="searchBar" destination="scf-wX-Nsg" id="zva-Ye-w0v"/>
-                        <outlet property="searchContentsController" destination="Vs5-Kc-hVj" id="xmN-tm-Gn5"/>
-                        <outlet property="searchResultsDataSource" destination="Vs5-Kc-hVj" id="8ZN-SC-3Uy"/>
-                        <outlet property="searchResultsDelegate" destination="Vs5-Kc-hVj" id="3x5-zM-5dr"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="985" y="18"/>
         </scene>

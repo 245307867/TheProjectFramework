@@ -79,7 +79,7 @@ static NSString * cellIdentifier = @"HomeTableViewCell";
     [rightbutton setFrame:CGRectMake(0, 0, barRect.size.height, barRect.size.height)];
     rightbutton.layer.masksToBounds = YES;
     rightbutton.layer.cornerRadius = barRect.size.height/2.0;
-    [rightbutton setImage:[UIImage imageNamed:@"HomePage_Message"] forState:UIControlStateNormal];
+    [rightbutton setImage:[UIImage imageNamed:@"my_message_btn_h"] forState:UIControlStateNormal];
     [rightbutton setBackgroundColor:[UIColor clearColor]];
     [rightbutton addTarget:self action:@selector(sendMessgae) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *rightitem = [[UIBarButtonItem alloc] initWithCustomView:rightbutton];
@@ -168,7 +168,7 @@ static NSString * cellIdentifier = @"HomeTableViewCell";
     return cell;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return KScreenBoundHeight;
+    return KScreenBoundHeight-300;
 }
 #pragma mark --UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
