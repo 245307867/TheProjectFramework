@@ -53,6 +53,7 @@ static NSString * itemIdentifier = @"FoundCollectionViewCell";
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"bigShadow.png"] forBarMetrics:UIBarMetricsDefault];
     [self setAutomaticallyAdjustsScrollViewInsets:NO];
     self.searchBar.delegate = self;
+    self.foundheadCollectionView.showsHorizontalScrollIndicator = NO;
 
 }
 -(void)scanthecode{
@@ -119,12 +120,15 @@ static NSString * itemIdentifier = @"FoundCollectionViewCell";
 #pragma mark --UIScrollViewDelegate
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
     if (self.foundDetailTableView.contentOffset.y > 208) {
-        self.headViewHeight.constant = 308-self.foundDetailTableView.contentOffset.y;
-        [self viewIfLoaded];
+        if (self.headViewHeight.constant>0) {
+            self.headViewHeight.constant = 268-self.foundDetailTableView.contentOffset.y;
+         }
     }
     if (self.foundDetailTableView.contentOffset.y<208) {
-        self.headViewHeight.constant =100;
-        [self viewIfLoaded];
+        if (self.headViewHeight.constant!=60) {
+            self.headViewHeight.constant =60;
+            [self viewIfLoaded];
+        }
     }
 
 }

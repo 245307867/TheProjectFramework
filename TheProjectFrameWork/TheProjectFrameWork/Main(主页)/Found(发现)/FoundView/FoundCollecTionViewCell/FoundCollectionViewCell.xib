@@ -15,13 +15,13 @@
                 <rect key="frame" x="0.0" y="0.0" width="324" height="258"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="测试内容" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IKx-t1-ret">
-                        <rect key="frame" x="0.0" y="193.5" width="324" height="64.5"/>
+                        <rect key="frame" x="0.0" y="191.5" width="324" height="61.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0ik-DW-WLi">
-                        <rect key="frame" x="0.0" y="0.0" width="324" height="193.5"/>
+                        <rect key="frame" x="0.0" y="5" width="324" height="186.5"/>
                     </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -30,11 +30,11 @@
                 <constraint firstAttribute="trailing" secondItem="IKx-t1-ret" secondAttribute="trailing" id="9K9-Uk-H2S"/>
                 <constraint firstItem="IKx-t1-ret" firstAttribute="trailing" secondItem="0ik-DW-WLi" secondAttribute="trailing" id="AGd-Sb-pkP"/>
                 <constraint firstItem="IKx-t1-ret" firstAttribute="leading" secondItem="0ik-DW-WLi" secondAttribute="leading" id="EF6-nv-YXL"/>
-                <constraint firstItem="0ik-DW-WLi" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="EWR-fy-gmG"/>
+                <constraint firstItem="0ik-DW-WLi" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="EWR-fy-gmG"/>
                 <constraint firstItem="0ik-DW-WLi" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="J03-ug-PFH"/>
                 <constraint firstItem="IKx-t1-ret" firstAttribute="height" secondItem="0ik-DW-WLi" secondAttribute="height" multiplier="1:3" id="XW1-cb-k94"/>
                 <constraint firstItem="IKx-t1-ret" firstAttribute="top" secondItem="0ik-DW-WLi" secondAttribute="bottom" id="egR-NH-1eC"/>
-                <constraint firstAttribute="bottom" secondItem="IKx-t1-ret" secondAttribute="bottom" id="elW-Hl-BiW"/>
+                <constraint firstAttribute="bottom" secondItem="IKx-t1-ret" secondAttribute="bottom" constant="5" id="elW-Hl-BiW"/>
                 <constraint firstAttribute="trailing" secondItem="0ik-DW-WLi" secondAttribute="trailing" id="gKa-cH-nUt"/>
                 <constraint firstItem="IKx-t1-ret" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="oLb-yU-7ab"/>
             </constraints>
