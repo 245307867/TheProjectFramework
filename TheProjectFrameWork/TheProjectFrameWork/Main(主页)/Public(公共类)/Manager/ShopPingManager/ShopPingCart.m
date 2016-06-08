@@ -71,6 +71,22 @@ static ShopPingCart * shoppingcat = nil;
         }
     }
 }
+-(NSInteger)allGoodsNumber{
+    NSInteger totalNumber = 0;
+    for (ShoppingModel * checkmodel in shoppingcat.shoppingArray) {
+        totalNumber+=checkmodel.goodsNumber;
+       }
+    
+    return totalNumber;
+}
+-(NSString *)allGoodPrices{
+    CGFloat price ;
+    for (ShoppingModel * checkmodel in shoppingcat.shoppingArray) {
+        price+=(checkmodel.goodsNumber*[checkmodel.goodsPrices floatValue]);
+    }
+    return [NSString stringWithFormat:@"%g",price];
+}
+
 
 #pragma mark - NSCoding
 - (void)encodeWithCoder:(NSCoder *)Coder {
@@ -124,6 +140,5 @@ static ShopPingCart * shoppingcat = nil;
     //写入文件
     [data writeToFile:[ShopPingCart ShopPingCartPath] atomically:YES];
 }
-
 
 @end

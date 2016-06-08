@@ -12,13 +12,18 @@
 #import "ShoppingModel.h"
 
 static NSString * cellIdentifier = @"ShoppingCartTableViewCell";
-@interface ShoppingViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface ShoppingViewController ()<UITableViewDelegate,UITableViewDataSource,ShoppingCartTableViewCellDelegate>
 /** 购物车列表 */
 @property (weak, nonatomic) IBOutlet UITableView *shoppingCartTableView;
+/** 数据列表 */
 @property(strong,nonatomic) NSMutableArray * dataArray;
+/** 选择所有 */
 @property (weak, nonatomic) IBOutlet UIButton *selectedAllButtn;
+/** 合计价格 */
 @property (weak, nonatomic) IBOutlet UILabel *totalPricesLabel;
+/** 总额 */
 @property (weak, nonatomic) IBOutlet UILabel *allPricesLabel;
+/** 支付按钮 */
 @property (weak, nonatomic) IBOutlet UIButton *payForButton;
 
 @end
@@ -34,6 +39,9 @@ static NSString * cellIdentifier = @"ShoppingCartTableViewCell";
     [self loadDatasource];
 }
 -(void)loadDatasource{
+    [self.payForButton setTitle:[NSString stringWithFormat:@"去结算(%ld)",[[ShopPingCart ShareShopping] allGoodsNumber]] forState:UIControlStateNormal];
+    self.allPricesLabel.text = [NSString stringWithFormat:@"总额：￥%@",[[ShopPingCart ShareShopping] allGoodPrices]];
+    self.totalPricesLabel.text = [NSString stringWithFormat:@"合计：￥%@",[[ShopPingCart ShareShopping] allGoodPrices]];
     self.dataArray = [NSMutableArray array];
     NSArray * array = [[ShopPingCart ShareShopping] Shoppinglist];
     [self.dataArray addObjectsFromArray:array];
@@ -60,6 +68,7 @@ static NSString * cellIdentifier = @"ShoppingCartTableViewCell";
     if (!cell) {
         cell = [[[NSBundle mainBundle] loadNibNamed:cellIdentifier owner:nil options:nil] firstObject];
     }
+    cell.delegate = self;
     [cell goodsLoadShoppingCartWithModel:model andIndexPath:indexPath];
     return cell;
 }
@@ -67,6 +76,15 @@ static NSString * cellIdentifier = @"ShoppingCartTableViewCell";
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 100;
 }
+
+#pragma mark --ShoppingCartTableViewCellDelegate
+-(void)goodsNumberChangeedWith:(ShoppingModel*)goodsmodel withIndexPath:(NSIndexPath*)indexPath
+{
+    [self.payForButton setTitle:[NSString stringWithFormat:@"去结算(%ld)",[[ShopPingCart ShareShopping] allGoodsNumber]] forState:UIControlStateNormal];
+    self.allPricesLabel.text = [NSString stringWithFormat:@"总额：￥%@",[[ShopPingCart ShareShopping] allGoodPrices]];
+    self.totalPricesLabel.text = [NSString stringWithFormat:@"合计：￥%@",[[ShopPingCart ShareShopping] allGoodPrices]];
+}
+
 /*
 #pragma mark - Navigation
 

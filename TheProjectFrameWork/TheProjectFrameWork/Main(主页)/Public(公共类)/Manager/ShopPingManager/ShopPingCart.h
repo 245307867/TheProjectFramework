@@ -47,5 +47,17 @@
  *  归档到本地
  */
 - (void)saveToLocal;
+/**
+ *  查询购物车商品总数
+ *
+ *  @return 返回个数
+ */
+-(NSInteger)allGoodsNumber;
+/**
+ *  查询所有货物列表
+ *
+ *  @return <#return value description#>
+ */
+-(NSString*)allGoodPrices;
 
 @end

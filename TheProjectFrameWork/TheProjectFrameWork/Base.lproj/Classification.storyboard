@@ -88,8 +88,8 @@
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="n9s-dF-D9s">
                                             <size key="itemSize" width="100" height="100"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                            <size key="footerReferenceSize" width="10" height="1"/>
-                                            <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="GzL-52-ZVg">
@@ -102,19 +102,17 @@
                                                 </view>
                                             </collectionViewCell>
                                         </cells>
-                                        <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="fa3-bG-48m">
-                                            <rect key="frame" x="0.0" y="184" width="240" height="1"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionReusableView>
                                         <connections>
                                             <outlet property="dataSource" destination="QyF-jN-gaY" id="NV1-Wh-T1r"/>
                                             <outlet property="delegate" destination="QyF-jN-gaY" id="SZ7-wm-kTN"/>
                                         </connections>
                                     </collectionView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.90505446265757583" green="0.90505446265757583" blue="0.90505446265757583" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="ffx-M1-TBs" firstAttribute="leading" secondItem="y6n-AX-idq" secondAttribute="leading" id="DLM-14-ysf"/>
+                                    <constraint firstItem="ffx-M1-TBs" firstAttribute="leading" secondItem="y6n-AX-idq" secondAttribute="leading" id="DLM-14-ysf">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="10"/>
+                                    </constraint>
                                     <constraint firstAttribute="bottom" secondItem="ffx-M1-TBs" secondAttribute="bottom" id="Gqb-wV-tau"/>
                                     <constraint firstAttribute="trailing" secondItem="ffx-M1-TBs" secondAttribute="trailing" id="QUy-A3-dJt"/>
                                     <constraint firstItem="ffx-M1-TBs" firstAttribute="top" secondItem="y6n-AX-idq" secondAttribute="top" id="UIu-BR-8vO"/>

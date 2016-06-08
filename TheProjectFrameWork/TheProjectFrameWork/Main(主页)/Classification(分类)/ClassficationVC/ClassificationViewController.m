@@ -50,9 +50,9 @@ static NSString * headViewIndentifier = @"ClassficationHeadCollectionReusableVie
 
 -(void)registerCollectionView{
     self.automaticallyAdjustsScrollViewInsets = NO;
-    self.classficationMenutableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
-    self.classficationDetailCollectionView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.15];
-    self.classficationDetailCollectionView.backgroundView.backgroundColor  = [UIColor whiteColor];
+    self.classficationMenutableView.backgroundColor = [UIColor clearColor];
+    self.classficationDetailCollectionView.backgroundColor = [UIColor clearColor];
+    self.classficationDetailCollectionView.backgroundView.backgroundColor  = [UIColor clearColor];
     //注册collectionViewCell
     [self.classficationDetailCollectionView registerNib:[UINib nibWithNibName:itemIndetifier bundle:nil] forCellWithReuseIdentifier:itemIndetifier];
     //注册collectionViewCellHeadViewTypeImage
@@ -95,7 +95,7 @@ static NSString * headViewIndentifier = @"ClassficationHeadCollectionReusableVie
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 7;
+    return 6;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -143,7 +143,7 @@ static NSString * headViewIndentifier = @"ClassficationHeadCollectionReusableVie
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-            return CGSizeMake(collectionView.frame.size.width/4, 100);
+            return CGSizeMake(collectionView.frame.size.width/3, 100);
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
@@ -151,11 +151,9 @@ static NSString * headViewIndentifier = @"ClassficationHeadCollectionReusableVie
         return CGSizeMake(self.classficationDetailCollectionView.frame.size.width, 40);
     }
     else{
-        return CGSizeMake(self.classficationDetailCollectionView.frame.size.width, 100);;
+        return CGSizeMake(self.classficationDetailCollectionView.frame.size.width, 140);;
     }
 }
-
-
 
 #pragma mark --ClassficationHeadCollectionReusableViewDelegate
 -(void)ClassficationHeadCollectionReusableViewDeatialistClickWithseciton:(NSInteger)section{

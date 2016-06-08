@@ -45,6 +45,8 @@
 		F5B879A71D07C3EE000798E0 /* GoodsDetialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B879A51D07C3EE000798E0 /* GoodsDetialViewController.m */; };
 		F5B879A81D07C3EE000798E0 /* GoodsDetialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5B879A61D07C3EE000798E0 /* GoodsDetialViewController.xib */; };
 		F5B879AB1D07C75D000798E0 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B879AA1D07C75D000798E0 /* BaseModel.m */; };
+		F5B879AF1D0807E7000798E0 /* ButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B879AE1D0807E7000798E0 /* ButtonView.m */; };
+		F5B879B11D080802000798E0 /* ButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5B879B01D080802000798E0 /* ButtonView.xib */; };
 		F5CAD1571D0112BF00E7E482 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CAD1561D0112BF00E7E482 /* main.m */; };
 		F5CAD1621D0112BF00E7E482 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5CAD1611D0112BF00E7E482 /* Assets.xcassets */; };
 		F5DB3D4B1D02B0CC001A64D0 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DB3D4A1D02B0CC001A64D0 /* LoginViewController.m */; };
@@ -154,6 +156,9 @@
 		F5B879A61D07C3EE000798E0 /* GoodsDetialViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoodsDetialViewController.xib; sourceTree = "<group>"; };
 		F5B879A91D07C75D000798E0 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
 		F5B879AA1D07C75D000798E0 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
+		F5B879AD1D0807E7000798E0 /* ButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonView.h; sourceTree = "<group>"; };
+		F5B879AE1D0807E7000798E0 /* ButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonView.m; sourceTree = "<group>"; };
+		F5B879B01D080802000798E0 /* ButtonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonView.xib; sourceTree = "<group>"; };
 		F5CAD1521D0112BF00E7E482 /* TheProjectFrameWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheProjectFrameWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5CAD1561D0112BF00E7E482 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F5CAD1611D0112BF00E7E482 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -701,6 +706,16 @@
 			path = GoodsDetialVC;
 			sourceTree = "<group>";
 		};
+		F5B879AC1D0807D4000798E0 /* ButtonView */ = {
+			isa = PBXGroup;
+			children = (
+				F5B879AD1D0807E7000798E0 /* ButtonView.h */,
+				F5B879AE1D0807E7000798E0 /* ButtonView.m */,
+				F5B879B01D080802000798E0 /* ButtonView.xib */,
+			);
+			path = ButtonView;
+			sourceTree = "<group>";
+		};
 		F5CAD1491D0112BF00E7E482 = {
 			isa = PBXGroup;
 			children = (
@@ -897,6 +912,7 @@
 		F5E699B01D055B03007F0298 /* PublicView */ = {
 			isa = PBXGroup;
 			children = (
+				F5B879AC1D0807D4000798E0 /* ButtonView */,
 			);
 			path = PublicView;
 			sourceTree = "<group>";
@@ -1093,6 +1109,7 @@
 				F5935DE41D011F2D008622D4 /* ShoppingCart.storyboard in Resources */,
 				F5FA47F31D03E01D0083D5FE /* ClassfiactionHeadTypeImageCollectionReusableView.xib in Resources */,
 				F5FA47EF1D03E01D0083D5FE /* ClassficationDetailCollectionViewCell.xib in Resources */,
+				F5B879B11D080802000798E0 /* ButtonView.xib in Resources */,
 				F5737D3A1D02EBC10004168F /* HometableHeadView.xib in Resources */,
 				F5935DDD1D011EF5008622D4 /* LaunchScreen.storyboard in Resources */,
 				F5FA47F51D03E01D0083D5FE /* ClassficationMenuTableViewCell.xib in Resources */,
@@ -1168,6 +1185,7 @@
 				F5935DCA1D011B39008622D4 /* BaseViewController.m in Sources */,
 				F5935DCD1D011B50008622D4 /* BaseView.m in Sources */,
 				F5935E411D0165AE008622D4 /* AppDelegate.m in Sources */,
+				F5B879AF1D0807E7000798E0 /* ButtonView.m in Sources */,
 				F5935E1A1D0136B5008622D4 /* PersonalViewController.m in Sources */,
 				F5FA47EE1D03E01D0083D5FE /* ClassficationDetailCollectionViewCell.m in Sources */,
 				F5935E571D028B0D008622D4 /* NetWork.m in Sources */,
