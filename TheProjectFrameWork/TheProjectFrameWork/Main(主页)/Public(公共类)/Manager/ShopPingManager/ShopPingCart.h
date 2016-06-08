@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+@class ShoppingModel;
 @interface ShopPingCart : NSObject
 /** 购物车货物列表*/
 @property (atomic, strong) NSMutableArray * shoppingArray;
@@ -22,5 +22,30 @@
  *
  *  @return <#return value description#>
  */
-+(NSArray*)Shoppinglist;
+-(NSArray*)Shoppinglist;
+/**
+ *  添加到购物车中
+ *
+ *  @param model <#model description#>
+ */
+-(void)AddShoppingListwith:(ShoppingModel*)model;
+/**
+ *  购物车中是否存在
+ *
+ *  @param model <#model description#>
+ *
+ *  @return <#return value description#>
+ */
+-(BOOL)ShoppingArrayIsContainsModel:(ShoppingModel*)model;
+/**
+ *  移除商品从购物车
+ *
+ *  @param model <#model description#>
+ */
+-(void)goodsRemoveFromeShoppingCartWithModel:(ShoppingModel*)model;
+/**
+ *  归档到本地
+ */
+- (void)saveToLocal;
+
 @end

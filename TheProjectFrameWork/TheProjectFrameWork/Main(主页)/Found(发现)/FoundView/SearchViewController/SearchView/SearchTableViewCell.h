@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface SearchTableViewCell : UITableViewCell
+/** 搜索结果label */
+@property (weak, nonatomic) IBOutlet UILabel *searchResultLabel;
 
 @end

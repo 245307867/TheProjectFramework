@@ -11,7 +11,6 @@
 		F5737D3A1D02EBC10004168F /* HometableHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5737D391D02EBC10004168F /* HometableHeadView.xib */; };
 		F5935DCA1D011B39008622D4 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5935DC81D011B39008622D4 /* BaseViewController.m */; };
 		F5935DCD1D011B50008622D4 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5935DCC1D011B50008622D4 /* BaseView.m */; };
-		F5935DD01D011B6A008622D4 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5935DCF1D011B6A008622D4 /* BaseModel.m */; };
 		F5935DD81D011EC0008622D4 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5935DD61D011EC0008622D4 /* Home.storyboard */; };
 		F5935DDD1D011EF5008622D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5935DD91D011EF5008622D4 /* LaunchScreen.storyboard */; };
 		F5935DE11D011F0B008622D4 /* Personal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5935DDF1D011F0B008622D4 /* Personal.storyboard */; };
@@ -40,6 +39,12 @@
 		F5AF71AB1D06772F005A1DB6 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5AF71A91D06772F005A1DB6 /* SearchTableViewCell.xib */; };
 		F5B879971D06D61C000798E0 /* ShoppingCartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B879951D06D61C000798E0 /* ShoppingCartTableViewCell.m */; };
 		F5B879981D06D61C000798E0 /* ShoppingCartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5B879961D06D61C000798E0 /* ShoppingCartTableViewCell.xib */; };
+		F5B8799C1D06D68E000798E0 /* ShoppingButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B8799B1D06D68E000798E0 /* ShoppingButtonView.m */; };
+		F5B8799E1D06D6A3000798E0 /* ShoppingButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5B8799D1D06D6A3000798E0 /* ShoppingButtonView.xib */; };
+		F5B879A21D07C186000798E0 /* ShoppingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B879A11D07C186000798E0 /* ShoppingModel.m */; };
+		F5B879A71D07C3EE000798E0 /* GoodsDetialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B879A51D07C3EE000798E0 /* GoodsDetialViewController.m */; };
+		F5B879A81D07C3EE000798E0 /* GoodsDetialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5B879A61D07C3EE000798E0 /* GoodsDetialViewController.xib */; };
+		F5B879AB1D07C75D000798E0 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B879AA1D07C75D000798E0 /* BaseModel.m */; };
 		F5CAD1571D0112BF00E7E482 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CAD1561D0112BF00E7E482 /* main.m */; };
 		F5CAD1621D0112BF00E7E482 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5CAD1611D0112BF00E7E482 /* Assets.xcassets */; };
 		F5DB3D4B1D02B0CC001A64D0 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DB3D4A1D02B0CC001A64D0 /* LoginViewController.m */; };
@@ -52,8 +57,6 @@
 		F5E699A11D0549AB007F0298 /* ClassificationTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5E699A01D0549AB007F0298 /* ClassificationTitleView.xib */; };
 		F5E699A31D054F77007F0298 /* BaseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5E699A21D054F77007F0298 /* BaseView.xib */; };
 		F5E699AA1D055AB8007F0298 /* ShopPingCart.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E699A71D055AB8007F0298 /* ShopPingCart.m */; };
-		F5E699B31D055B19007F0298 /* SearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E699B21D055B19007F0298 /* SearchView.m */; };
-		F5E699B51D055B30007F0298 /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5E699B41D055B30007F0298 /* SearchView.xib */; };
 		F5E699B81D056ED7007F0298 /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E699B71D056ED7007F0298 /* UINavigationBar+Awesome.m */; };
 		F5FA47EE1D03E01D0083D5FE /* ClassficationDetailCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5FA47E01D03E01D0083D5FE /* ClassficationDetailCollectionViewCell.m */; };
 		F5FA47EF1D03E01D0083D5FE /* ClassficationDetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5FA47E11D03E01D0083D5FE /* ClassficationDetailCollectionViewCell.xib */; };
@@ -92,8 +95,6 @@
 		F5935DC81D011B39008622D4 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		F5935DCB1D011B50008622D4 /* BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
 		F5935DCC1D011B50008622D4 /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
-		F5935DCE1D011B6A008622D4 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
-		F5935DCF1D011B6A008622D4 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 		F5935DD71D011EC0008622D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Home.storyboard; sourceTree = "<group>"; };
 		F5935DDA1D011EF5008622D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F5935DE01D011F0B008622D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Personal.storyboard; sourceTree = "<group>"; };
@@ -143,6 +144,16 @@
 		F5B879941D06D61C000798E0 /* ShoppingCartTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingCartTableViewCell.h; sourceTree = "<group>"; };
 		F5B879951D06D61C000798E0 /* ShoppingCartTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCartTableViewCell.m; sourceTree = "<group>"; };
 		F5B879961D06D61C000798E0 /* ShoppingCartTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShoppingCartTableViewCell.xib; sourceTree = "<group>"; };
+		F5B8799A1D06D68E000798E0 /* ShoppingButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingButtonView.h; sourceTree = "<group>"; };
+		F5B8799B1D06D68E000798E0 /* ShoppingButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingButtonView.m; sourceTree = "<group>"; };
+		F5B8799D1D06D6A3000798E0 /* ShoppingButtonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShoppingButtonView.xib; sourceTree = "<group>"; };
+		F5B879A01D07C186000798E0 /* ShoppingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingModel.h; sourceTree = "<group>"; };
+		F5B879A11D07C186000798E0 /* ShoppingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingModel.m; sourceTree = "<group>"; };
+		F5B879A41D07C3EE000798E0 /* GoodsDetialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsDetialViewController.h; sourceTree = "<group>"; };
+		F5B879A51D07C3EE000798E0 /* GoodsDetialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsDetialViewController.m; sourceTree = "<group>"; };
+		F5B879A61D07C3EE000798E0 /* GoodsDetialViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoodsDetialViewController.xib; sourceTree = "<group>"; };
+		F5B879A91D07C75D000798E0 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
+		F5B879AA1D07C75D000798E0 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 		F5CAD1521D0112BF00E7E482 /* TheProjectFrameWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheProjectFrameWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5CAD1561D0112BF00E7E482 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F5CAD1611D0112BF00E7E482 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -166,9 +177,6 @@
 		F5E699A21D054F77007F0298 /* BaseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseView.xib; sourceTree = "<group>"; };
 		F5E699A61D055AB8007F0298 /* ShopPingCart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopPingCart.h; sourceTree = "<group>"; };
 		F5E699A71D055AB8007F0298 /* ShopPingCart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopPingCart.m; sourceTree = "<group>"; };
-		F5E699B11D055B19007F0298 /* SearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchView.h; sourceTree = "<group>"; };
-		F5E699B21D055B19007F0298 /* SearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchView.m; sourceTree = "<group>"; };
-		F5E699B41D055B30007F0298 /* SearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
 		F5E699B61D056ED7007F0298 /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Awesome.h"; sourceTree = "<group>"; };
 		F5E699B71D056ED7007F0298 /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Awesome.m"; sourceTree = "<group>"; };
 		F5FA47DF1D03E01D0083D5FE /* ClassficationDetailCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassficationDetailCollectionViewCell.h; sourceTree = "<group>"; };
@@ -338,8 +346,8 @@
 		F5935DC51D011B39008622D4 /* BaseModel */ = {
 			isa = PBXGroup;
 			children = (
-				F5935DCE1D011B6A008622D4 /* BaseModel.h */,
-				F5935DCF1D011B6A008622D4 /* BaseModel.m */,
+				F5B879A91D07C75D000798E0 /* BaseModel.h */,
+				F5B879AA1D07C75D000798E0 /* BaseModel.m */,
 			);
 			path = BaseModel;
 			sourceTree = "<group>";
@@ -550,6 +558,7 @@
 		F5935E1E1D013758008622D4 /* ShoppingView */ = {
 			isa = PBXGroup;
 			children = (
+				F5B879991D06D669000798E0 /* ShoppingButton */,
 				F5B879931D06D61C000798E0 /* ShoppingCartTableViewCell */,
 			);
 			path = ShoppingView;
@@ -661,6 +670,35 @@
 				F5B879961D06D61C000798E0 /* ShoppingCartTableViewCell.xib */,
 			);
 			path = ShoppingCartTableViewCell;
+			sourceTree = "<group>";
+		};
+		F5B879991D06D669000798E0 /* ShoppingButton */ = {
+			isa = PBXGroup;
+			children = (
+				F5B8799A1D06D68E000798E0 /* ShoppingButtonView.h */,
+				F5B8799B1D06D68E000798E0 /* ShoppingButtonView.m */,
+				F5B8799D1D06D6A3000798E0 /* ShoppingButtonView.xib */,
+			);
+			path = ShoppingButton;
+			sourceTree = "<group>";
+		};
+		F5B8799F1D07C16E000798E0 /* ShoppingModel */ = {
+			isa = PBXGroup;
+			children = (
+				F5B879A01D07C186000798E0 /* ShoppingModel.h */,
+				F5B879A11D07C186000798E0 /* ShoppingModel.m */,
+			);
+			path = ShoppingModel;
+			sourceTree = "<group>";
+		};
+		F5B879A31D07C3D7000798E0 /* GoodsDetialVC */ = {
+			isa = PBXGroup;
+			children = (
+				F5B879A41D07C3EE000798E0 /* GoodsDetialViewController.h */,
+				F5B879A51D07C3EE000798E0 /* GoodsDetialViewController.m */,
+				F5B879A61D07C3EE000798E0 /* GoodsDetialViewController.xib */,
+			);
+			path = GoodsDetialVC;
 			sourceTree = "<group>";
 		};
 		F5CAD1491D0112BF00E7E482 = {
@@ -825,6 +863,7 @@
 		F5E699A41D055AB8007F0298 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				F5B8799F1D07C16E000798E0 /* ShoppingModel */,
 				F5E699A51D055AB8007F0298 /* ShopPingManager */,
 				F5E699A81D055AB8007F0298 /* UserInfoManger */,
 			);
@@ -850,6 +889,7 @@
 		F5E699A91D055AB8007F0298 /* PublicVC */ = {
 			isa = PBXGroup;
 			children = (
+				F5B879A31D07C3D7000798E0 /* GoodsDetialVC */,
 			);
 			path = PublicVC;
 			sourceTree = "<group>";
@@ -857,9 +897,6 @@
 		F5E699B01D055B03007F0298 /* PublicView */ = {
 			isa = PBXGroup;
 			children = (
-				F5E699B11D055B19007F0298 /* SearchView.h */,
-				F5E699B21D055B19007F0298 /* SearchView.m */,
-				F5E699B41D055B30007F0298 /* SearchView.xib */,
 			);
 			path = PublicView;
 			sourceTree = "<group>";
@@ -1062,15 +1099,16 @@
 				F5935E531D0176CD008622D4 /* PersonalHeadCollectionReusableView.xib in Resources */,
 				F5935DF21D0125BB008622D4 /* Login.storyboard in Resources */,
 				F5B879981D06D61C000798E0 /* ShoppingCartTableViewCell.xib in Resources */,
+				F5B8799E1D06D6A3000798E0 /* ShoppingButtonView.xib in Resources */,
 				F5FA47F11D03E01D0083D5FE /* ClassficationHeadCollectionReusableView.xib in Resources */,
 				F5FA48161D03F7680083D5FE /* FoundCollectionViewCell.xib in Resources */,
 				F5CAD1621D0112BF00E7E482 /* Assets.xcassets in Resources */,
+				F5B879A81D07C3EE000798E0 /* GoodsDetialViewController.xib in Resources */,
 				F5935E2E1D015206008622D4 /* Classification.storyboard in Resources */,
 				F5935E2B1D0151E8008622D4 /* Found.storyboard in Resources */,
 				F5AF71AB1D06772F005A1DB6 /* SearchTableViewCell.xib in Resources */,
 				F5AF71A61D06770F005A1DB6 /* SearchViewController.xib in Resources */,
 				F5935DD81D011EC0008622D4 /* Home.storyboard in Resources */,
-				F5E699B51D055B30007F0298 /* SearchView.xib in Resources */,
 				F5E699A31D054F77007F0298 /* BaseView.xib in Resources */,
 				F5935DE11D011F0B008622D4 /* Personal.storyboard in Resources */,
 				F5E0709A1D02DED5006D467A /* HomeTableViewCell.xib in Resources */,
@@ -1124,10 +1162,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5935DD01D011B6A008622D4 /* BaseModel.m in Sources */,
 				F5935E371D0161E8008622D4 /* NSString+Validation.m in Sources */,
 				F503E9CC1D051A7B001CB721 /* NetWork+BodyAndCookie.m in Sources */,
-				F5E699B31D055B19007F0298 /* SearchView.m in Sources */,
 				F5935E341D015F06008622D4 /* UIImagePickerController+PublishMethods.m in Sources */,
 				F5935DCA1D011B39008622D4 /* BaseViewController.m in Sources */,
 				F5935DCD1D011B50008622D4 /* BaseView.m in Sources */,
@@ -1146,6 +1182,7 @@
 				F5FA48051D03F64D0083D5FE /* FoundViewController.m in Sources */,
 				F5935E4D1D0172C9008622D4 /* PersonalCollectionViewCell.m in Sources */,
 				F5935E521D0176CD008622D4 /* PersonalHeadCollectionReusableView.m in Sources */,
+				F5B8799C1D06D68E000798E0 /* ShoppingButtonView.m in Sources */,
 				F5AF71A51D06770F005A1DB6 /* SearchViewController.m in Sources */,
 				F5E699AA1D055AB8007F0298 /* ShopPingCart.m in Sources */,
 				F5DB3D5B1D02B633001A64D0 /* ClassificationViewController.m in Sources */,
@@ -1158,6 +1195,9 @@
 				F5FA48101D03F6A30083D5FE /* FoundTableViewCell.m in Sources */,
 				F5E699B81D056ED7007F0298 /* UINavigationBar+Awesome.m in Sources */,
 				F5FA47F21D03E01D0083D5FE /* ClassfiactionHeadTypeImageCollectionReusableView.m in Sources */,
+				F5B879AB1D07C75D000798E0 /* BaseModel.m in Sources */,
+				F5B879A71D07C3EE000798E0 /* GoodsDetialViewController.m in Sources */,
+				F5B879A21D07C186000798E0 /* ShoppingModel.m in Sources */,
 				F5E6999F1D054994007F0298 /* ClassificationTitleView.m in Sources */,
 				F5935E421D0165AE008622D4 /* AppDelegate+PrivateMethods.m in Sources */,
 				F5935E281D0137AC008622D4 /* HomeViewController.m in Sources */,

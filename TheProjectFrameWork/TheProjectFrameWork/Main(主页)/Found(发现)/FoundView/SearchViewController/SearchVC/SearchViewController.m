@@ -9,7 +9,7 @@
 #import "SearchViewController.h"
 #import "SearchTableViewCell.h"
 static NSString * cellIdenfier =@"SearchTableViewCell";
-@interface SearchViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface SearchViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate>
 /** 搜索bar */
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 /** 取消button */
@@ -18,67 +18,59 @@ static NSString * cellIdenfier =@"SearchTableViewCell";
 @property (weak, nonatomic) IBOutlet UIButton *voiceInputButton;
 /** 搜索TableView */
 @property (weak, nonatomic) IBOutlet UITableView *searchTableView;
+/** 数组元素 */
+@property(strong,nonatomic) NSMutableArray * dataArray;
 @end
 
 @implementation SearchViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.dataArray = [NSMutableArray array];
+    [self.searchBar becomeFirstResponder];
+    self.searchBar.delegate = self ;
     // Do any additional setup after loading the view from its nib.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (IBAction)cancelButtonClicked:(UIButton *)sender {
-    CATransition * animation = [CATransition animation];
-    
-    animation.duration = 1;    //  时间
-    /**  type：动画类型
-     *  pageCurl       向上翻一页
-     *  pageUnCurl     向下翻一页
-     *  rippleEffect   水滴
-     *  suckEffect     收缩
-     *  cube           方块
-     *  oglFlip        上下翻转
-     */
-    animation.type = @"suckEffect";
-    
-    /**  type：页面转换类型
-     *  kCATransitionFade       淡出
-     *  kCATransitionMoveIn     覆盖
-     *  kCATransitionReveal     底部显示
-     *  kCATransitionPush       推出
-     */
-    animation.type = kCATransitionFade;
-    
-    //PS：type 更多效果请 搜索： CATransition
-    
-    /**  subtype：出现的方向
-     *  kCATransitionFromRight       右
-     *  kCATransitionFromLeft        左
-     *  kCATransitionFromTop         上
-     *  kCATransitionFromBottom      下
-     */
-    animation.subtype = kCATransitionFromTop;
-    [self.view.window.layer addAnimation:animation forKey:nil];                   //  添加动作
+    [UIView animateWithDuration:1 animations:^{
+        self.view.alpha = 0;
+    } completion:^(BOOL finished) {
+        self.view.alpha =1;
+    }];
     [self dismissViewControllerAnimated:NO completion:^{
         
     }];
 }
 #pragma mark --UITableViewDelegate&&UITableViewDataSource
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    return self.dataArray.count;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     SearchTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellIdenfier];
     if (!cell) {
         cell = [[[NSBundle mainBundle] loadNibNamed:cellIdenfier owner:nil options:nil] firstObject];
     }
+    cell.searchResultLabel.text = self.dataArray[indexPath.row];
     return cell;
 }
+
+#pragma mark --UISearchBarDelegate
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    if (searchText.length) {
+        self.voiceInputButton.alpha = 0;
+        [self.dataArray addObject:searchText];
+        [self.searchTableView reloadData];
+    }
+    else{
+        self.voiceInputButton.alpha = 1;
+        [self.dataArray removeAllObjects];
+        [self.searchTableView reloadData];
+    }
+}
+
+
 /*
 #pragma mark - Navigation
 

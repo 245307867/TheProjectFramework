@@ -7,20 +7,40 @@
 //
 
 #import "ShoppingCartTableViewCell.h"
+#import "ShoppingButtonView.h"
+#import "ShoppingModel.h"
+
+@interface ShoppingCartTableViewCell ()<ShoppingButtonViewDelegate>
+
+@end
 
 @implementation ShoppingCartTableViewCell
 
 - (void)awakeFromNib {
+
     // Initialization code
 }
 
--(void)goodsLoadShoppingCartWithModel:(id)Model andIndexPath:(NSIndexPath *)indexPath{
-    self.goodsDetialImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"MENU_0_0_%ld",indexPath.row]];
+-(void)goodsLoadShoppingCartWithModel:(ShoppingModel*)model andIndexPath:(NSIndexPath *)indexPath{
+    self.goodsDetialImageView.image = [UIImage imageNamed:model.goodsImageUrl];
+    self.goodsNameLabel.text = model.goodsName;
+    self.goodsmodel = model;
+    self.goodsDescribtionLabel.text= model.goodsDescription;
+    ShoppingButtonView * view =[ShoppingButtonView loadShoppingButtonViewWithShoppingNumber:model.goodsNumber frame:self.goodsView.bounds];
+    view.delegate = self;
+    [self.goodsView addSubview:view];
+
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+-(void)shoppingNumberChangeedvalue:(NSInteger )number{
+    self.goodsmodel.goodsNumber = number;
+    if ([self.delegate respondsToSelector:@selector(goodsNumberChangeedWith:withIndexPath:)]) {
+        [self.delegate goodsNumberChangeedWith:self.goodsmodel withIndexPath:self.indexPath];
+    }
 }
 
 @end

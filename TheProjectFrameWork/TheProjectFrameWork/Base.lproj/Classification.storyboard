@@ -20,7 +20,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zxj-uE-dMv">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="vcu-4E-Kwc">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="vcu-4E-Kwc">
                                         <rect key="frame" x="6" y="105" width="240" height="128"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -83,7 +83,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y6n-AX-idq">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ffx-M1-TBs">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ffx-M1-TBs">
                                         <rect key="frame" x="244" y="105" width="240" height="128"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="n9s-dF-D9s">
                                             <size key="itemSize" width="100" height="100"/>
@@ -172,13 +172,13 @@
                                 <exclude reference="y6n-AX-idq"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="Gkm-V1-oyc"/>
+                                <exclude reference="Qy7-hC-HDq"/>
                                 <exclude reference="CTu-7K-O6Z"/>
                                 <exclude reference="W2z-kA-MV8"/>
                                 <exclude reference="A9s-0a-h3d"/>
                                 <exclude reference="Ngf-gT-a3C"/>
                                 <exclude reference="pyh-ML-iqT"/>
-                                <exclude reference="Gkm-V1-oyc"/>
-                                <exclude reference="Qy7-hC-HDq"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -187,13 +187,13 @@
                                 <include reference="y6n-AX-idq"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="Gkm-V1-oyc"/>
+                                <include reference="Qy7-hC-HDq"/>
                                 <include reference="CTu-7K-O6Z"/>
                                 <include reference="W2z-kA-MV8"/>
                                 <include reference="A9s-0a-h3d"/>
                                 <include reference="Ngf-gT-a3C"/>
                                 <include reference="pyh-ML-iqT"/>
-                                <include reference="Gkm-V1-oyc"/>
-                                <include reference="Qy7-hC-HDq"/>
                             </mask>
                         </variation>
                     </view>

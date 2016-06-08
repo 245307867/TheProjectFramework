@@ -15,11 +15,21 @@
                     <rect key="frame" x="10" y="0.0" width="300" height="50"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdE-Ln-Ctp">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                    <connections>
+                        <action selector="cellClicked:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="FaD-W4-qkF"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="bdE-Ln-Ctp" secondAttribute="bottom" id="06X-kg-Z4d"/>
+                <constraint firstItem="bdE-Ln-Ctp" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="8Ke-Qe-Ygw"/>
                 <constraint firstItem="E1h-uo-bZg" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="10" id="8kf-pO-wEg"/>
+                <constraint firstItem="bdE-Ln-Ctp" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="Fk9-1w-cmt"/>
                 <constraint firstItem="E1h-uo-bZg" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="PSy-wm-1Ux"/>
                 <constraint firstAttribute="bottom" secondItem="E1h-uo-bZg" secondAttribute="bottom" id="eSX-Bi-Tu5"/>
+                <constraint firstAttribute="trailing" secondItem="bdE-Ln-Ctp" secondAttribute="trailing" id="gwQ-w3-Xf7"/>
                 <constraint firstAttribute="trailing" secondItem="E1h-uo-bZg" secondAttribute="trailing" constant="10" id="n78-zL-XSE"/>
             </constraints>
             <connections>

@@ -13,5 +13,15 @@
 - (void)awakeFromNib {
     // Initialization code
 }
+-(void)loadRecommendImageViewModel:(id)model WithIndex:(NSIndexPath*)indexpath
+{
+    self.indexpath = indexpath;
+
+}
+- (IBAction)cellClicked:(UIButton *)sender {
+    if ([self.delegate respondsToSelector:@selector(ClassfiactionHeadTypeImageCollectionReusableViewClickedWithindexPath:)]) {
+        [self.delegate ClassfiactionHeadTypeImageCollectionReusableViewClickedWithindexPath:self.indexpath];
+    }
+}
 
 @end

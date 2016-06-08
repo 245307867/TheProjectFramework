@@ -29,6 +29,9 @@
                     <constraint firstItem="vDq-OI-x1J" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="acY-A8-eRG"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="searchResultLabel" destination="vDq-OI-x1J" id="61x-4m-dq5"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>

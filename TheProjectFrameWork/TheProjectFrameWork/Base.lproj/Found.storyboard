@@ -71,8 +71,6 @@
                                 <constraints>
                                     <constraint firstItem="0Hy-ib-cPX" firstAttribute="centerY" secondItem="JeB-jx-dQc" secondAttribute="centerY" id="1KL-YB-c2K"/>
                                     <constraint firstItem="0Hy-ib-cPX" firstAttribute="centerX" secondItem="JeB-jx-dQc" secondAttribute="centerX" id="4Mf-Eb-2YZ"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="0Hy-ib-cPX" secondAttribute="bottom" id="59E-Xo-j9W"/>
-                                    <constraint firstItem="0Hy-ib-cPX" firstAttribute="leading" secondItem="JeB-jx-dQc" secondAttribute="leadingMargin" id="5ZD-66-6UA"/>
                                     <constraint firstItem="0Hy-ib-cPX" firstAttribute="leading" secondItem="JeB-jx-dQc" secondAttribute="leading" id="68y-dU-BkI"/>
                                     <constraint firstItem="0Hy-ib-cPX" firstAttribute="top" secondItem="JeB-jx-dQc" secondAttribute="top" id="cre-14-RGy"/>
                                     <constraint firstItem="0Hy-ib-cPX" firstAttribute="top" secondItem="JeB-jx-dQc" secondAttribute="topMargin" id="e3Y-nh-61D"/>
@@ -80,8 +78,6 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="59E-Xo-j9W"/>
-                                        <exclude reference="5ZD-66-6UA"/>
                                         <exclude reference="e3Y-nh-61D"/>
                                         <exclude reference="kRH-Dn-qEw"/>
                                     </mask>
@@ -122,7 +118,6 @@
                         <outlet property="foundDetailTableView" destination="0Hy-ib-cPX" id="9xe-TD-tW1"/>
                         <outlet property="foundheadCollectionView" destination="Tp8-Bs-oif" id="buz-lp-NUp"/>
                         <outlet property="foundheadView" destination="5ZN-Ot-OSv" id="wfe-vX-9eL"/>
-                        <outlet property="headViewHeight" destination="gsF-Hj-7D2" id="UK7-SM-1es"/>
                         <outlet property="searchBar" destination="wtI-lV-isJ" id="fXK-Ka-dc6"/>
                         <outlet property="topToSuperView" destination="eT2-Wc-83p" id="CFE-Rx-ytb"/>
                     </connections>

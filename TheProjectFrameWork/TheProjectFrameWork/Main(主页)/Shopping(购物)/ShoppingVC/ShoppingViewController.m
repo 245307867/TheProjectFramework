@@ -8,11 +8,18 @@
 
 #import "ShoppingViewController.h"
 #import "ShoppingCartTableViewCell.h"
+#import "ShopPingCart.h"
+#import "ShoppingModel.h"
 
 static NSString * cellIdentifier = @"ShoppingCartTableViewCell";
 @interface ShoppingViewController ()<UITableViewDelegate,UITableViewDataSource>
 /** 购物车列表 */
 @property (weak, nonatomic) IBOutlet UITableView *shoppingCartTableView;
+@property(strong,nonatomic) NSMutableArray * dataArray;
+@property (weak, nonatomic) IBOutlet UIButton *selectedAllButtn;
+@property (weak, nonatomic) IBOutlet UILabel *totalPricesLabel;
+@property (weak, nonatomic) IBOutlet UILabel *allPricesLabel;
+@property (weak, nonatomic) IBOutlet UIButton *payForButton;
 
 @end
 
@@ -20,10 +27,19 @@ static NSString * cellIdentifier = @"ShoppingCartTableViewCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setAutomaticallyAdjustsScrollViewInsets:NO];
-    // Do any additional setup after loading the view.
+        // Do any additional setup after loading the view.
 }
-
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self loadDatasource];
+}
+-(void)loadDatasource{
+    self.dataArray = [NSMutableArray array];
+    NSArray * array = [[ShopPingCart ShareShopping] Shoppinglist];
+    [self.dataArray addObjectsFromArray:array];
+    [self setAutomaticallyAdjustsScrollViewInsets:NO];
+    [self.shoppingCartTableView reloadData];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -35,15 +51,16 @@ static NSString * cellIdentifier = @"ShoppingCartTableViewCell";
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    return self.dataArray.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     ShoppingCartTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    ShoppingModel * model = self.dataArray[indexPath.row];
     if (!cell) {
         cell = [[[NSBundle mainBundle] loadNibNamed:cellIdentifier owner:nil options:nil] firstObject];
     }
-    [cell goodsLoadShoppingCartWithModel:nil andIndexPath:indexPath];
+    [cell goodsLoadShoppingCartWithModel:model andIndexPath:indexPath];
     return cell;
 }
 

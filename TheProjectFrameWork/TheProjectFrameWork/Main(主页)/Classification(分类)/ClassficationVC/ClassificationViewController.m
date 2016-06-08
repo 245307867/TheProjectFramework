@@ -11,6 +11,8 @@
 #import "ClassficationDetailCollectionViewCell.h"
 #import "ClassficationHeadCollectionReusableView.h"
 #import "ClassfiactionHeadTypeImageCollectionReusableView.h"
+#import "GoodsDetialViewController.h"
+#import "ShoppingModel.h"
 
 /** MenuCell  */
 static NSString * cellIdentifier = @"ClassficationMenuTableViewCell";
@@ -21,7 +23,7 @@ static NSString * headViewRecommendedIndetifier = @"ClassfiactionHeadTypeImageCo
 /** HeadView */
 static NSString * headViewIndentifier = @"ClassficationHeadCollectionReusableView";
 
-@interface ClassificationViewController ()<UITableViewDelegate,UITableViewDataSource,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,ClassficationHeadCollectionReusableViewDelegate>
+@interface ClassificationViewController ()<UITableViewDelegate,UITableViewDataSource,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,ClassficationHeadCollectionReusableViewDelegate,ClassfiactionHeadTypeImageCollectionReusableViewDelegate>
 /** 菜单列表tableView */
 @property (weak, nonatomic) IBOutlet UITableView *classficationMenutableView;
 /** 详情collectionView */
@@ -33,10 +35,14 @@ static NSString * headViewIndentifier = @"ClassficationHeadCollectionReusableVie
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self registerCollectionView];
     // Do any additional setup after loading the view.
 }
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.tabBarController.tabBar.hidden =NO;
+    [self registerCollectionView];
 
+}
 
 /**
  *  注册collectionView
@@ -99,6 +105,19 @@ static NSString * headViewIndentifier = @"ClassficationHeadCollectionReusableVie
     item.detialContentLabel.text = @"测试详情";
     return item;
 }
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    GoodsDetialViewController *detialVC = [[GoodsDetialViewController alloc] init];
+    ShoppingModel * model = [ShoppingModel new];
+    model.goodsName = [NSString stringWithFormat:@"MENU_0_0_%ld",indexPath.row];
+    model.goodsImageUrl = [NSString stringWithFormat:@"MENU_0_0_%ld",indexPath.row];
+    model.goodsId =[NSString stringWithFormat:@"MENU_0_0_%ld",indexPath.row];
+    model.goodsDescription = @"详细描述是什么";
+    model.goodsPrices = KArc4andomPrices;
+    detialVC.goodsmodel = model;
+    self.tabBarController.tabBar.hidden =YES;
+    [self.navigationController pushViewController:detialVC animated:YES];
+    
+}
 #pragma mark--UICollectionViewDelegateFlowLayout
 
 -(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
@@ -112,6 +131,8 @@ static NSString * headViewIndentifier = @"ClassficationHeadCollectionReusableVie
         }
         else{
             ClassfiactionHeadTypeImageCollectionReusableView * headView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:headViewRecommendedIndetifier forIndexPath:indexPath];
+            [headView loadRecommendImageViewModel:nil WithIndex:indexPath];
+            headView.delegate = self;
             return headView;
             
         }
@@ -134,11 +155,36 @@ static NSString * headViewIndentifier = @"ClassficationHeadCollectionReusableVie
     }
 }
 
+
+
 #pragma mark --ClassficationHeadCollectionReusableViewDelegate
 -(void)ClassficationHeadCollectionReusableViewDeatialistClickWithseciton:(NSInteger)section{
-    NSLog(@"%ld",(long)section);
+    GoodsDetialViewController *detialVC = [[GoodsDetialViewController alloc] init];
+    ShoppingModel * model = [ShoppingModel new];
+    model.goodsName = [NSString stringWithFormat:@"MENU_0_0_%ld",section];
+    model.goodsImageUrl = [NSString stringWithFormat:@"MENU_0_0_%ld",section];
+    model.goodsId =[NSString stringWithFormat:@"MENU_0_0_%ld",section];
+    model.goodsDescription = @"详细描述是什么";
+    model.goodsPrices = KArc4andomPrices;
+    detialVC.goodsmodel = model;
+    self.tabBarController.tabBar.hidden =YES;
+    [self.navigationController pushViewController:detialVC animated:YES];
 }
+#pragma mark -ClassfiactionHeadTypeImageCollectionReusableViewDelegate
+-(void)ClassfiactionHeadTypeImageCollectionReusableViewClickedWithindexPath:(NSIndexPath *)index
+{
+    GoodsDetialViewController *detialVC = [[GoodsDetialViewController alloc] init];
+    ShoppingModel * model = [ShoppingModel new];
+    model.goodsName = [NSString stringWithFormat:@"MENU_0_0_%ld",index.section];
+    model.goodsImageUrl = [NSString stringWithFormat:@"MENU_0_0_%ld",index.section];
+    model.goodsDescription = @"详细描述是什么";
+    model.goodsId =[NSString stringWithFormat:@"MENU_0_0_%ld",index.section];
+    model.goodsPrices = KArc4andomPrices;
+    detialVC.goodsmodel = model;
+    self.tabBarController.tabBar.hidden =YES;
+    [self.navigationController pushViewController:detialVC animated:YES];
 
+}
 
 
 

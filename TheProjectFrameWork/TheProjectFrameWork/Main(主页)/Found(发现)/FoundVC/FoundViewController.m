@@ -10,13 +10,15 @@
 #import "FoundTableViewCell.h"
 #import "FoundCollectionViewCell.h"
 #import "SearchViewController.h"
+#import "GoodsDetialViewController.h"
+#import "ShoppingModel.h"
 
 static NSString * cellIdentifier = @"FoundTableViewCell";
 static NSString * itemIdentifier = @"FoundCollectionViewCell";
 @interface FoundViewController ()<UITableViewDataSource,UITableViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UISearchBarDelegate,UISearchDisplayDelegate>
 
 /** headView 高度 */
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *headViewHeight;
+//@property (weak, nonatomic) IBOutlet NSLayoutConstraint *headViewHeight;
 /** 顶部高度 */
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topToSuperView;
 /** 发现头部视图 */
@@ -36,7 +38,7 @@ static NSString * itemIdentifier = @"FoundCollectionViewCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self loadNavagationBar];
+    [self loadNavigationBar];
     [self loadDataSource];
 
 
@@ -46,7 +48,16 @@ static NSString * itemIdentifier = @"FoundCollectionViewCell";
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(void)loadNavagationBar{
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.tabBarController.tabBar.hidden=NO;
+
+}
+
+/**
+ *  加载navigationBar
+ */
+-(void)loadNavigationBar{
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ico_camera_7_gray"] style:UIBarButtonItemStyleDone target:self action:@selector(scanthecode)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"HomePage_Message"] style:UIBarButtonItemStyleDone target:self action:@selector(sendMessgae)];
@@ -56,26 +67,22 @@ static NSString * itemIdentifier = @"FoundCollectionViewCell";
     self.foundheadCollectionView.showsHorizontalScrollIndicator = NO;
 
 }
+/**
+ *  扫描二维码
+ */
 -(void)scanthecode{
     
 }
+/**
+ *  发送信息
+ */
 -(void)sendMessgae{
     
 }
-- (UIImage *)imageWithColor:(UIColor *)color
-{
-    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
-    UIGraphicsBeginImageContext(rect.size);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    CGContextSetFillColorWithColor(context, [color CGColor]);
-    CGContextFillRect(context, rect);
-    
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return image;
-}
+
+/**
+ *  加载数据源
+ */
 -(void)loadDataSource{
     self.testDataArray = [NSMutableArray array];
     [self.foundheadCollectionView registerNib:[UINib nibWithNibName:itemIdentifier bundle:nil] forCellWithReuseIdentifier:itemIdentifier];
@@ -98,6 +105,18 @@ static NSString * itemIdentifier = @"FoundCollectionViewCell";
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 100;
 }
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    GoodsDetialViewController * detialView = [[GoodsDetialViewController alloc] init];
+    ShoppingModel * model = [[ShoppingModel alloc] init];
+    model.goodsImageUrl =[NSString stringWithFormat:@"MENU_0_0_%ld",indexPath.row];
+    model.goodsPrices = KArc4andomPrices;
+    model.goodsId = [NSString stringWithFormat:@"MENU_0_0_%ld",indexPath.row];
+    model.goodsDescription = @"这是什么什么商品";
+    detialView.goodsmodel = model;
+    self.tabBarController.tabBar.hidden=YES;
+    [self.navigationController pushViewController:detialView animated:YES];
+
+}
 #pragma mark --UICollectionViewDelegate &&UICollectionViewDataSource
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 2;
@@ -119,17 +138,6 @@ static NSString * itemIdentifier = @"FoundCollectionViewCell";
 }
 #pragma mark --UIScrollViewDelegate
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    if (self.foundDetailTableView.contentOffset.y > 208) {
-        if (self.headViewHeight.constant>0) {
-            self.headViewHeight.constant = 268-self.foundDetailTableView.contentOffset.y;
-         }
-    }
-    if (self.foundDetailTableView.contentOffset.y<208) {
-        if (self.headViewHeight.constant!=60) {
-            self.headViewHeight.constant =60;
-            [self viewIfLoaded];
-        }
-    }
 
 }
 
@@ -137,44 +145,30 @@ static NSString * itemIdentifier = @"FoundCollectionViewCell";
 
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar{
     SearchViewController * search = [[SearchViewController alloc] init];
-    CATransition * animation = [CATransition animation];
-    
-    animation.duration = 1;    //  时间
-    /**  type：动画类型
-     *  pageCurl       向上翻一页
-     *  pageUnCurl     向下翻一页
-     *  rippleEffect   水滴
-     *  suckEffect     收缩
-     *  cube           方块
-     *  oglFlip        上下翻转
-     */
-    animation.type = @"suckEffect";
-    
-    /**  type：页面转换类型
-     *  kCATransitionFade       淡出
-     *  kCATransitionMoveIn     覆盖
-     *  kCATransitionReveal     底部显示
-     *  kCATransitionPush       推出
-     */
-    animation.type = kCATransitionFade;
-    
-    //PS：type 更多效果请 搜索： CATransition
-    
-    /**  subtype：出现的方向
-     *  kCATransitionFromRight       右
-     *  kCATransitionFromLeft        左
-     *  kCATransitionFromTop         上
-     *  kCATransitionFromBottom      下
-     */
-    animation.subtype = kCATransitionFromTop;
-    
-    [self.view.window.layer addAnimation:animation forKey:nil];                   //  添加动作
+    [UIView animateWithDuration:1 animations:^{
+        self.view.alpha = 0;
+    } completion:^(BOOL finished) {
+        self.view.alpha = 1;
+    }];
     [self presentViewController:search animated:NO completion:^{
-        
     }];
     return YES;
 }
 
+#pragma mark--publish
+- (UIImage *)imageWithColor:(UIColor *)color
+{
+    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
 
 /*
 #pragma mark - Navigation
