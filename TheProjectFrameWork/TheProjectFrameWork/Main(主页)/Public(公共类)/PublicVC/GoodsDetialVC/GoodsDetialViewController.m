@@ -40,7 +40,7 @@
         [buttonview.clickButton addTarget:self action:@selector(ShopViewClicked) forControlEvents:UIControlEventTouchUpInside];
         [self.shoppingView addSubview:buttonview];
     }
-    self.title = self.goodsmodel.goodsDescription;
+    self.title = self.goodsmodel.goodsName;
     self.goodsPricelabel.text =[NSString stringWithFormat:@"商品单价:$ %@",self.goodsmodel.goodsPrices] ;
     if ([[ShopPingCart ShareShopping]allGoodsNumber]<1) {
         buttonview.badgeValuLabel.alpha = 0;
@@ -66,13 +66,16 @@
 }
 - (IBAction)addToShoppingCart:(UIButton *)sender {
     [[ShopPingCart ShareShopping] AddShoppingListwith:self.goodsmodel];
-    if ([[ShopPingCart ShareShopping]allGoodsNumber]<1) {
-        buttonview.badgeValuLabel.alpha = 0;
-    }
-    else{
-        buttonview.badgeValuLabel.alpha = 1;
-        buttonview.badgeValuLabel.text =[NSString stringWithFormat:@"%ld",[[ShopPingCart ShareShopping]allGoodsNumber]];
-    }
+    [self shpopingaddAnimatedWithFrame:sender.frame blocks:^{
+        if ([[ShopPingCart ShareShopping]allGoodsNumber]<1) {
+            buttonview.badgeValuLabel.alpha = 0;
+        }
+        else{
+            buttonview.badgeValuLabel.alpha = 1;
+            buttonview.badgeValuLabel.text =[NSString stringWithFormat:@"%ld",[[ShopPingCart ShareShopping]allGoodsNumber]];
+        }
+    }];
+ 
     
 }
 
@@ -81,4 +84,26 @@
 - (IBAction)CustomerService:(UIButton *)sender {
 }
 
+-(void)shpopingaddAnimatedWithFrame:(CGRect)frame blocks:(void (^)(void))block{
+    UIButton *move = [[UIButton alloc] initWithFrame:CGRectMake(KScreenBoundWidth-frame.size.width, KScreenBoundHeight-frame.size.height, frame.size.width, frame.size.height)];
+    [move setBackgroundColor:[UIColor redColor]];
+    [move setTitle:self.title forState:UIControlStateNormal];
+    [move setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    move.contentMode = UIViewContentModeScaleToFill;
+    [[UIApplication sharedApplication].keyWindow addSubview:move];
+    // 加入购物车动画效果
+    [UIView animateWithDuration:0.5 animations:^{
+        move.center = CGPointMake(KScreenBoundWidth/4*3, KScreenBoundHeight/5*4);
+
+    } completion:^(BOOL finished) {
+       [UIView animateWithDuration:0.5 animations:^{
+           move.frame = CGRectMake(KScreenBoundWidth-frame.size.width-30,KScreenBoundHeight-frame.size.height,30, frame.size.height/2);
+       } completion:^(BOOL finished) {
+           [move removeFromSuperview];
+           block();
+       }];
+    }];
+
+
+}
 @end
