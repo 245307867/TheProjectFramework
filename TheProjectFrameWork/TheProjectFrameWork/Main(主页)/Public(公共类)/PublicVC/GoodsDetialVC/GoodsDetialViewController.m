@@ -94,6 +94,7 @@
     // 加入购物车动画效果
     [UIView animateWithDuration:0.5 animations:^{
         move.center = CGPointMake(KScreenBoundWidth/4*3, KScreenBoundHeight/5*4);
+        move.frame = CGRectMake(KScreenBoundWidth/4*3,KScreenBoundHeight/5*4,frame.size.width/2, frame.size.height/3*2);
 
     } completion:^(BOOL finished) {
        [UIView animateWithDuration:0.5 animations:^{

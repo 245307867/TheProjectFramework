@@ -50,6 +50,7 @@ static NSString * headViewIndentifier = @"ClassficationHeadCollectionReusableVie
  */
 
 -(void)registerCollectionView{
+    self.title = @"分类";
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.classficationMenutableView.backgroundColor = [UIColor clearColor];
     self.classficationDetailCollectionView.backgroundColor = [UIColor clearColor];

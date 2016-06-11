@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate+PrivateMethods.h"
+#import "ShopPingCart.h"
 
 @implementation AppDelegate (PrivateMethods)
 -(void)ProjectSetRootViewController{
@@ -39,7 +40,7 @@
     UIStoryboard * shoppingCartStoryBoard = [UIStoryboard storyboardWithName:@"ShoppingCart" bundle:nil];
     UINavigationController *shoppingCartNaV = [shoppingCartStoryBoard instantiateInitialViewController];
     shoppingCartNaV.tabBarItem.title = @"购物车";
-    shoppingCartNaV.tabBarItem.badgeValue = @"11";
+    shoppingCartNaV.tabBarItem.badgeValue = [NSString stringWithFormat:@"%ld",[[ShopPingCart ShareShopping] allGoodsNumber]];
     shoppingCartNaV.tabBarItem.image = [UIImage imageNamed:@"tabBar_cart_normal"];
     shoppingCartNaV.tabBarItem.selectedImage = [UIImage imageNamed:@"tabBar_cart_press"];
 

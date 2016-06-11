@@ -40,10 +40,11 @@ static ShopPingCart * shoppingcat = nil;
     return shoppingcat.shoppingArray;
 }
 -(void)AddShoppingListwith:(ShoppingModel*)model{
+    
+
     if (![shoppingcat ShoppingArrayIsContainsModelOrModelNumberAdd:model]){
         model.goodsNumber = 1;
         [shoppingcat.shoppingArray addObject:model];
-        
     }
 }
 -(BOOL)ShoppingArrayIsContainsModelOrModelNumberAdd:(ShoppingModel*)model{
@@ -76,7 +77,11 @@ static ShopPingCart * shoppingcat = nil;
     for (ShoppingModel * checkmodel in shoppingcat.shoppingArray) {
         totalNumber+=checkmodel.goodsNumber;
        }
-    
+    UITabBarController * tabController = (UITabBarController*)kRootViewController;
+    UIViewController * requiredViewController = [tabController.viewControllers objectAtIndex:3];
+    UITabBarItem * item = requiredViewController.tabBarItem;
+    NSString * badgeValue = [NSString stringWithFormat:@"%ld",totalNumber];
+    [item setBadgeValue:badgeValue];
     return totalNumber;
 }
 -(NSString *)allGoodPrices{
