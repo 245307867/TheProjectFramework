@@ -11,6 +11,7 @@
                 <outlet property="goodsDescriptionLabel" destination="qfK-ls-HVf" id="SGy-Ae-7xk"/>
                 <outlet property="goodsImageView" destination="oab-BD-tAy" id="RgR-xJ-3GE"/>
                 <outlet property="goodsPricelabel" destination="uD1-Mz-8eN" id="xxd-5L-e1y"/>
+                <outlet property="shoppingView" destination="y1t-88-1kA" id="3Rz-nG-hYm"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -25,6 +26,18 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ddc-K2-gT7">
                     <rect key="frame" x="0.0" y="550" width="600" height="50"/>
                     <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y1t-88-1kA">
+                            <rect key="frame" x="180" y="0.0" width="60" height="50"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="Fbd-go-vc1"/>
+                            </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="Fbd-go-vc1"/>
+                                </mask>
+                            </variation>
+                        </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rSd-qx-DUX">
                             <rect key="frame" x="0.0" y="0.0" width="60" height="50"/>
                             <constraints>
@@ -40,13 +53,6 @@
                             <state key="normal" title="店铺"/>
                             <connections>
                                 <action selector="ContactTheShopper:" destination="-1" eventType="touchUpInside" id="kf3-zO-fwy"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="woQ-hp-oJ1">
-                            <rect key="frame" x="180" y="0.0" width="60" height="50"/>
-                            <state key="normal" title="购物车"/>
-                            <connections>
-                                <action selector="shoppingCart:" destination="-1" eventType="touchUpInside" id="Wmt-nW-a2i"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gLx-oG-YgR">
@@ -75,23 +81,23 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="rSd-qx-DUX" secondAttribute="bottom" id="03Z-bb-Itf"/>
-                        <constraint firstItem="woQ-hp-oJ1" firstAttribute="leading" secondItem="6Xt-Eb-GwB" secondAttribute="trailing" id="5XW-9S-9tr"/>
                         <constraint firstItem="6Xt-Eb-GwB" firstAttribute="top" secondItem="Ddc-K2-gT7" secondAttribute="top" id="75d-2d-pgB"/>
+                        <constraint firstItem="y1t-88-1kA" firstAttribute="width" secondItem="6Xt-Eb-GwB" secondAttribute="width" id="8Lc-jF-TaJ"/>
                         <constraint firstAttribute="height" constant="50" id="A3S-EX-zmJ"/>
-                        <constraint firstItem="gLx-oG-YgR" firstAttribute="leading" secondItem="woQ-hp-oJ1" secondAttribute="trailing" id="C6s-yl-hlg"/>
                         <constraint firstItem="6Xt-Eb-GwB" firstAttribute="leading" secondItem="YZ5-jw-p7r" secondAttribute="trailing" id="DDH-Ml-77c"/>
                         <constraint firstItem="rSd-qx-DUX" firstAttribute="top" secondItem="Ddc-K2-gT7" secondAttribute="top" id="GoF-mG-iuH"/>
                         <constraint firstItem="rSd-qx-DUX" firstAttribute="leading" secondItem="Ddc-K2-gT7" secondAttribute="leading" id="MB0-ge-nqz"/>
                         <constraint firstItem="gLx-oG-YgR" firstAttribute="top" secondItem="Ddc-K2-gT7" secondAttribute="top" id="NWe-wa-ygE"/>
                         <constraint firstItem="YZ5-jw-p7r" firstAttribute="width" secondItem="rSd-qx-DUX" secondAttribute="width" id="RNx-PK-XVb"/>
-                        <constraint firstItem="woQ-hp-oJ1" firstAttribute="width" secondItem="6Xt-Eb-GwB" secondAttribute="width" id="V9P-tm-HAg"/>
                         <constraint firstAttribute="trailing" secondItem="gLx-oG-YgR" secondAttribute="trailing" id="XmA-Q1-sW3"/>
                         <constraint firstItem="YZ5-jw-p7r" firstAttribute="top" secondItem="Ddc-K2-gT7" secondAttribute="top" id="Yg9-Yi-ysH"/>
-                        <constraint firstItem="woQ-hp-oJ1" firstAttribute="top" secondItem="Ddc-K2-gT7" secondAttribute="top" id="Zqf-y0-Pt4"/>
                         <constraint firstItem="YZ5-jw-p7r" firstAttribute="leading" secondItem="rSd-qx-DUX" secondAttribute="trailing" id="cPL-mm-7Cd"/>
                         <constraint firstAttribute="bottom" secondItem="gLx-oG-YgR" secondAttribute="bottom" id="iSo-fe-Krj"/>
                         <constraint firstAttribute="bottom" secondItem="6Xt-Eb-GwB" secondAttribute="bottom" id="j1y-IJ-kyT"/>
-                        <constraint firstAttribute="bottom" secondItem="woQ-hp-oJ1" secondAttribute="bottom" id="sTJ-6T-qyW"/>
+                        <constraint firstItem="y1t-88-1kA" firstAttribute="leading" secondItem="6Xt-Eb-GwB" secondAttribute="trailing" id="qZY-8r-CAo"/>
+                        <constraint firstItem="gLx-oG-YgR" firstAttribute="leading" secondItem="y1t-88-1kA" secondAttribute="trailing" id="qZn-mf-atj"/>
+                        <constraint firstItem="y1t-88-1kA" firstAttribute="top" secondItem="Ddc-K2-gT7" secondAttribute="top" id="she-eF-Wp9"/>
+                        <constraint firstAttribute="bottom" secondItem="y1t-88-1kA" secondAttribute="bottom" id="vvC-BL-VPA"/>
                         <constraint firstAttribute="bottom" secondItem="YZ5-jw-p7r" secondAttribute="bottom" id="wf5-HY-qtw"/>
                         <constraint firstItem="6Xt-Eb-GwB" firstAttribute="width" secondItem="YZ5-jw-p7r" secondAttribute="width" id="znZ-JF-tTV"/>
                     </constraints>
@@ -99,7 +105,7 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfK-ls-HVf" userLabel="商品描述信息">
                     <rect key="frame" x="20" y="333.5" width="580" height="166.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商品价格" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uD1-Mz-8eN">
@@ -108,7 +114,7 @@
                         <constraint firstAttribute="height" constant="50" id="enZ-5n-SuX"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>

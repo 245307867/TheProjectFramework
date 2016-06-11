@@ -13,10 +13,13 @@
 +(ButtonView*)loadButtonViewWith:(UIImage*)image andbadgeValue:(NSString*)badgeValue andFreme:(CGRect)frame{
     ButtonView * view =[[[NSBundle mainBundle] loadNibNamed:@"ButtonView" owner:nil options:nil] firstObject];
     view.frame = frame;
+    view.badgeValuLabel.layer.masksToBounds = YES;
+    view.badgeValuLabel.layer.cornerRadius = 8;
     view.ButtonImageView.image = image;
     view.badgeValuLabel.text = badgeValue;
     return view;
 }
+
 
 
 /*

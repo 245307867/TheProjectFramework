@@ -15,5 +15,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *clickButton;
 /** badgeValue */
 @property (weak, nonatomic) IBOutlet UILabel *badgeValuLabel;
+
+
+
 +(ButtonView*)loadButtonViewWith:(UIImage*)image andbadgeValue:(NSString*)badgeValue andFreme:(CGRect)frame;
+
+
 @end

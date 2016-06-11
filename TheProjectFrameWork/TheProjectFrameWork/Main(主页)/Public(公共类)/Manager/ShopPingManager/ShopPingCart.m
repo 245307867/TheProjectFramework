@@ -80,9 +80,12 @@ static ShopPingCart * shoppingcat = nil;
     return totalNumber;
 }
 -(NSString *)allGoodPrices{
-    CGFloat price ;
+    CGFloat price  = 0;
     for (ShoppingModel * checkmodel in shoppingcat.shoppingArray) {
         price+=(checkmodel.goodsNumber*[checkmodel.goodsPrices floatValue]);
+    }
+    if (price==0) {
+        return @"";
     }
     return [NSString stringWithFormat:@"%g",price];
 }
