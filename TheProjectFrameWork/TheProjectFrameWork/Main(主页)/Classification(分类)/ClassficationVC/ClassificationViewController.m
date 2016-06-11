@@ -28,6 +28,7 @@ static NSString * headViewIndentifier = @"ClassficationHeadCollectionReusableVie
 @property (weak, nonatomic) IBOutlet UITableView *classficationMenutableView;
 /** 详情collectionView */
 @property (weak, nonatomic) IBOutlet UICollectionView *classficationDetailCollectionView;
+@property (weak, nonatomic) IBOutlet UIView *collectionSuperView;
 
 @end
 
@@ -52,6 +53,7 @@ static NSString * headViewIndentifier = @"ClassficationHeadCollectionReusableVie
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.classficationMenutableView.backgroundColor = [UIColor clearColor];
     self.classficationDetailCollectionView.backgroundColor = [UIColor clearColor];
+    self.collectionSuperView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.1];
     self.classficationDetailCollectionView.backgroundView.backgroundColor  = [UIColor clearColor];
     //注册collectionViewCell
     [self.classficationDetailCollectionView registerNib:[UINib nibWithNibName:itemIndetifier bundle:nil] forCellWithReuseIdentifier:itemIndetifier];
@@ -78,13 +80,17 @@ static NSString * headViewIndentifier = @"ClassficationHeadCollectionReusableVie
         cell = [[[NSBundle mainBundle] loadNibNamed:cellIdentifier owner:nil options:nil] firstObject];
     }
     cell.menuContentLabel.text = @"测试内容";
-    cell.selectionStyle = UITableViewCellSelectionStyleGray;
+    cell.selectionStyle = UITableViewCellSelectionStyleDefault;
+    UIView * view = [[UIView alloc]init];
+    view.backgroundColor =  [UIColor colorWithRed:0 green:0 blue:0 alpha:0.1];
+    cell.selectedBackgroundView = view;
     cell.menuContentLabel.highlightedTextColor = [UIColor redColor];
     
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionTop];
     [self.classficationDetailCollectionView reloadData];
 }
 

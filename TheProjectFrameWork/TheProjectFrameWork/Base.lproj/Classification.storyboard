@@ -45,7 +45,6 @@
                                         </connections>
                                     </tableView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="vcu-4E-Kwc" secondAttribute="trailing" id="3Ju-1y-a2F"/>
                                     <constraint firstItem="vcu-4E-Kwc" firstAttribute="top" secondItem="Zxj-uE-dMv" secondAttribute="top" id="8BZ-WA-Qxc"/>
@@ -108,7 +107,7 @@
                                         </connections>
                                     </collectionView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.90505446265757583" green="0.90505446265757583" blue="0.90505446265757583" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="ffx-M1-TBs" firstAttribute="leading" secondItem="y6n-AX-idq" secondAttribute="leading" id="DLM-14-ysf">
                                         <variation key="heightClass=regular-widthClass=compact" constant="10"/>
@@ -203,6 +202,7 @@
                     <connections>
                         <outlet property="classficationDetailCollectionView" destination="ffx-M1-TBs" id="TqB-Aw-aET"/>
                         <outlet property="classficationMenutableView" destination="vcu-4E-Kwc" id="Dqz-RL-6Cw"/>
+                        <outlet property="collectionSuperView" destination="y6n-AX-idq" id="Rnr-cJ-4Fn"/>
                         <outlet property="searchDisplayController" destination="sQi-Ny-wJe" id="rLd-1I-fHN"/>
                     </connections>
                 </viewController>
