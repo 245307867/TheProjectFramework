@@ -12,10 +12,14 @@
 #import "SearchViewController.h"
 #import "GoodsDetialViewController.h"
 #import "ShoppingModel.h"
+#import "LBXScanViewStyle.h"
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import "SubLBXScanViewController.h"
 
 static NSString * cellIdentifier = @"FoundTableViewCell";
 static NSString * itemIdentifier = @"FoundCollectionViewCell";
-@interface FoundViewController ()<UITableViewDataSource,UITableViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UISearchBarDelegate,UISearchDisplayDelegate>
+@interface FoundViewController ()<UITableViewDataSource,UITableViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UISearchBarDelegate>
 
 /** headView 高度 */
 //@property (weak, nonatomic) IBOutlet NSLayoutConstraint *headViewHeight;
@@ -67,18 +71,7 @@ static NSString * itemIdentifier = @"FoundCollectionViewCell";
     self.foundheadCollectionView.showsHorizontalScrollIndicator = NO;
 
 }
-/**
- *  扫描二维码
- */
--(void)scanthecode{
-    
-}
-/**
- *  发送信息
- */
--(void)sendMessgae{
-    
-}
+
 
 /**
  *  加载数据源
@@ -136,12 +129,8 @@ static NSString * itemIdentifier = @"FoundCollectionViewCell";
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
     return 0;
 }
-#pragma mark --UIScrollViewDelegate
--(void)scrollViewDidScroll:(UIScrollView *)scrollView{
 
-}
-
-#pragma mark --
+#pragma mark --UISearchBarDelegate
 
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar{
     SearchViewController * search = [[SearchViewController alloc] init];

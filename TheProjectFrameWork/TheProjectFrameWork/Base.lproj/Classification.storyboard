@@ -196,8 +196,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="NmK-h2-YCB">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" image="ico_camera_7_gray" id="djE-Eb-Tsi"/>
-                        <barButtonItem key="rightBarButtonItem" image="HomePage_Message" id="NjJ-uh-tAy"/>
                     </navigationItem>
                     <connections>
                         <outlet property="classficationDetailCollectionView" destination="ffx-M1-TBs" id="TqB-Aw-aET"/>
@@ -245,8 +243,4 @@
             <point key="canvasLocation" x="204" y="-15"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="HomePage_Message" width="27" height="27"/>
-        <image name="ico_camera_7_gray" width="27" height="27"/>
-    </resources>
 </document>

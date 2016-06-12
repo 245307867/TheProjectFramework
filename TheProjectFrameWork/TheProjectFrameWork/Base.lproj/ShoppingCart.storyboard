@@ -108,6 +108,7 @@
                         <outlet property="payForButton" destination="HNe-Bz-Lyn" id="8KG-Ft-eLV"/>
                         <outlet property="selectedAllButtn" destination="ZNy-3S-Iw0" id="zh0-fn-sTO"/>
                         <outlet property="shoppingCartTableView" destination="SRA-Ef-dfU" id="WMc-wb-fRx"/>
+                        <outlet property="shoppingView" destination="bk1-SE-f90" id="ejP-Kr-oF8"/>
                         <outlet property="totalPricesLabel" destination="tO4-GZ-csw" id="CZy-9P-tuV"/>
                     </connections>
                 </viewController>

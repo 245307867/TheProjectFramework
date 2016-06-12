@@ -66,7 +66,8 @@ static ShopPingCart * shoppingcat = nil;
     return NO;
 }
 -(void)goodsRemoveFromeShoppingCartWithModel:(ShoppingModel*)model{
-    for (ShoppingModel * checkmodel in shoppingcat.shoppingArray) {
+    NSMutableArray * array =[shoppingcat.shoppingArray copy];
+    for (ShoppingModel * checkmodel in array) {
         if ([model.goodsId isEqualToString:checkmodel.goodsId]) {
             [shoppingcat.shoppingArray removeObject:checkmodel];
         }

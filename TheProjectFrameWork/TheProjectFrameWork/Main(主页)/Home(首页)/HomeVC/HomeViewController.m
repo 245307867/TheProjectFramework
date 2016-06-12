@@ -26,6 +26,10 @@ static NSString * cellIdentifier = @"HomeTableViewCell";
     [self loadHeadView];
     // Do any additional setup after loading the view.
 }
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.tabBarController.tabBar setHidden:NO];
+}
 
 /**
  *  加载头部视图
@@ -87,6 +91,9 @@ static NSString * cellIdentifier = @"HomeTableViewCell";
     
     [self.navigationController.navigationBar lt_setBackgroundColor:[[UIColor whiteColor] colorWithAlphaComponent:0] showShowImage:nil];
 }
+/**
+ *  设置NavigationBar样式
+ */
 -(void)setTypeNavigationBar{
     CGRect barRect = self.navigationController.navigationBar.bounds;
     UIButton *leftbutton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -111,19 +118,6 @@ static NSString * cellIdentifier = @"HomeTableViewCell";
     
     [self.navigationController.navigationBar lt_setBackgroundColor:[[UIColor whiteColor] colorWithAlphaComponent:1] showShowImage:YES];
 }
-/**
- *  扫描二维码
- */
--(void)scanthecode{
-    
-}
-/**
- *  发送消息
- */
--(void)sendMessgae{
-    
-}
-
 
 #pragma mark --ImagePlayerViewDelegate
 -(NSInteger)numberOfItems{

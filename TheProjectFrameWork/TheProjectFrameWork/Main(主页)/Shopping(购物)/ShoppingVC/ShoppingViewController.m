@@ -21,6 +21,7 @@ static NSString * cellIdentifier = @"ShoppingCartTableViewCell";
 @property (weak, nonatomic) IBOutlet UIButton *selectedAllButtn;
 /** 合计价格 */
 @property (weak, nonatomic) IBOutlet UILabel *totalPricesLabel;
+@property (weak, nonatomic) IBOutlet UIView *shoppingView;
 /** 总额 */
 @property (weak, nonatomic) IBOutlet UILabel *allPricesLabel;
 /** 支付按钮 */
@@ -39,11 +40,19 @@ static NSString * cellIdentifier = @"ShoppingCartTableViewCell";
     [self loadDatasource];
 }
 -(void)loadDatasource{
-    [self.payForButton setTitle:[NSString stringWithFormat:@"去结算(%ld)",[[ShopPingCart ShareShopping] allGoodsNumber]] forState:UIControlStateNormal];
-    self.allPricesLabel.text = [NSString stringWithFormat:@"总额：￥%@",[[ShopPingCart ShareShopping] allGoodPrices]];
-    self.totalPricesLabel.text = [NSString stringWithFormat:@"合计：￥%@",[[ShopPingCart ShareShopping] allGoodPrices]];
+
     self.dataArray = [NSMutableArray array];
     NSArray * array = [[ShopPingCart ShareShopping] Shoppinglist];
+    if (array.count) {
+        self.shoppingView.alpha = 1;
+        [self.payForButton setTitle:[NSString stringWithFormat:@"去结算(%ld)",[[ShopPingCart ShareShopping] allGoodsNumber]] forState:UIControlStateNormal];
+        self.allPricesLabel.text = [NSString stringWithFormat:@"总额：￥%@",[[ShopPingCart ShareShopping] allGoodPrices]];
+        self.totalPricesLabel.text = [NSString stringWithFormat:@"合计：￥%@",[[ShopPingCart ShareShopping] allGoodPrices]];
+    }
+    else{
+        self.shoppingView.alpha = 0;
+
+    }
     [self.dataArray addObjectsFromArray:array];
     [self setAutomaticallyAdjustsScrollViewInsets:NO];
     [self.shoppingCartTableView reloadData];
@@ -69,12 +78,38 @@ static NSString * cellIdentifier = @"ShoppingCartTableViewCell";
         cell = [[[NSBundle mainBundle] loadNibNamed:cellIdentifier owner:nil options:nil] firstObject];
     }
     cell.delegate = self;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     [cell goodsLoadShoppingCartWithModel:model andIndexPath:indexPath];
     return cell;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 100;
+}
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+// 设置 哪一行的编辑按钮 状态 指定编辑样式
+- (UITableViewCellEditingStyle) tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return UITableViewCellEditingStyleDelete;
+}
+-(NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewRowAction *deleteRoWAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"删除" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+        ShoppingModel * model =self.dataArray[indexPath.row];
+        [[ShopPingCart ShareShopping] goodsRemoveFromeShoppingCartWithModel:model];
+        [self loadDatasource];
+        //title可自已定义
+    NSLog(@"点击删除");
+    }];
+    //此处是iOS8.0以后苹果最新推出的api，UITableViewRowAction，Style是划出的标签颜色等状态的定义，这里也可自行定义
+    UITableViewRowAction * editRowAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"关注" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+        NSLog(@"点击关注");
+    }];
+    editRowAction.backgroundColor = [UIColor lightGrayColor];//可以定义RowAction的颜色
+    return @[deleteRoWAction, editRowAction];
+    
 }
 
 #pragma mark --ShoppingCartTableViewCellDelegate
