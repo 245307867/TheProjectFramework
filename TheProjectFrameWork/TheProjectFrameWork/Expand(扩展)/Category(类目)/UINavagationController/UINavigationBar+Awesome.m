@@ -33,11 +33,17 @@ static char emptyImageKey;
     objc_setAssociatedObject(self, &emptyImageKey, image, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (void)lt_setBackgroundColor:(UIColor *)backgroundColor
-{
+- (void)lt_setBackgroundColor:(UIColor *)backgroundColor showShowImage:(BOOL) isshow{
+    if (isshow)
+    {
+        [self setShadowImage:nil];
+    }
+    else
+    {
+        [self setShadowImage:[UIImage new]];
+    }
     if (!self.overlay) {
         [self setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-        [self setShadowImage:[UIImage new]];
         self.overlay = [[UIView alloc] initWithFrame:CGRectMake(0, -20, [UIScreen mainScreen].bounds.size.width, CGRectGetHeight(self.bounds) + 20)];
         self.overlay.userInteractionEnabled = NO;
         self.overlay.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
@@ -45,6 +51,12 @@ static char emptyImageKey;
     }
     self.overlay.backgroundColor = backgroundColor;
 }
+
+
+//- (void)lt_setBackgroundColor:(UIColor *)backgroundColor
+//{
+//  
+//}
 
 - (void)lt_setTranslationY:(CGFloat)translationY
 {
@@ -54,7 +66,8 @@ static char emptyImageKey;
 - (void)lt_setContentAlpha:(CGFloat)alpha
 {
     if (!self.overlay) {
-        [self lt_setBackgroundColor:self.barTintColor];
+        [self lt_setBackgroundColor:self.barTintColor showShowImage:YES];
+//        [self lt_setBackgroundColor:self.barTintColor];
     }
     [self setAlpha:alpha forSubviewsOfView:self];
     if (alpha == 1) {

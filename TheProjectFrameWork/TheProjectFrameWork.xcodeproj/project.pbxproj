@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F503E9CC1D051A7B001CB721 /* NetWork+BodyAndCookie.m in Sources */ = {isa = PBXBuildFile; fileRef = F503E9CB1D051A7B001CB721 /* NetWork+BodyAndCookie.m */; };
+		F5244EA01D0CEF0A0028B427 /* UITabBar+badge.m in Sources */ = {isa = PBXBuildFile; fileRef = F5244E9F1D0CEF0A0028B427 /* UITabBar+badge.m */; };
 		F5737D3A1D02EBC10004168F /* HometableHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5737D391D02EBC10004168F /* HometableHeadView.xib */; };
 		F5935DCA1D011B39008622D4 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5935DC81D011B39008622D4 /* BaseViewController.m */; };
 		F5935DCD1D011B50008622D4 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5935DCC1D011B50008622D4 /* BaseView.m */; };
@@ -92,6 +93,8 @@
 		C2D98CDD2CA494B4924BEB87 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F503E9CA1D051A7B001CB721 /* NetWork+BodyAndCookie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NetWork+BodyAndCookie.h"; sourceTree = "<group>"; };
 		F503E9CB1D051A7B001CB721 /* NetWork+BodyAndCookie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NetWork+BodyAndCookie.m"; sourceTree = "<group>"; };
+		F5244E9E1D0CEF0A0028B427 /* UITabBar+badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBar+badge.h"; sourceTree = "<group>"; };
+		F5244E9F1D0CEF0A0028B427 /* UITabBar+badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBar+badge.m"; sourceTree = "<group>"; };
 		F5737D391D02EBC10004168F /* HometableHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HometableHeadView.xib; sourceTree = "<group>"; };
 		F5935DC71D011B39008622D4 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		F5935DC81D011B39008622D4 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
@@ -242,6 +245,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		F5244E9D1D0CEEE50028B427 /* UITabbar */ = {
+			isa = PBXGroup;
+			children = (
+				F5244E9E1D0CEF0A0028B427 /* UITabBar+badge.h */,
+				F5244E9F1D0CEF0A0028B427 /* UITabBar+badge.m */,
+			);
+			path = UITabbar;
+			sourceTree = "<group>";
+		};
 		F5935DA21D01187E008622D4 /* Base.lproj */ = {
 			isa = PBXGroup;
 			children = (
@@ -295,6 +307,7 @@
 		F5935DBB1D011AC8008622D4 /* Category(类目) */ = {
 			isa = PBXGroup;
 			children = (
+				F5244E9D1D0CEEE50028B427 /* UITabbar */,
 				F5935E0E1D013626008622D4 /* NSData */,
 				F5935E0F1D013626008622D4 /* NSString */,
 				F5935E101D013626008622D4 /* UIColor */,
@@ -1189,6 +1202,7 @@
 				F5935E1A1D0136B5008622D4 /* PersonalViewController.m in Sources */,
 				F5FA47EE1D03E01D0083D5FE /* ClassficationDetailCollectionViewCell.m in Sources */,
 				F5935E571D028B0D008622D4 /* NetWork.m in Sources */,
+				F5244EA01D0CEF0A0028B427 /* UITabBar+badge.m in Sources */,
 				F5CAD1571D0112BF00E7E482 /* main.m in Sources */,
 				F5E0709B1D02DED5006D467A /* HometableHeadView.m in Sources */,
 				F5FA47F41D03E01D0083D5FE /* ClassficationMenuTableViewCell.m in Sources */,

@@ -19,6 +19,8 @@
 #import "Enumeration.h"
 #import "UrlMacros.h"
 #import "UINavigationBar+Awesome.h"
+#import "UITabBar+badge.h"
+
 /*
  *CocoaPods
  */

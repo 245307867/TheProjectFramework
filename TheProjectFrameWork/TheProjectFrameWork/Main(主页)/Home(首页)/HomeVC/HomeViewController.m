@@ -85,7 +85,7 @@ static NSString * cellIdentifier = @"HomeTableViewCell";
     UIBarButtonItem *rightitem = [[UIBarButtonItem alloc] initWithCustomView:rightbutton];
     self.navigationItem.rightBarButtonItem = rightitem;
     
-    [self.navigationController.navigationBar lt_setBackgroundColor:[[UIColor whiteColor] colorWithAlphaComponent:0]];
+    [self.navigationController.navigationBar lt_setBackgroundColor:[[UIColor whiteColor] colorWithAlphaComponent:0] showShowImage:nil];
 }
 -(void)setTypeNavigationBar{
     CGRect barRect = self.navigationController.navigationBar.bounds;
@@ -109,7 +109,7 @@ static NSString * cellIdentifier = @"HomeTableViewCell";
     UIBarButtonItem *rightitem = [[UIBarButtonItem alloc] initWithCustomView:rightbutton];
     self.navigationItem.rightBarButtonItem = rightitem;
     
-    [self.navigationController.navigationBar lt_setBackgroundColor:[[UIColor whiteColor] colorWithAlphaComponent:1]];
+    [self.navigationController.navigationBar lt_setBackgroundColor:[[UIColor whiteColor] colorWithAlphaComponent:1] showShowImage:YES];
 }
 /**
  *  扫描二维码

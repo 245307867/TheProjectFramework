@@ -8,7 +8,6 @@
 
 #import "AppDelegate+PrivateMethods.h"
 #import "ShopPingCart.h"
-
 @implementation AppDelegate (PrivateMethods)
 -(void)ProjectSetRootViewController{
     self.window = [[UIWindow alloc] initWithFrame:kScreenFreameBound];
@@ -53,6 +52,8 @@
 
     // 设置tabBarController
     mianTabBar.viewControllers = @[homeNaV,classificationNaV,foundNaV,shoppingCartNaV,personalNaV];
+    [mianTabBar.tabBarController.tabBar showBadgeOnItemIndex:1];
+
     self.window.rootViewController = mianTabBar;
     [self.window makeKeyAndVisible];
     
