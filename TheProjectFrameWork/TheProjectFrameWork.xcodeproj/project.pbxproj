@@ -1046,6 +1046,7 @@
 				F5CAD14F1D0112BF00E7E482 /* Frameworks */,
 				F5CAD1501D0112BF00E7E482 /* Resources */,
 				95346670F17170152A73D8DA /* Copy Pods Resources */,
+				9153F573D543B8143D0ED936 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1155,6 +1156,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		9153F573D543B8143D0ED936 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		95346670F17170152A73D8DA /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

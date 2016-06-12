@@ -8,6 +8,7 @@ pod 'MBProgressHUD', '~> 0.8'
 pod 'Reachability', '~> 3.2'
 pod 'ImagePlayerView'
 pod 'SDCycleScrollView'
+pod 'LBXScan’
 
 
 

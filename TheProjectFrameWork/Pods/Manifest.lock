@@ -22,6 +22,8 @@ PODS:
     - AFNetworking/NSURLSession
   - ImagePlayerView (1.0.3)
   - JSONModel (1.1.0)
+  - LBXScan (1.1.1):
+    - ZXingObjC (~> 3.0)
   - MagicalRecord (2.3.0)
   - MBProgressHUD (0.9.1)
   - Reachability (3.2)
@@ -30,11 +32,15 @@ PODS:
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
   - UMengSocial (4.2.3)
+  - ZXingObjC (3.1.0):
+    - ZXingObjC/All (= 3.1.0)
+  - ZXingObjC/All (3.1.0)
 
 DEPENDENCIES:
   - AFNetworking
   - ImagePlayerView
   - JSONModel
+  - LBXScan
   - MagicalRecord
   - MBProgressHUD (~> 0.8)
   - Reachability (~> 3.2)
@@ -46,11 +52,13 @@ SPEC CHECKSUMS:
   AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
   ImagePlayerView: c5db63e0548d711b16b2c7a3acae720216d0082b
   JSONModel: ec77e9865236a7a09d9cf7668df6b4b328d9ec1d
+  LBXScan: dfb4d8ae8e4cff2aa0c9e1771e43954dce1469a9
   MagicalRecord: 89eb7d7ead39fb37f01c3d010665ee94d17f8dba
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SDCycleScrollView: 90e43636fcc8e6a7f74e8b64d87418a8e96549b4
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   UMengSocial: 85882abe5b20aa38ad558ece71360e16b5d50909
+  ZXingObjC: bf15b3814f7a105b6d99f47da2333c93a063650a
 
-COCOAPODS: 0.38.2
+COCOAPODS: 0.39.0
