@@ -451,12 +451,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YNj-zz-uwx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-684" y="-440"/>
+            <point key="canvasLocation" x="-396" y="-716.25"/>
         </scene>
         <!--手机快速注册-->
         <scene sceneID="CRY-im-LcR">
             <objects>
-                <viewController id="XV9-Zj-qsv" sceneMemberID="viewController">
+                <viewController id="XV9-Zj-qsv" customClass="RegisterViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="o7N-tE-O8d"/>
                         <viewControllerLayoutGuide type="bottom" id="gIF-NZ-QO0"/>
@@ -476,7 +476,7 @@
                                             </constraint>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -544,17 +544,17 @@
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="PBj-Bg-I8r"/>
-                                        <exclude reference="4AL-ZU-nzq"/>
-                                        <exclude reference="V1k-7y-Tq7"/>
-                                        <exclude reference="f0K-p5-GO9"/>
-                                        <exclude reference="fmt-kK-r2d"/>
-                                        <exclude reference="9t3-0S-wZ5"/>
-                                        <exclude reference="GZu-pp-GvU"/>
-                                        <exclude reference="ocx-YD-Xol"/>
                                         <exclude reference="2yV-0t-k1o"/>
                                         <exclude reference="VOR-6y-MSq"/>
                                         <exclude reference="arh-Y7-SPS"/>
                                         <exclude reference="xWk-Dt-NwE"/>
+                                        <exclude reference="9t3-0S-wZ5"/>
+                                        <exclude reference="GZu-pp-GvU"/>
+                                        <exclude reference="ocx-YD-Xol"/>
+                                        <exclude reference="4AL-ZU-nzq"/>
+                                        <exclude reference="V1k-7y-Tq7"/>
+                                        <exclude reference="f0K-p5-GO9"/>
+                                        <exclude reference="fmt-kK-r2d"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -565,17 +565,17 @@
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="PBj-Bg-I8r"/>
-                                        <include reference="4AL-ZU-nzq"/>
-                                        <include reference="V1k-7y-Tq7"/>
-                                        <include reference="f0K-p5-GO9"/>
-                                        <include reference="fmt-kK-r2d"/>
-                                        <include reference="9t3-0S-wZ5"/>
-                                        <include reference="GZu-pp-GvU"/>
-                                        <include reference="ocx-YD-Xol"/>
                                         <include reference="2yV-0t-k1o"/>
                                         <include reference="VOR-6y-MSq"/>
                                         <include reference="arh-Y7-SPS"/>
                                         <include reference="xWk-Dt-NwE"/>
+                                        <include reference="9t3-0S-wZ5"/>
+                                        <include reference="GZu-pp-GvU"/>
+                                        <include reference="ocx-YD-Xol"/>
+                                        <include reference="4AL-ZU-nzq"/>
+                                        <include reference="V1k-7y-Tq7"/>
+                                        <include reference="f0K-p5-GO9"/>
+                                        <include reference="fmt-kK-r2d"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -606,7 +606,7 @@
                                     </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -628,7 +628,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="遇到问题？您可以联系客服。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VkU-V4-qw9">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvu-Bo-ahT">
@@ -653,9 +653,12 @@
                                         <exclude reference="vMh-Uz-ap2"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="nextStepButton:" destination="XV9-Zj-qsv" eventType="touchUpInside" id="cpn-zh-AqN"/>
+                                </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="8PE-hb-JOd" firstAttribute="top" secondItem="yWY-Hx-gn3" secondAttribute="bottom" constant="19" id="0fb-Ep-lkB">
                                 <variation key="heightClass=regular-widthClass=compact" constant="15"/>
@@ -716,28 +719,28 @@
                                 <exclude reference="gvu-Bo-ahT"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Ana-wG-s07"/>
-                                <exclude reference="X80-hf-vqe"/>
-                                <exclude reference="xcu-7A-Hs1"/>
-                                <exclude reference="8Pp-yZ-ZQk"/>
-                                <exclude reference="yKw-am-Orb"/>
-                                <exclude reference="0fb-Ep-lkB"/>
-                                <exclude reference="bbS-fE-Gdl"/>
-                                <exclude reference="hMw-fZ-gvT"/>
-                                <exclude reference="mXL-Vu-fIe"/>
-                                <exclude reference="nHf-zm-ljV"/>
-                                <exclude reference="IqK-rv-a4h"/>
-                                <exclude reference="bbI-VG-8Fe"/>
-                                <exclude reference="oRt-Q4-dnc"/>
-                                <exclude reference="s46-V4-HNp"/>
-                                <exclude reference="uOP-9y-Jnf"/>
                                 <exclude reference="UUM-wI-LlJ"/>
                                 <exclude reference="cNM-vR-rlY"/>
                                 <exclude reference="dhZ-F7-ytd"/>
                                 <exclude reference="icm-88-Ysj"/>
                                 <exclude reference="vxY-6B-u9z"/>
+                                <exclude reference="8Pp-yZ-ZQk"/>
+                                <exclude reference="yKw-am-Orb"/>
+                                <exclude reference="IqK-rv-a4h"/>
+                                <exclude reference="bbI-VG-8Fe"/>
+                                <exclude reference="oRt-Q4-dnc"/>
+                                <exclude reference="s46-V4-HNp"/>
+                                <exclude reference="uOP-9y-Jnf"/>
+                                <exclude reference="0fb-Ep-lkB"/>
+                                <exclude reference="bbS-fE-Gdl"/>
+                                <exclude reference="hMw-fZ-gvT"/>
+                                <exclude reference="mXL-Vu-fIe"/>
+                                <exclude reference="nHf-zm-ljV"/>
                                 <exclude reference="BEV-fW-oW3"/>
                                 <exclude reference="Yei-VS-o6n"/>
+                                <exclude reference="Ana-wG-s07"/>
+                                <exclude reference="X80-hf-vqe"/>
+                                <exclude reference="xcu-7A-Hs1"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -750,36 +753,40 @@
                                 <include reference="gvu-Bo-ahT"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Ana-wG-s07"/>
-                                <include reference="X80-hf-vqe"/>
-                                <include reference="xcu-7A-Hs1"/>
-                                <include reference="8Pp-yZ-ZQk"/>
-                                <include reference="yKw-am-Orb"/>
-                                <include reference="0fb-Ep-lkB"/>
-                                <exclude reference="bbS-fE-Gdl"/>
-                                <include reference="hMw-fZ-gvT"/>
-                                <include reference="mXL-Vu-fIe"/>
-                                <exclude reference="nHf-zm-ljV"/>
-                                <exclude reference="IqK-rv-a4h"/>
-                                <exclude reference="bbI-VG-8Fe"/>
-                                <include reference="oRt-Q4-dnc"/>
-                                <include reference="s46-V4-HNp"/>
-                                <include reference="uOP-9y-Jnf"/>
                                 <include reference="UUM-wI-LlJ"/>
                                 <include reference="cNM-vR-rlY"/>
                                 <include reference="dhZ-F7-ytd"/>
                                 <exclude reference="icm-88-Ysj"/>
                                 <include reference="vxY-6B-u9z"/>
+                                <include reference="8Pp-yZ-ZQk"/>
+                                <include reference="yKw-am-Orb"/>
+                                <exclude reference="IqK-rv-a4h"/>
+                                <exclude reference="bbI-VG-8Fe"/>
+                                <include reference="oRt-Q4-dnc"/>
+                                <include reference="s46-V4-HNp"/>
+                                <include reference="uOP-9y-Jnf"/>
+                                <include reference="0fb-Ep-lkB"/>
+                                <exclude reference="bbS-fE-Gdl"/>
+                                <include reference="hMw-fZ-gvT"/>
+                                <include reference="mXL-Vu-fIe"/>
+                                <exclude reference="nHf-zm-ljV"/>
                                 <include reference="BEV-fW-oW3"/>
                                 <include reference="Yei-VS-o6n"/>
+                                <include reference="Ana-wG-s07"/>
+                                <include reference="X80-hf-vqe"/>
+                                <include reference="xcu-7A-Hs1"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="手机快速注册" id="fTm-fx-DKH"/>
+                    <connections>
+                        <outlet property="nextStepButton" destination="gvu-Bo-ahT" id="ltD-na-BZ7"/>
+                        <outlet property="phoneNumberTextfield" destination="6Ol-lF-pjE" id="FFQ-Df-gRe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LYb-Tt-ARp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-684" y="206.25"/>
+            <point key="canvasLocation" x="-12" y="206.25"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TuS-hj-rfJ">

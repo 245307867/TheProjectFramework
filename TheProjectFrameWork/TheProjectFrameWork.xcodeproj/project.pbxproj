@@ -34,15 +34,15 @@
 		F5935E521D0176CD008622D4 /* PersonalHeadCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5935E501D0176CD008622D4 /* PersonalHeadCollectionReusableView.m */; };
 		F5935E531D0176CD008622D4 /* PersonalHeadCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5935E511D0176CD008622D4 /* PersonalHeadCollectionReusableView.xib */; };
 		F5935E571D028B0D008622D4 /* NetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = F5935E561D028B0D008622D4 /* NetWork.m */; };
-		F5AF71A51D06770F005A1DB6 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AF71A21D06770F005A1DB6 /* SearchViewController.m */; };
-		F5AF71A61D06770F005A1DB6 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5AF71A31D06770F005A1DB6 /* SearchViewController.xib */; };
-		F5AF71AA1D06772F005A1DB6 /* SearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AF71A81D06772F005A1DB6 /* SearchTableViewCell.m */; };
-		F5AF71AB1D06772F005A1DB6 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5AF71A91D06772F005A1DB6 /* SearchTableViewCell.xib */; };
 		F5B2A79D1D0D499600479C1F /* SubLBXScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B2A79C1D0D499600479C1F /* SubLBXScanViewController.m */; };
 		F5B2A7A11D0D4D2900479C1F /* ScanResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B2A79F1D0D4D2900479C1F /* ScanResultViewController.m */; };
 		F5B2A7A21D0D4D2900479C1F /* ScanResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5B2A7A01D0D4D2900479C1F /* ScanResultViewController.xib */; };
 		F5B2A7A41D0D4D8000479C1F /* CodeScan.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F5B2A7A31D0D4D8000479C1F /* CodeScan.bundle */; };
 		F5B2A7A71D0D4EBF00479C1F /* LBXScanVideoZoomView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B2A7A61D0D4EBF00479C1F /* LBXScanVideoZoomView.m */; };
+		F5B2A7B71D0D67EB00479C1F /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B2A7B11D0D67EB00479C1F /* SearchViewController.m */; };
+		F5B2A7B81D0D67EB00479C1F /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5B2A7B21D0D67EB00479C1F /* SearchViewController.xib */; };
+		F5B2A7B91D0D67EB00479C1F /* SearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B2A7B51D0D67EB00479C1F /* SearchTableViewCell.m */; };
+		F5B2A7BA1D0D67EB00479C1F /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5B2A7B61D0D67EB00479C1F /* SearchTableViewCell.xib */; };
 		F5B879971D06D61C000798E0 /* ShoppingCartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B879951D06D61C000798E0 /* ShoppingCartTableViewCell.m */; };
 		F5B879981D06D61C000798E0 /* ShoppingCartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5B879961D06D61C000798E0 /* ShoppingCartTableViewCell.xib */; };
 		F5B8799C1D06D68E000798E0 /* ShoppingButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B8799B1D06D68E000798E0 /* ShoppingButtonView.m */; };
@@ -145,12 +145,6 @@
 		F5935E511D0176CD008622D4 /* PersonalHeadCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalHeadCollectionReusableView.xib; sourceTree = "<group>"; };
 		F5935E551D028B0D008622D4 /* NetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWork.h; sourceTree = "<group>"; };
 		F5935E561D028B0D008622D4 /* NetWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWork.m; sourceTree = "<group>"; };
-		F5AF71A11D06770F005A1DB6 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
-		F5AF71A21D06770F005A1DB6 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
-		F5AF71A31D06770F005A1DB6 /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
-		F5AF71A71D06772F005A1DB6 /* SearchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTableViewCell.h; sourceTree = "<group>"; };
-		F5AF71A81D06772F005A1DB6 /* SearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewCell.m; sourceTree = "<group>"; };
-		F5AF71A91D06772F005A1DB6 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		F5B2A79B1D0D499600479C1F /* SubLBXScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubLBXScanViewController.h; sourceTree = "<group>"; };
 		F5B2A79C1D0D499600479C1F /* SubLBXScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubLBXScanViewController.m; sourceTree = "<group>"; };
 		F5B2A79E1D0D4D2900479C1F /* ScanResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanResultViewController.h; sourceTree = "<group>"; };
@@ -159,6 +153,12 @@
 		F5B2A7A31D0D4D8000479C1F /* CodeScan.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CodeScan.bundle; sourceTree = "<group>"; };
 		F5B2A7A51D0D4EBF00479C1F /* LBXScanVideoZoomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBXScanVideoZoomView.h; sourceTree = "<group>"; };
 		F5B2A7A61D0D4EBF00479C1F /* LBXScanVideoZoomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBXScanVideoZoomView.m; sourceTree = "<group>"; };
+		F5B2A7B01D0D67EB00479C1F /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		F5B2A7B11D0D67EB00479C1F /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		F5B2A7B21D0D67EB00479C1F /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		F5B2A7B41D0D67EB00479C1F /* SearchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTableViewCell.h; sourceTree = "<group>"; };
+		F5B2A7B51D0D67EB00479C1F /* SearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewCell.m; sourceTree = "<group>"; };
+		F5B2A7B61D0D67EB00479C1F /* SearchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		F5B879941D06D61C000798E0 /* ShoppingCartTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingCartTableViewCell.h; sourceTree = "<group>"; };
 		F5B879951D06D61C000798E0 /* ShoppingCartTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCartTableViewCell.m; sourceTree = "<group>"; };
 		F5B879961D06D61C000798E0 /* ShoppingCartTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShoppingCartTableViewCell.xib; sourceTree = "<group>"; };
@@ -665,35 +665,6 @@
 			path = NetWork;
 			sourceTree = "<group>";
 		};
-		F5AF719A1D0669FD005A1DB6 /* SearchViewController */ = {
-			isa = PBXGroup;
-			children = (
-				F5AF71A01D06770F005A1DB6 /* SearchVC */,
-				F5AF71A41D06770F005A1DB6 /* SearchView */,
-			);
-			path = SearchViewController;
-			sourceTree = "<group>";
-		};
-		F5AF71A01D06770F005A1DB6 /* SearchVC */ = {
-			isa = PBXGroup;
-			children = (
-				F5AF71A11D06770F005A1DB6 /* SearchViewController.h */,
-				F5AF71A21D06770F005A1DB6 /* SearchViewController.m */,
-				F5AF71A31D06770F005A1DB6 /* SearchViewController.xib */,
-			);
-			path = SearchVC;
-			sourceTree = "<group>";
-		};
-		F5AF71A41D06770F005A1DB6 /* SearchView */ = {
-			isa = PBXGroup;
-			children = (
-				F5AF71A71D06772F005A1DB6 /* SearchTableViewCell.h */,
-				F5AF71A81D06772F005A1DB6 /* SearchTableViewCell.m */,
-				F5AF71A91D06772F005A1DB6 /* SearchTableViewCell.xib */,
-			);
-			path = SearchView;
-			sourceTree = "<group>";
-		};
 		F5B2A7941D0D475C00479C1F /* LBXScan */ = {
 			isa = PBXGroup;
 			children = (
@@ -707,6 +678,35 @@
 				F5B2A7A31D0D4D8000479C1F /* CodeScan.bundle */,
 			);
 			path = LBXScan;
+			sourceTree = "<group>";
+		};
+		F5B2A7AE1D0D67EB00479C1F /* SearchViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F5B2A7AF1D0D67EB00479C1F /* SearchVC */,
+				F5B2A7B31D0D67EB00479C1F /* SearchView */,
+			);
+			path = SearchViewController;
+			sourceTree = "<group>";
+		};
+		F5B2A7AF1D0D67EB00479C1F /* SearchVC */ = {
+			isa = PBXGroup;
+			children = (
+				F5B2A7B01D0D67EB00479C1F /* SearchViewController.h */,
+				F5B2A7B11D0D67EB00479C1F /* SearchViewController.m */,
+				F5B2A7B21D0D67EB00479C1F /* SearchViewController.xib */,
+			);
+			path = SearchVC;
+			sourceTree = "<group>";
+		};
+		F5B2A7B31D0D67EB00479C1F /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				F5B2A7B41D0D67EB00479C1F /* SearchTableViewCell.h */,
+				F5B2A7B51D0D67EB00479C1F /* SearchTableViewCell.m */,
+				F5B2A7B61D0D67EB00479C1F /* SearchTableViewCell.xib */,
+			);
+			path = SearchView;
 			sourceTree = "<group>";
 		};
 		F5B879931D06D61C000798E0 /* ShoppingCartTableViewCell */ = {
@@ -954,6 +954,7 @@
 		F5E699B01D055B03007F0298 /* PublicView */ = {
 			isa = PBXGroup;
 			children = (
+				F5B2A7AE1D0D67EB00479C1F /* SearchViewController */,
 				F5B879AC1D0807D4000798E0 /* ButtonView */,
 			);
 			path = PublicView;
@@ -1022,7 +1023,6 @@
 		F5FA48021D03F64D0083D5FE /* FoundView */ = {
 			isa = PBXGroup;
 			children = (
-				F5AF719A1D0669FD005A1DB6 /* SearchViewController */,
 				F5FA480B1D03F6A30083D5FE /* FoundCollecTionViewCell */,
 				F5FA480C1D03F6A30083D5FE /* FoundTableViewCell */,
 			);
@@ -1151,6 +1151,7 @@
 				F5B2A7A21D0D4D2900479C1F /* ScanResultViewController.xib in Resources */,
 				F5935E4E1D0172C9008622D4 /* PersonalCollectionViewCell.xib in Resources */,
 				F5935DE41D011F2D008622D4 /* ShoppingCart.storyboard in Resources */,
+				F5B2A7B81D0D67EB00479C1F /* SearchViewController.xib in Resources */,
 				F5FA47F31D03E01D0083D5FE /* ClassfiactionHeadTypeImageCollectionReusableView.xib in Resources */,
 				F5FA47EF1D03E01D0083D5FE /* ClassficationDetailCollectionViewCell.xib in Resources */,
 				F5B879B11D080802000798E0 /* ButtonView.xib in Resources */,
@@ -1168,10 +1169,9 @@
 				F5B2A7A41D0D4D8000479C1F /* CodeScan.bundle in Resources */,
 				F5935E2E1D015206008622D4 /* Classification.storyboard in Resources */,
 				F5935E2B1D0151E8008622D4 /* Found.storyboard in Resources */,
-				F5AF71AB1D06772F005A1DB6 /* SearchTableViewCell.xib in Resources */,
-				F5AF71A61D06770F005A1DB6 /* SearchViewController.xib in Resources */,
 				F5935DD81D011EC0008622D4 /* Home.storyboard in Resources */,
 				F5E699A31D054F77007F0298 /* BaseView.xib in Resources */,
+				F5B2A7BA1D0D67EB00479C1F /* SearchTableViewCell.xib in Resources */,
 				F5935DE11D011F0B008622D4 /* Personal.storyboard in Resources */,
 				F5E0709A1D02DED5006D467A /* HomeTableViewCell.xib in Resources */,
 			);
@@ -1244,6 +1244,7 @@
 				F5935E341D015F06008622D4 /* UIImagePickerController+PublishMethods.m in Sources */,
 				F5935DCA1D011B39008622D4 /* BaseViewController.m in Sources */,
 				F5935DCD1D011B50008622D4 /* BaseView.m in Sources */,
+				F5B2A7B91D0D67EB00479C1F /* SearchTableViewCell.m in Sources */,
 				F5935E411D0165AE008622D4 /* AppDelegate.m in Sources */,
 				F5B879AF1D0807E7000798E0 /* ButtonView.m in Sources */,
 				F5935E1A1D0136B5008622D4 /* PersonalViewController.m in Sources */,
@@ -1263,13 +1264,12 @@
 				F5935E4D1D0172C9008622D4 /* PersonalCollectionViewCell.m in Sources */,
 				F5935E521D0176CD008622D4 /* PersonalHeadCollectionReusableView.m in Sources */,
 				F5B8799C1D06D68E000798E0 /* ShoppingButtonView.m in Sources */,
-				F5AF71A51D06770F005A1DB6 /* SearchViewController.m in Sources */,
 				F5E699AA1D055AB8007F0298 /* ShopPingCart.m in Sources */,
 				F5DB3D5B1D02B633001A64D0 /* ClassificationViewController.m in Sources */,
-				F5AF71AA1D06772F005A1DB6 /* SearchTableViewCell.m in Sources */,
 				F5935E071D013005008622D4 /* HUDManager.m in Sources */,
 				F5DB3D4F1D02B23A001A64D0 /* RegisterViewController.m in Sources */,
 				F5DB3D4B1D02B0CC001A64D0 /* LoginViewController.m in Sources */,
+				F5B2A7B71D0D67EB00479C1F /* SearchViewController.m in Sources */,
 				F5935E3A1D016371008622D4 /* NSString+Calculate.m in Sources */,
 				F5E070991D02DED5006D467A /* HomeTableViewCell.m in Sources */,
 				F5FA48101D03F6A30083D5FE /* FoundTableViewCell.m in Sources */,

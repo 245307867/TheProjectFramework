@@ -8,7 +8,11 @@
 
 #import "RegisterViewController.h"
 
-@interface RegisterViewController ()
+@interface RegisterViewController ()<UITextFieldDelegate>
+/** 电话号码输入 */
+@property (weak, nonatomic) IBOutlet UITextField *phoneNumberTextfield;
+/** 下一步 */
+@property (weak, nonatomic) IBOutlet UIButton *nextStepButton;
 
 @end
 
@@ -16,7 +20,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.phoneNumberTextfield.delegate = self;
+    
     // Do any additional setup after loading the view.
+}
+- (IBAction)nextStepButton:(UIButton *)sender {
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,14 +33,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+#pragma mark --UITextFieldDelegate
 
 @end
