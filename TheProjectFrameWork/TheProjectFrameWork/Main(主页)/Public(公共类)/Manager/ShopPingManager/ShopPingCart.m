@@ -77,11 +77,9 @@ static ShopPingCart * shoppingcat = nil;
     for (ShoppingModel * checkmodel in shoppingcat.shoppingArray) {
         totalNumber+=checkmodel.goodsNumber;
        }
-    UITabBarController * tabController = (UITabBarController*)kRootViewController;
-    UIViewController * requiredViewController = [tabController.viewControllers objectAtIndex:3];
-    UITabBarItem * item = requiredViewController.tabBarItem;
     NSString * badgeValue = [NSString stringWithFormat:@"%ld",totalNumber];
-    [item setBadgeValue:badgeValue];
+    UITabBarController * tabController = (UITabBarController*)kRootViewController;
+    [tabController.tabBar showBadgeOnItemIndex:3 withBadgeValue:badgeValue];
     return totalNumber;
 }
 -(NSString *)allGoodPrices{

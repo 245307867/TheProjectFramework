@@ -10,13 +10,34 @@
 #define TabbarItemNums 5.0    //tabbar的数量 如果是5个设置为5.0
 
 @implementation UITabBar (badge)
+- (void)showBadgeOnItemIndex:(int)index withBadgeValue:(NSString*)badgevaluse{
+    [self removeBadgeOnItemIndex:index];
+    UILabel * label = [[UILabel alloc] init];
+    CGRect tabFrame = self.frame;
+    //确定小红点的位置
+    float percentX = (index +0.6) / TabbarItemNums;
+    CGFloat x = ceilf(percentX * tabFrame.size.width);
+    CGFloat y = ceilf(0.1 * tabFrame.size.height);
+    label.layer.cornerRadius = 5;//圆形
+    label.layer.masksToBounds = YES;
+    label.frame = CGRectMake(x+5, y, 20, 15);//圆形大小为10
+    label.tag = 888+index;
+    label.font = [UIFont systemFontOfSize:14];
+    label.text = badgevaluse;
+    label.textAlignment = NSTextAlignmentCenter;
+    label.backgroundColor = [UIColor redColor];
+    label.textColor = [UIColor whiteColor];
+    [self addSubview:label];
+}//显示小红点
+
 - (void)showBadgeOnItemIndex:(int)index{
     [self removeBadgeOnItemIndex:index];
     //新建小红点
-    UIView *badgeView = [[UIView alloc]init];
+    UILabel *badgeView = [[UILabel alloc]init];
     badgeView.tag = 888 + index;
     badgeView.layer.cornerRadius = 5;//圆形
-    badgeView.backgroundColor = [UIColor redColor];//颜色：红色
+    badgeView.layer.masksToBounds = YES;
+    badgeView.backgroundColor = [UIColor colorWithRed:1 green:0 blue:0 alpha:0.7];//颜色：红色
     CGRect tabFrame = self.frame;
     //确定小红点的位置
     float percentX = (index +0.6) / TabbarItemNums;

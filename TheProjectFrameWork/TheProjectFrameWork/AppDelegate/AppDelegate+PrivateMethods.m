@@ -8,6 +8,11 @@
 
 #import "AppDelegate+PrivateMethods.h"
 #import "ShopPingCart.h"
+
+@interface AppDelegate ()<UITabBarControllerDelegate>
+
+@end
+
 @implementation AppDelegate (PrivateMethods)
 -(void)ProjectSetRootViewController{
     self.window = [[UIWindow alloc] initWithFrame:kScreenFreameBound];
@@ -39,7 +44,6 @@
     UIStoryboard * shoppingCartStoryBoard = [UIStoryboard storyboardWithName:@"ShoppingCart" bundle:nil];
     UINavigationController *shoppingCartNaV = [shoppingCartStoryBoard instantiateInitialViewController];
     shoppingCartNaV.tabBarItem.title = @"购物车";
-    shoppingCartNaV.tabBarItem.badgeValue = [NSString stringWithFormat:@"%ld",[[ShopPingCart ShareShopping] allGoodsNumber]];
     shoppingCartNaV.tabBarItem.image = [UIImage imageNamed:@"tabBar_cart_normal"];
     shoppingCartNaV.tabBarItem.selectedImage = [UIImage imageNamed:@"tabBar_cart_press"];
 
@@ -52,11 +56,20 @@
 
     // 设置tabBarController
     mianTabBar.viewControllers = @[homeNaV,classificationNaV,foundNaV,shoppingCartNaV,personalNaV];
-    [mianTabBar.tabBarController.tabBar showBadgeOnItemIndex:1];
-
+    [mianTabBar.tabBar showBadgeOnItemIndex:3 withBadgeValue:[NSString stringWithFormat:@"%ld",[[ShopPingCart ShareShopping] allGoodsNumber]]];
+    [mianTabBar.tabBar showBadgeOnItemIndex:2];
+    mianTabBar.delegate = self;
     self.window.rootViewController = mianTabBar;
+
     [self.window makeKeyAndVisible];
     
+}
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+{
+    if (tabBarController.selectedIndex!=3) {
+        [tabBarController.tabBar hideBadgeOnItemIndex:tabBarController.selectedIndex];
+    }
+
 }
 
 @end
