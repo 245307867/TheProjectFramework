@@ -167,7 +167,7 @@ static NSString * cellIdentifier = @"HomeTableViewCell";
 #pragma mark --UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    if(self.homeTableView.contentOffset.y>200) {
+    if(self.homeTableView.contentOffset.y>KNavigationbarHiddenHeight) {
         [self setTypeNavigationBar];
     }
     else

@@ -15,8 +15,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="343" height="99.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gGh-Pw-sS1">
-                        <rect key="frame" x="8" y="8" width="304" height="27.5"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gGh-Pw-sS1">
+                        <rect key="frame" x="8" y="8" width="327" height="83.5"/>
                     </imageView>
                 </subviews>
                 <constraints>
