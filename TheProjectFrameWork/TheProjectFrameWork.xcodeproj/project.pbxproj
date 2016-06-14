@@ -17,6 +17,8 @@
 		F55555EF1D0F96DB009D5527 /* FoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F55555EE1D0F96DB009D5527 /* FoundViewController.m */; };
 		F55555F31D0F9707009D5527 /* ShoppingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F55555F21D0F9707009D5527 /* ShoppingViewController.m */; };
 		F55555F71D0F9BBC009D5527 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F55555F61D0F9BBC009D5527 /* HomeViewController.m */; };
+		F55555FB1D0FA3F3009D5527 /* FoundView.m in Sources */ = {isa = PBXBuildFile; fileRef = F55555FA1D0FA3F3009D5527 /* FoundView.m */; };
+		F55555FD1D0FA400009D5527 /* FoundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F55555FC1D0FA400009D5527 /* FoundView.xib */; };
 		F5737D3A1D02EBC10004168F /* HometableHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5737D391D02EBC10004168F /* HometableHeadView.xib */; };
 		F5935DCA1D011B39008622D4 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5935DC81D011B39008622D4 /* BaseViewController.m */; };
 		F5935DCD1D011B50008622D4 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5935DCC1D011B50008622D4 /* BaseView.m */; };
@@ -115,6 +117,9 @@
 		F55555F21D0F9707009D5527 /* ShoppingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingViewController.m; sourceTree = "<group>"; };
 		F55555F51D0F9BBC009D5527 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		F55555F61D0F9BBC009D5527 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		F55555F91D0FA3F3009D5527 /* FoundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoundView.h; sourceTree = "<group>"; };
+		F55555FA1D0FA3F3009D5527 /* FoundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoundView.m; sourceTree = "<group>"; };
+		F55555FC1D0FA400009D5527 /* FoundView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoundView.xib; sourceTree = "<group>"; };
 		F5737D391D02EBC10004168F /* HometableHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HometableHeadView.xib; sourceTree = "<group>"; };
 		F5935DC71D011B39008622D4 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		F5935DC81D011B39008622D4 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
@@ -322,6 +327,16 @@
 				F55555F61D0F9BBC009D5527 /* HomeViewController.m */,
 			);
 			path = HomeViewController;
+			sourceTree = "<group>";
+		};
+		F55555F81D0FA3E3009D5527 /* FoundView */ = {
+			isa = PBXGroup;
+			children = (
+				F55555F91D0FA3F3009D5527 /* FoundView.h */,
+				F55555FA1D0FA3F3009D5527 /* FoundView.m */,
+				F55555FC1D0FA400009D5527 /* FoundView.xib */,
+			);
+			path = FoundView;
 			sourceTree = "<group>";
 		};
 		F5935DA21D01187E008622D4 /* Base.lproj */ = {
@@ -1073,6 +1088,7 @@
 		F5FA48021D03F64D0083D5FE /* FoundView */ = {
 			isa = PBXGroup;
 			children = (
+				F55555F81D0FA3E3009D5527 /* FoundView */,
 				F5FA480B1D03F6A30083D5FE /* FoundCollecTionViewCell */,
 				F5FA480C1D03F6A30083D5FE /* FoundTableViewCell */,
 			);
@@ -1215,6 +1231,7 @@
 				F5FA48161D03F7680083D5FE /* FoundCollectionViewCell.xib in Resources */,
 				F5CAD1621D0112BF00E7E482 /* Assets.xcassets in Resources */,
 				F5B879A81D07C3EE000798E0 /* GoodsDetialViewController.xib in Resources */,
+				F55555FD1D0FA400009D5527 /* FoundView.xib in Resources */,
 				F55555E51D0F9671009D5527 /* PersonalCollectionViewCell.xib in Resources */,
 				F5B2A7A41D0D4D8000479C1F /* CodeScan.bundle in Resources */,
 				F5935E2E1D015206008622D4 /* Classification.storyboard in Resources */,
@@ -1299,6 +1316,7 @@
 				F5B879AF1D0807E7000798E0 /* ButtonView.m in Sources */,
 				F5FA47EE1D03E01D0083D5FE /* ClassficationDetailCollectionViewCell.m in Sources */,
 				F5935E571D028B0D008622D4 /* NetWork.m in Sources */,
+				F55555FB1D0FA3F3009D5527 /* FoundView.m in Sources */,
 				F55555EB1D0F9697009D5527 /* PersonalViewController.m in Sources */,
 				F5244EA01D0CEF0A0028B427 /* UITabBar+badge.m in Sources */,
 				F5B2A7A71D0D4EBF00479C1F /* LBXScanVideoZoomView.m in Sources */,

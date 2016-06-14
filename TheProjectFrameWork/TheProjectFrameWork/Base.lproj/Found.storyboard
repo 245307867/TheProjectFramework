@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Found View Controller-->
@@ -55,43 +54,18 @@
                                     <constraint firstAttribute="height" constant="60" id="gsF-Hj-7D2"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JeB-jx-dQc">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BhZ-Ah-B7N">
                                 <rect key="frame" x="0.0" y="124" width="600" height="476"/>
-                                <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0Hy-ib-cPX">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="476"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <connections>
-                                            <outlet property="dataSource" destination="Vs5-Kc-hVj" id="3PI-Z5-5MK"/>
-                                            <outlet property="delegate" destination="Vs5-Kc-hVj" id="FfQ-gd-ror"/>
-                                        </connections>
-                                    </tableView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="0Hy-ib-cPX" firstAttribute="centerY" secondItem="JeB-jx-dQc" secondAttribute="centerY" id="1KL-YB-c2K"/>
-                                    <constraint firstItem="0Hy-ib-cPX" firstAttribute="centerX" secondItem="JeB-jx-dQc" secondAttribute="centerX" id="4Mf-Eb-2YZ"/>
-                                    <constraint firstItem="0Hy-ib-cPX" firstAttribute="leading" secondItem="JeB-jx-dQc" secondAttribute="leading" id="68y-dU-BkI"/>
-                                    <constraint firstItem="0Hy-ib-cPX" firstAttribute="top" secondItem="JeB-jx-dQc" secondAttribute="top" id="cre-14-RGy"/>
-                                    <constraint firstItem="0Hy-ib-cPX" firstAttribute="top" secondItem="JeB-jx-dQc" secondAttribute="topMargin" id="e3Y-nh-61D"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="0Hy-ib-cPX" secondAttribute="trailing" id="kRH-Dn-qEw"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="e3Y-nh-61D"/>
-                                        <exclude reference="kRH-Dn-qEw"/>
-                                    </mask>
-                                </variation>
-                            </view>
+                            </scrollView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="JeB-jx-dQc" firstAttribute="centerX" secondItem="jcW-qu-nfA" secondAttribute="centerX" id="1Ug-tb-MKR"/>
                             <constraint firstItem="5ZN-Ot-OSv" firstAttribute="top" secondItem="K38-bn-lH7" secondAttribute="bottom" id="2Nf-yf-LuU"/>
-                            <constraint firstItem="JeB-jx-dQc" firstAttribute="top" secondItem="5ZN-Ot-OSv" secondAttribute="bottom" id="8ii-Mm-HEE"/>
-                            <constraint firstItem="FbR-yZ-Z0L" firstAttribute="top" secondItem="JeB-jx-dQc" secondAttribute="bottom" id="Abn-aP-VLv"/>
-                            <constraint firstItem="JeB-jx-dQc" firstAttribute="leading" secondItem="jcW-qu-nfA" secondAttribute="leading" id="EYK-Ut-9pQ"/>
+                            <constraint firstItem="BhZ-Ah-B7N" firstAttribute="top" secondItem="5ZN-Ot-OSv" secondAttribute="bottom" id="CEG-Wh-B9I"/>
+                            <constraint firstItem="FbR-yZ-Z0L" firstAttribute="top" secondItem="BhZ-Ah-B7N" secondAttribute="bottom" id="JvW-ja-oir"/>
                             <constraint firstAttribute="trailing" secondItem="5ZN-Ot-OSv" secondAttribute="trailing" id="R8e-Ty-pIP"/>
+                            <constraint firstAttribute="trailing" secondItem="BhZ-Ah-B7N" secondAttribute="trailing" id="dH2-QC-zcG"/>
                             <constraint firstItem="5ZN-Ot-OSv" firstAttribute="leading" secondItem="jcW-qu-nfA" secondAttribute="leading" id="saW-Mr-blb"/>
+                            <constraint firstItem="BhZ-Ah-B7N" firstAttribute="leading" secondItem="jcW-qu-nfA" secondAttribute="leading" id="use-WK-ffX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lIM-0k-mSF">
@@ -115,7 +89,7 @@
                         </view>
                     </navigationItem>
                     <connections>
-                        <outlet property="foundDetailTableView" destination="0Hy-ib-cPX" id="9xe-TD-tW1"/>
+                        <outlet property="foundDetialscrollView" destination="BhZ-Ah-B7N" id="u9h-qI-H0N"/>
                         <outlet property="foundheadCollectionView" destination="Tp8-Bs-oif" id="buz-lp-NUp"/>
                         <outlet property="foundheadView" destination="5ZN-Ot-OSv" id="wfe-vX-9eL"/>
                         <outlet property="searchBar" destination="wtI-lV-isJ" id="fXK-Ka-dc6"/>
