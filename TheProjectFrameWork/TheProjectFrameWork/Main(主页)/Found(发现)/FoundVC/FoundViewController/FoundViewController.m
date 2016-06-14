@@ -23,7 +23,7 @@ static NSString * itemIdentifier = @"FoundCollectionViewCell";
 /** headView 高度 */
 //@property (weak, nonatomic) IBOutlet NSLayoutConstraint *headViewHeight;
 /** 顶部高度 */
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topToSuperView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topViewHegint;
 /** 发现头部视图 */
 @property (weak, nonatomic) IBOutlet UIView *foundheadView;
 /** 发现头部collectionView */
@@ -39,6 +39,7 @@ static NSString * itemIdentifier = @"FoundCollectionViewCell";
 
 @implementation FoundViewController
 {
+    NSMutableArray * foundViewArray;
     BOOL isCollectionViewScroll;
 }
 - (void)viewDidLoad {
@@ -81,15 +82,21 @@ static NSString * itemIdentifier = @"FoundCollectionViewCell";
     self.testDataArray = [NSMutableArray array];
     [self.foundheadCollectionView registerNib:[UINib nibWithNibName:itemIdentifier bundle:nil] forCellWithReuseIdentifier:itemIdentifier];
     NSArray * array =@[@"wait_money_icon",@"wait_product_icon",@"wait_comment_icon",@"wait_after_icon",@"my_privilege_icon",@"wait_money_icon",@"wait_product_icon",@"wait_comment_icon",@"wait_after_icon",@"my_privilege_icon"];
+    foundViewArray = [NSMutableArray array];
     for (NSInteger m = 0; m<array.count; m++) {
       FoundView *  foundView= [FoundView createFoundView];
         foundView.tag = 1000+m;
         foundView.delegate = self;
         [foundView loadDataSourceWithArray:array];
         foundView.frame = CGRectMake(m*self.view.frame.size.width, 0, self.foundDetialscrollView.frame.size.width, self.foundDetialscrollView.frame.size.height);
+        [foundViewArray addObject:foundView];
         [self.foundDetialscrollView addSubview:foundView];
     }
     self.foundDetialscrollView.scrollEnabled = YES;
+    NSIndexPath *indexpath =[NSIndexPath indexPathForRow:0 inSection:0];
+    [self selectItemAtIndexPath:indexpath];
+  
+
 //    self.foundheadCollectionView.backgroundColor = [UIColor blackColor];
     //设置在拖拽的时候是否锁定其在水平或者垂直的方向
     self.foundDetialscrollView.showsHorizontalScrollIndicator = YES;
@@ -97,6 +104,13 @@ static NSString * itemIdentifier = @"FoundCollectionViewCell";
     self.foundDetialscrollView.pagingEnabled = YES;
     self.foundDetialscrollView.delegate = self;
     [self.testDataArray addObjectsFromArray:array];
+}
+-(void)selectItemAtIndexPath:(NSIndexPath*)indexPath{
+    NSArray * array =@[@"wait_money_icon",@"wait_product_icon",@"wait_comment_icon",@"wait_after_icon",@"my_privilege_icon",@"wait_money_icon",@"wait_product_icon",@"wait_comment_icon",@"wait_after_icon",@"my_privilege_icon"];
+    FoundView *  foundView =(FoundView*)[self.view viewWithTag:indexPath.row+1000];
+    [foundView loadDataSourceWithArray:array];
+    [self.foundheadCollectionView selectItemAtIndexPath:indexPath animated:YES scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
+    
 }
 #pragma mark --UICollectionViewDelegate &&UICollectionViewDataSource
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
@@ -119,7 +133,7 @@ static NSString * itemIdentifier = @"FoundCollectionViewCell";
 }
 #pragma mark --UICollectionViewDelegateFlowLayout
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    return CGSizeMake(collectionView.frame.size.width/5, collectionView.frame.size.height);
+    return CGSizeMake(self.view.frame.size.width/5, collectionView.frame.size.height);
 }
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     isCollectionViewScroll = YES;
@@ -162,11 +176,36 @@ static NSString * itemIdentifier = @"FoundCollectionViewCell";
 }
 
 #pragma mark --FoundViewDelegate
--(void)FoundViewtabelViewScrolled:(FoundView *)foundview{
-    NSLog(@"%@--",foundview);
+
+-(void)FoundViewtabelViewScrolled:(FoundView *)foundview withScrollerView:(UIScrollView *)scrollerView{
+    if(scrollerView.contentOffset.y<250){
+        [UIView animateWithDuration:0.5 animations:^{
+            self.topViewHegint.constant =0;
+            [self loadViewIfNeeded];
+        } completion:^(BOOL finished) {
+        }];
+
+    }
+    else{
+        [UIView animateWithDuration:0.5 animations:^{
+            self.topViewHegint.constant =-60;
+            [self loadViewIfNeeded];
+        } completion:^(BOOL finished) {
+        }];
+    }
+
+    
 }
 -(void)FoundViewtabelViewSelected:(FoundView *)foundview WithIndexPath:(NSIndexPath *)indexpath{
-    NSLog(@"foundView %@  ===%@",foundview,indexpath);
+        GoodsDetialViewController * detialView = [[GoodsDetialViewController alloc] init];
+        ShoppingModel * model = [[ShoppingModel alloc] init];
+        model.goodsImageUrl =[NSString stringWithFormat:@"MENU_0_0_%ld",indexpath.row];
+        model.goodsPrices = KArc4andomPrices;
+        model.goodsId = [NSString stringWithFormat:@"MENU_0_0_%ld",indexpath.row];
+        model.goodsDescription = @"这是什么什么商品";
+        detialView.goodsmodel = model;
+        self.tabBarController.tabBar.hidden=YES;
+        [self.navigationController pushViewController:detialView animated:YES];
 }
 #pragma mark--publish
 - (UIImage *)imageWithColor:(UIColor *)color
@@ -174,10 +213,8 @@ static NSString * itemIdentifier = @"FoundCollectionViewCell";
     CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
     UIGraphicsBeginImageContext(rect.size);
     CGContextRef context = UIGraphicsGetCurrentContext();
-    
     CGContextSetFillColorWithColor(context, [color CGColor]);
     CGContextFillRect(context, rect);
-    
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return image;

@@ -31,6 +31,9 @@ static NSString * cellIdentifier = @"FoundTableViewCell";
 }
 -(void)loadDataSourceWithArray:(NSArray*)array
 {
+    if (array.count) {
+        [self.tableviewDataArray removeAllObjects];
+    }
     [self.tableviewDataArray addObjectsFromArray:array];
     [self.foundTableView reloadData];
 }
@@ -44,6 +47,7 @@ static NSString * cellIdentifier = @"FoundTableViewCell";
     if (!cell) {
         cell = [[[NSBundle mainBundle ]loadNibNamed:cellIdentifier owner:nil options:nil] firstObject];
     }
+    cell.selectionStyle =UITableViewCellSelectionStyleNone;
     cell.backgroundColor = KArc4andomColor;
     cell.foundCellImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"MENU_0_0_%ld",indexPath.row]];
     return cell;
@@ -53,21 +57,6 @@ static NSString * cellIdentifier = @"FoundTableViewCell";
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 100;
 }
-/*
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    GoodsDetialViewController * detialView = [[GoodsDetialViewController alloc] init];
-//    ShoppingModel * model = [[ShoppingModel alloc] init];
-//    model.goodsImageUrl =[NSString stringWithFormat:@"MENU_0_0_%ld",indexPath.row];
-//    model.goodsPrices = KArc4andomPrices;
-//    model.goodsId = [NSString stringWithFormat:@"MENU_0_0_%ld",indexPath.row];
-//    model.goodsDescription = @"这是什么什么商品";
-//    detialView.goodsmodel = model;
-//    self.tabBarController.tabBar.hidden=YES;
-//    [self.navigationController pushViewController:detialView animated:YES];
-    
-}
-*/
-
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if ([self.delegate respondsToSelector:@selector(FoundViewtabelViewSelected:WithIndexPath:)]) {
         [self.delegate FoundViewtabelViewSelected:self WithIndexPath:indexPath];
@@ -75,8 +64,8 @@ static NSString * cellIdentifier = @"FoundTableViewCell";
 }
 #pragma mark --UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    if ([self.delegate respondsToSelector:@selector(FoundViewtabelViewScrolled:)]) {
-        [self.delegate FoundViewtabelViewScrolled:self];
+        if ([self.delegate respondsToSelector:@selector(FoundViewtabelViewScrolled:withScrollerView:)]) {
+            [self.delegate FoundViewtabelViewScrolled:self withScrollerView:scrollView];
     }
 }
 /*

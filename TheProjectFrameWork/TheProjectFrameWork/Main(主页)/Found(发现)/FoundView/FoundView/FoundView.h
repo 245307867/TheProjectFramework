@@ -12,7 +12,7 @@
 
 -(void)FoundViewtabelViewSelected:(FoundView*)foundview WithIndexPath:(NSIndexPath*)indexpath;
 
--(void)FoundViewtabelViewScrolled:(FoundView*)foundview ;
+-(void)FoundViewtabelViewScrolled:(FoundView*)foundview  withScrollerView:(UIScrollView*)scrollerView ;
 
 @end
 
