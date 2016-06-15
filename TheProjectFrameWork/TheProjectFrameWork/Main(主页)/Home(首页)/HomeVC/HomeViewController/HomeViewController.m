@@ -92,7 +92,7 @@ static NSString * cellIdentifier = @"HomeTableViewCell";
     
     [self.navigationController.navigationBar lt_setBackgroundColor:[[UIColor whiteColor] colorWithAlphaComponent:0] showShowImage:nil];
 
-//    self.homeSearchBar.barTintColor = [UIColor clearColor];
+    self.homeSearchBar.barTintColor = [UIColor clearColor];
     UITextField * searchTextField = [[[self.homeSearchBar.subviews firstObject] subviews] lastObject];
     searchTextField.textColor = [UIColor whiteColor];
     [searchTextField setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
@@ -127,6 +127,8 @@ static NSString * cellIdentifier = @"HomeTableViewCell";
     self.navigationItem.rightBarButtonItem = rightitem;
     
     [self.navigationController.navigationBar lt_setBackgroundColor:[[UIColor whiteColor] colorWithAlphaComponent:1] showShowImage:YES];
+    self.homeSearchBar.barTintColor = [UIColor clearColor];
+    //修改searchBar 占位符 以及输入框颜色
     UITextField * searchTextField = [[[self.homeSearchBar.subviews firstObject] subviews] lastObject];
     searchTextField.textColor = [UIColor blackColor];
     [searchTextField setValue:[UIColor grayColor] forKeyPath:@"_placeholderLabel.textColor"];
@@ -190,17 +192,5 @@ static NSString * cellIdentifier = @"HomeTableViewCell";
     }
 }
 
-
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
