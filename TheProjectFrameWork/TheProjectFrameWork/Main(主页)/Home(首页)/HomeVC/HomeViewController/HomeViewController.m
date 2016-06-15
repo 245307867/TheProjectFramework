@@ -13,6 +13,7 @@
 static NSString * cellIdentifier = @"HomeTableViewCell";
 
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource,SDCycleScrollViewDelegate>
+@property (weak, nonatomic) IBOutlet UISearchBar *homeSearchBar;
 /** 首页表格 */
 @property(strong,nonatomic)UITableView * homeTableView;
 
@@ -90,6 +91,15 @@ static NSString * cellIdentifier = @"HomeTableViewCell";
     self.navigationItem.rightBarButtonItem = rightitem;
     
     [self.navigationController.navigationBar lt_setBackgroundColor:[[UIColor whiteColor] colorWithAlphaComponent:0] showShowImage:nil];
+
+//    self.homeSearchBar.barTintColor = [UIColor clearColor];
+    UITextField * searchTextField = [[[self.homeSearchBar.subviews firstObject] subviews] lastObject];
+    searchTextField.textColor = [UIColor whiteColor];
+    [searchTextField setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
+    self.homeSearchBar.backgroundImage = [UIImage new];
+      searchTextField.backgroundColor = [UIColor colorWithWhite:0.9 alpha:0.6];
+
+
 }
 /**
  *  设置NavigationBar样式
@@ -117,6 +127,10 @@ static NSString * cellIdentifier = @"HomeTableViewCell";
     self.navigationItem.rightBarButtonItem = rightitem;
     
     [self.navigationController.navigationBar lt_setBackgroundColor:[[UIColor whiteColor] colorWithAlphaComponent:1] showShowImage:YES];
+    UITextField * searchTextField = [[[self.homeSearchBar.subviews firstObject] subviews] lastObject];
+    searchTextField.textColor = [UIColor blackColor];
+    [searchTextField setValue:[UIColor grayColor] forKeyPath:@"_placeholderLabel.textColor"];
+    self.homeSearchBar.backgroundImage = [UIImage new];
 }
 
 #pragma mark --ImagePlayerViewDelegate

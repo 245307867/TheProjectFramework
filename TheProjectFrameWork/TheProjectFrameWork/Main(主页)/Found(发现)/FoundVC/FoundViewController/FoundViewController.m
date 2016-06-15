@@ -96,8 +96,6 @@ static NSString * itemIdentifier = @"FoundCollectionViewCell";
     NSIndexPath *indexpath =[NSIndexPath indexPathForRow:0 inSection:0];
     [self selectItemAtIndexPath:indexpath];
   
-
-//    self.foundheadCollectionView.backgroundColor = [UIColor blackColor];
     //设置在拖拽的时候是否锁定其在水平或者垂直的方向
     self.foundDetialscrollView.showsHorizontalScrollIndicator = YES;
     self.foundDetialscrollView.contentSize = CGSizeMake(self.view.frame.size.width*array.count, 0);

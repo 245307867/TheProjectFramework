@@ -17,7 +17,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </view>
-                    <navigationItem key="navigationItem" id="egd-s4-cJ5"/>
+                    <navigationItem key="navigationItem" id="egd-s4-cJ5">
+                        <nil key="title"/>
+                        <view key="titleView" contentMode="scaleToFill" id="Mxh-d5-9VZ">
+                            <rect key="frame" x="180" y="5.5" width="240" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <searchBar contentMode="redraw" searchBarStyle="prominent" placeholder="快来抢购吧虽然我不知道是啥" translatesAutoresizingMaskIntoConstraints="NO" id="Khk-eB-Hlt">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="33"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="Khk-eB-Hlt" firstAttribute="top" secondItem="Mxh-d5-9VZ" secondAttribute="top" id="115-Od-Tgt"/>
+                                <constraint firstItem="Khk-eB-Hlt" firstAttribute="leading" secondItem="Mxh-d5-9VZ" secondAttribute="leading" id="BkH-36-tmg"/>
+                                <constraint firstAttribute="bottom" secondItem="Khk-eB-Hlt" secondAttribute="bottom" id="J8R-nJ-U3J"/>
+                                <constraint firstAttribute="trailing" secondItem="Khk-eB-Hlt" secondAttribute="trailing" id="Jwl-yf-MtN"/>
+                            </constraints>
+                        </view>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="homeSearchBar" destination="Khk-eB-Hlt" id="DRH-rG-0fS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UcZ-qu-jni" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

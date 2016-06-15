@@ -76,6 +76,8 @@
                             <subviews>
                                 <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="海尔优惠券正在疯抢中" translatesAutoresizingMaskIntoConstraints="NO" id="wtI-lV-isJ">
                                     <rect key="frame" x="0.0" y="0.0" width="240" height="33"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <offsetWrapper key="searchFieldBackgroundPositionAdjustment" horizontal="0.0" vertical="0.0"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
                             </subviews>
