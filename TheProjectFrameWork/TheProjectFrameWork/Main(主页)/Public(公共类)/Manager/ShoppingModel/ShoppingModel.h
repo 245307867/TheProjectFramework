@@ -30,4 +30,6 @@
 /** 商品标示符 */
 @property(copy,atomic) NSString * goodsSuit;
 
+@property(assign,nonatomic) BOOL  goodspayment;
+
 @end

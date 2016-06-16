@@ -21,11 +21,13 @@ static NSString * cellIdentifier = @"ShoppingCartTableViewCell";
 @property (weak, nonatomic) IBOutlet UIButton *selectedAllButtn;
 /** 合计价格 */
 @property (weak, nonatomic) IBOutlet UILabel *totalPricesLabel;
-@property (weak, nonatomic) IBOutlet UIView *shoppingView;
+@property (weak, nonatomic) IBOutlet UIView * shoppingView;
 /** 总额 */
-@property (weak, nonatomic) IBOutlet UILabel *allPricesLabel;
+@property (weak, nonatomic) IBOutlet UILabel * allPricesLabel;
 /** 支付按钮 */
-@property (weak, nonatomic) IBOutlet UIButton *payForButton;
+@property (weak, nonatomic) IBOutlet UIButton * payForButton;
+/** 选择支付列表 */
+@property(strong,nonatomic) NSMutableArray * selectArray;
 
 @end
 
@@ -40,26 +42,40 @@ static NSString * cellIdentifier = @"ShoppingCartTableViewCell";
     [self loadDatasource];
 }
 -(void)loadDatasource{
-
-    self.dataArray = [NSMutableArray array];
+    self.dataArray   = [NSMutableArray array];
     NSArray * array = [[ShopPingCart ShareShopping] Shoppinglist];
     if (array.count) {
         self.shoppingView.alpha = 1;
-        [self.payForButton setTitle:[NSString stringWithFormat:@"去结算(%ld)",[[ShopPingCart ShareShopping] allGoodsNumber]] forState:UIControlStateNormal];
-        self.allPricesLabel.text = [NSString stringWithFormat:@"总额：￥%@",[[ShopPingCart ShareShopping] allGoodPrices]];
-        self.totalPricesLabel.text = [NSString stringWithFormat:@"合计：￥%@",[[ShopPingCart ShareShopping] allGoodPrices]];
+        [self reloadPayViewAndTableView];
     }
     else{
         self.shoppingView.alpha = 0;
-
     }
     [self.dataArray addObjectsFromArray:array];
     [self setAutomaticallyAdjustsScrollViewInsets:NO];
     [self.shoppingCartTableView reloadData];
 }
+-(void)reloadPayViewAndTableView{
+    [self.payForButton setTitle:[NSString stringWithFormat:@"去结算(%ld)",[[ShopPingCart ShareShopping] allGoodsPamentNumber]] forState:UIControlStateNormal];
+    self.allPricesLabel.text = [NSString stringWithFormat:@"总额：￥%@",[[ShopPingCart ShareShopping] allGoodPrices]];
+    self.totalPricesLabel.text = [NSString stringWithFormat:@"合计：￥%@",[[ShopPingCart ShareShopping] allGoodPrices]];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)selectAll:(UIButton *)sender {
+    sender.selected = !sender.selected;
+    if (sender.selected){
+        [[ShopPingCart ShareShopping] selectAllGoodsPament];
+    }
+    else{
+        [[ShopPingCart ShareShopping] cancelSelectAllGoodsPament];
+    }
+    [self.shoppingCartTableView reloadData];
+    [self.payForButton setTitle:[NSString stringWithFormat:@"去结算(%ld)",[[ShopPingCart ShareShopping] allGoodsPamentNumber]] forState:UIControlStateNormal];
+    self.allPricesLabel.text = [NSString stringWithFormat:@"总额：￥%@",[[ShopPingCart ShareShopping] allGoodPrices]];
+    self.totalPricesLabel.text = [NSString stringWithFormat:@"合计：￥%@",[[ShopPingCart ShareShopping] allGoodPrices]];
 }
 
 #pragma mark --UITableViewDelegate && UITableViewDataSource
@@ -101,7 +117,7 @@ static NSString * cellIdentifier = @"ShoppingCartTableViewCell";
         [[ShopPingCart ShareShopping] goodsRemoveFromeShoppingCartWithModel:model];
         [self loadDatasource];
         //title可自已定义
-    NSLog(@"点击删除");
+       NSLog(@"点击删除");
     }];
     //此处是iOS8.0以后苹果最新推出的api，UITableViewRowAction，Style是划出的标签颜色等状态的定义，这里也可自行定义
     UITableViewRowAction * editRowAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"关注" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
@@ -115,11 +131,13 @@ static NSString * cellIdentifier = @"ShoppingCartTableViewCell";
 #pragma mark --ShoppingCartTableViewCellDelegate
 -(void)goodsNumberChangeedWith:(ShoppingModel*)goodsmodel withIndexPath:(NSIndexPath*)indexPath
 {
-    [self.payForButton setTitle:[NSString stringWithFormat:@"去结算(%ld)",[[ShopPingCart ShareShopping] allGoodsNumber]] forState:UIControlStateNormal];
-    self.allPricesLabel.text = [NSString stringWithFormat:@"总额：￥%@",[[ShopPingCart ShareShopping] allGoodPrices]];
-    self.totalPricesLabel.text = [NSString stringWithFormat:@"合计：￥%@",[[ShopPingCart ShareShopping] allGoodPrices]];
+    [self reloadPayViewAndTableView];
 }
+-(void)goodsModelSelected:(ShoppingModel *)goodsmodel withIndexPath:(NSIndexPath *)indexpath{
+    goodsmodel.goodspayment = !goodsmodel.goodspayment;
+    [self reloadPayViewAndTableView];
 
+}
 /*
 #pragma mark - Navigation
 

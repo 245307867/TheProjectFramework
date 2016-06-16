@@ -16,10 +16,11 @@
 
 @implementation ShopPingCart
 
-static ShopPingCart * shoppingcat = nil;
 
 +(ShopPingCart *)ShareShopping{
     static dispatch_once_t onceToken;
+    static ShopPingCart * shoppingcat = nil;
+
     dispatch_once(&onceToken, ^{
         // 解档
         NSData *data = [[NSMutableData alloc] initWithContentsOfFile:[self ShopPingCartPath]];
@@ -37,18 +38,17 @@ static ShopPingCart * shoppingcat = nil;
 }
 
 -(NSArray*)Shoppinglist{
-    return shoppingcat.shoppingArray;
+    NSArray * array = [[ShopPingCart ShareShopping].shoppingArray copy];
+    return array;
 }
 -(void)AddShoppingListwith:(ShoppingModel*)model{
-    
-
-    if (![shoppingcat ShoppingArrayIsContainsModelOrModelNumberAdd:model]){
+    if (![[ShopPingCart ShareShopping] ShoppingArrayIsContainsModelOrModelNumberAdd:model]){
         model.goodsNumber = 1;
-        [shoppingcat.shoppingArray addObject:model];
+        [[ShopPingCart ShareShopping].shoppingArray addObject:model];
     }
 }
 -(BOOL)ShoppingArrayIsContainsModelOrModelNumberAdd:(ShoppingModel*)model{
-    for (ShoppingModel * checkmodel in shoppingcat.shoppingArray) {
+    for (ShoppingModel * checkmodel in [ShopPingCart ShareShopping].shoppingArray) {
         if ([model.goodsId isEqualToString:checkmodel.goodsId]) {
             checkmodel.goodsNumber++;
             return YES;
@@ -58,24 +58,32 @@ static ShopPingCart * shoppingcat = nil;
 }
 
 -(BOOL)ShoppingArrayIsContainsModel:(ShoppingModel*)model{
-    for (ShoppingModel * checkmodel in shoppingcat.shoppingArray) {
+    for (ShoppingModel * checkmodel in [ShopPingCart ShareShopping].shoppingArray) {
         if ([model.goodsId isEqualToString:checkmodel.goodsId]) {
             return YES;
         }
     }
     return NO;
 }
+-(void)goodsRemoveFromeShoppingCartWithArray:(NSArray *)array{
+    [[ShopPingCart ShareShopping].shoppingArray removeObjectsInArray:array];
+}
 -(void)goodsRemoveFromeShoppingCartWithModel:(ShoppingModel*)model{
+    [[ShopPingCart ShareShopping].shoppingArray removeObject:model];
+    /*  
+      移除一个 model  从数组中 
     NSMutableArray * array =[shoppingcat.shoppingArray copy];
     for (ShoppingModel * checkmodel in array) {
         if ([model.goodsId isEqualToString:checkmodel.goodsId]) {
+            
             [shoppingcat.shoppingArray removeObject:checkmodel];
         }
     }
+     */
 }
 -(NSInteger)allGoodsNumber{
     NSInteger totalNumber = 0;
-    for (ShoppingModel * checkmodel in shoppingcat.shoppingArray) {
+    for (ShoppingModel * checkmodel in [ShopPingCart ShareShopping].shoppingArray) {
         totalNumber+=checkmodel.goodsNumber;
        }
     NSString * badgeValue = [NSString stringWithFormat:@"%ld",totalNumber];
@@ -83,10 +91,27 @@ static ShopPingCart * shoppingcat = nil;
     [tabController.tabBar showBadgeOnItemIndex:3 withBadgeValue:badgeValue];
     return totalNumber;
 }
+-(NSInteger)allGoodsPamentNumber{
+    NSInteger totalNumber = 0;
+    NSInteger pamentNumber = 0;
+
+    for (ShoppingModel * checkmodel in [ShopPingCart ShareShopping].shoppingArray) {
+        if (checkmodel.goodspayment) {
+            pamentNumber+=checkmodel.goodsNumber;
+        }
+        totalNumber+=checkmodel.goodsNumber;
+    }
+    NSString * badgeValue = [NSString stringWithFormat:@"%ld",totalNumber];
+    UITabBarController * tabController = (UITabBarController*)kRootViewController;
+    [tabController.tabBar showBadgeOnItemIndex:3 withBadgeValue:badgeValue];
+    return pamentNumber;
+}
 -(NSString *)allGoodPrices{
     CGFloat price  = 0;
-    for (ShoppingModel * checkmodel in shoppingcat.shoppingArray) {
+    for (ShoppingModel * checkmodel in [ShopPingCart ShareShopping].shoppingArray) {
+        if (checkmodel.goodspayment) {
         price+=(checkmodel.goodsNumber*[checkmodel.goodsPrices floatValue]);
+        }
     }
     if (price==0) {
         return @"";
@@ -94,7 +119,22 @@ static ShopPingCart * shoppingcat = nil;
     return [NSString stringWithFormat:@"%g",price];
 }
 
-
+-(BOOL)selectAllGoodsPament{
+    for (ShoppingModel * model in [ShopPingCart ShareShopping].shoppingArray) {
+        if (!model.goodspayment) {
+            model.goodspayment = YES;
+        }
+    }
+    return YES;
+}
+-(BOOL)cancelSelectAllGoodsPament{
+    for (ShoppingModel * model in [ShopPingCart ShareShopping].shoppingArray) {
+        if (model.goodspayment) {
+            model.goodspayment = NO;
+        }
+    }
+    return YES;
+}
 #pragma mark - NSCoding
 - (void)encodeWithCoder:(NSCoder *)Coder {
     

@@ -10,9 +10,11 @@
 #import "HomeTableViewCell.h"
 #import "HometableHeadView.h"
 #import "SDCycleScrollView.h"
+#import "NetWork.h"
+#import "SearchViewController.h"
 static NSString * cellIdentifier = @"HomeTableViewCell";
 
-@interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource,SDCycleScrollViewDelegate>
+@interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource,SDCycleScrollViewDelegate,UISearchBarDelegate>
 @property (weak, nonatomic) IBOutlet UISearchBar *homeSearchBar;
 /** 首页表格 */
 @property(strong,nonatomic)UITableView * homeTableView;
@@ -25,6 +27,22 @@ static NSString * cellIdentifier = @"HomeTableViewCell";
     [super viewDidLoad];
     [self addBtnNavBarButton];
     [self loadHeadView];
+    NSString * url =[NSString stringWithFormat:@"http://apps.super.wanxue.cn/wanxue/v2/user/get-time"];
+    // 请求的manager
+    /*
+     * desc  : 提交POST请求
+     * param :  URLString - 请求地址
+     *          parameters - 请求参数
+     *          success - 请求成功回调的block
+     *          failure - 请求失败回调的block
+     */
+    NSString * parames = [NSString stringWithFormat:@"---@-----@_---@_-_@_-_@-_@_@__@__@_@__@_@__@_"];
+    [NetWork PostNetWorkWithUrl:url with:parames successBlock:^(NSData *data) {
+        
+    } errorBlock:^(NSString *error) {
+        
+    }];
+
     // Do any additional setup after loading the view.
 }
 -(void)viewWillAppear:(BOOL)animated{
@@ -98,6 +116,7 @@ static NSString * cellIdentifier = @"HomeTableViewCell";
     [searchTextField setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     self.homeSearchBar.backgroundImage = [UIImage new];
       searchTextField.backgroundColor = [UIColor colorWithWhite:0.9 alpha:0.6];
+    self.homeSearchBar.delegate = self;
 
 
 }
@@ -191,6 +210,17 @@ static NSString * cellIdentifier = @"HomeTableViewCell";
         [self addBtnNavBarButton];
     }
 }
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar{
+    SearchViewController * search = [[SearchViewController alloc] init];
+    [UIView animateWithDuration:1 animations:^{
+        self.view.alpha = 0;
+    } completion:^(BOOL finished) {
+        self.view.alpha = 1;
+    }];
+    [self presentViewController:search animated:NO completion:^{
+    }];
+    return YES;
 
+}
 
 @end

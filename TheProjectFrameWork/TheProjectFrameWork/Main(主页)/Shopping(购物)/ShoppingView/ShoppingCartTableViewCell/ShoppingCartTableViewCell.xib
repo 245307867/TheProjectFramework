@@ -43,6 +43,12 @@
                             <constraint firstAttribute="width" constant="50" id="RrR-ly-tyH"/>
                         </constraints>
                         <state key="normal" title="选择"/>
+                        <state key="selected" title="选中">
+                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="selectedButtonClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ZMs-2F-Gfl"/>
+                        </connections>
                     </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k3p-7r-85G">
                         <rect key="frame" x="257" y="72" width="100" height="19.5"/>
@@ -92,6 +98,7 @@
                 <outlet property="goodsDescribtionLabel" destination="YAB-9A-DUF" id="DrF-3f-PNG"/>
                 <outlet property="goodsDetialImageView" destination="NZL-Vk-NbQ" id="LfG-kN-n8d"/>
                 <outlet property="goodsNameLabel" destination="JQN-li-i9e" id="kl8-ZX-v2u"/>
+                <outlet property="goodsSelectButton" destination="JNj-2j-bZZ" id="Bqh-XJ-BG6"/>
                 <outlet property="goodsView" destination="k3p-7r-85G" id="CuS-Tq-0Ab"/>
             </connections>
             <point key="canvasLocation" x="144.5" y="186"/>

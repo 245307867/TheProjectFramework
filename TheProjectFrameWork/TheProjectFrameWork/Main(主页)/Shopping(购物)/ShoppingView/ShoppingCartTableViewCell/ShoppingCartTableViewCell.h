@@ -12,9 +12,12 @@
 
 -(void)goodsNumberChangeedWith:(ShoppingModel*)goodsmodel withIndexPath:(NSIndexPath*)indexPath;
 
+-(void)goodsModelSelected:(ShoppingModel*)goodsmodel withIndexPath:(NSIndexPath*)indexpath;
 @end
 
 @interface ShoppingCartTableViewCell : UITableViewCell
+/** 货物选择图片 */
+@property (weak, nonatomic) IBOutlet UIButton *goodsSelectButton;
 /** 货物图片 */
 @property (weak, nonatomic) IBOutlet UIImageView *goodsDetialImageView;
 /** 物品名称 */

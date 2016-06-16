@@ -29,12 +29,14 @@
     [aCoder encodeObject:self.goodsDetails forKey:@"goodsDetails"];
     [aCoder encodeObject:self.goodsAllPrices forKey:@"goodsAllPrices"];
     [aCoder encodeObject:self.goodsSuit forKey:@"goodsSuit"];
+    [aCoder encodeObject:@(self.goodspayment) forKey:@"goodspayment"];
     
 }
 
 - (nullable instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [super init];
     if (self) {
+        self.goodspayment = [aDecoder decodeObjectForKey:@"goodspayment"];
         self.goodsName = [aDecoder decodeObjectForKey:@"goodsName"];
         self.goodsPrices  = [aDecoder decodeObjectForKey:@"goodsPrices"];
         self.goodsImageUrl = [aDecoder decodeObjectForKey:@"goodsImageUrl"];
@@ -60,8 +62,9 @@
     copy.creatTime = [self.creatTime copyWithZone:zone];
     copy.goodsDescription = [self.goodsDescription copyWithZone:zone];
     copy.goodsDetails = [self.goodsDetails copyWithZone:zone];
-    copy.goodsAllPrices = [self.goodsAllPrices copyWithZone:zone];//添加判断属于某个DB
+    copy.goodsAllPrices = [self.goodsAllPrices copyWithZone:zone];//
     copy.goodsSuit = [self.goodsSuit copyWithZone:zone];
+    copy.goodspayment = self.goodspayment;
     return copy;
     
 }

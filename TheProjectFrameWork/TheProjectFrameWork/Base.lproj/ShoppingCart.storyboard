@@ -28,6 +28,12 @@
                                             <constraint firstAttribute="width" constant="50" id="ABl-W8-Q1x"/>
                                         </constraints>
                                         <state key="normal" title="全选"/>
+                                        <state key="selected" title="选中">
+                                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="selectAll:" destination="GKu-LG-pOK" eventType="touchUpInside" id="qfu-wO-Lip"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="总额:$_$198" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HnY-Ui-Uyk">
                                         <rect key="frame" x="50" y="29.5" width="350" height="13.5"/>

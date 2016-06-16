@@ -37,6 +37,14 @@
  *  @return <#return value description#>
  */
 -(BOOL)ShoppingArrayIsContainsModel:(ShoppingModel*)model;
+
+
+/**
+ *  移除商品数组从购物车
+ *
+ *  @param model <#model description#>
+ */
+-(void)goodsRemoveFromeShoppingCartWithArray:(NSArray*)array;
 /**
  *  移除商品从购物车
  *
@@ -54,10 +62,29 @@
  */
 -(NSInteger)allGoodsNumber;
 /**
+ *  查询所有购物车待支付商品
+ *
+ *  @return <#return value description#>
+ */
+-(NSInteger)allGoodsPamentNumber;
+/**
  *  查询所有货物列表
  *
  *  @return <#return value description#>
  */
 -(NSString*)allGoodPrices;
+/**
+ *  全选所有货物
+ *
+ *  @return <#return value description#>
+ */
+-(BOOL)selectAllGoodsPament;
+/**
+ *  取消全选
+ *
+ *  @return <#return value description#>
+ */
+-(BOOL)cancelSelectAllGoodsPament;
+
 
 @end
