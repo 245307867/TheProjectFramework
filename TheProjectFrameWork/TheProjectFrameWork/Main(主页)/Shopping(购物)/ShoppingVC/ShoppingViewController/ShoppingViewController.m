@@ -56,6 +56,12 @@ static NSString * cellIdentifier = @"ShoppingCartTableViewCell";
     [self.shoppingCartTableView reloadData];
 }
 -(void)reloadPayViewAndTableView{
+    if ([[ShopPingCart ShareShopping]allGoodsPamentNumber]==[[ShopPingCart ShareShopping] allGoodsNumber]) {
+        self.selectedAllButtn.selected = YES;
+    }
+    else{
+        self.selectedAllButtn.selected = NO;
+    }
     [self.payForButton setTitle:[NSString stringWithFormat:@"去结算(%ld)",[[ShopPingCart ShareShopping] allGoodsPamentNumber]] forState:UIControlStateNormal];
     self.allPricesLabel.text = [NSString stringWithFormat:@"总额：￥%@",[[ShopPingCart ShareShopping] allGoodPrices]];
     self.totalPricesLabel.text = [NSString stringWithFormat:@"合计：￥%@",[[ShopPingCart ShareShopping] allGoodPrices]];
@@ -135,6 +141,7 @@ static NSString * cellIdentifier = @"ShoppingCartTableViewCell";
 }
 -(void)goodsModelSelected:(ShoppingModel *)goodsmodel withIndexPath:(NSIndexPath *)indexpath{
     goodsmodel.goodspayment = !goodsmodel.goodspayment;
+    
     [self reloadPayViewAndTableView];
 
 }
