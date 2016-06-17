@@ -14,7 +14,6 @@
 @end
 
 @implementation ShoppingModel
-
 #pragma mark - NSCoding
 - (void)encodeWithCoder:(NSCoder *)aCoder {
  

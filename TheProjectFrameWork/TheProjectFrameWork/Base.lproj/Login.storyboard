@@ -63,7 +63,9 @@
                                 <rect key="frame" x="145" y="260" width="46" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="CZS-Oy-X6r"/>
+                                    <constraint firstAttribute="height" constant="30" id="CZS-Oy-X6r">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="40"/>
+                                    </constraint>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="je6-VH-XQm"/>
                                 </constraints>
                                 <state key="normal" title="登陆">

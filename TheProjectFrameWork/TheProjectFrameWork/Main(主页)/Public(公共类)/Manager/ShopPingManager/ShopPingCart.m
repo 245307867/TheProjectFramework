@@ -33,6 +33,7 @@
             shoppingcat = [[ShopPingCart alloc] init];
             shoppingcat.shoppingArray = [NSMutableArray array];
         }
+        [shoppingcat addObserver:shoppingcat forKeyPath:@"shoppingArray" options: NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld  context:nil];
     });
     return shoppingcat;
 }
@@ -44,11 +45,11 @@
 -(void)AddShoppingListwith:(ShoppingModel*)model{
     if (![[ShopPingCart ShareShopping] ShoppingArrayIsContainsModelOrModelNumberAdd:model]){
         model.goodsNumber = 1;
-        [[ShopPingCart ShareShopping].shoppingArray addObject:model];
+        [[[ShopPingCart ShareShopping]mutableArrayValueForKey:@"shoppingArray" ] addObject:model];
     }
 }
 -(BOOL)ShoppingArrayIsContainsModelOrModelNumberAdd:(ShoppingModel*)model{
-    for (ShoppingModel * checkmodel in [ShopPingCart ShareShopping].shoppingArray) {
+    for (ShoppingModel * checkmodel in [[ShopPingCart ShareShopping] mutableArrayValueForKey:@"shoppingArray"]) {
         if ([model.goodsId isEqualToString:checkmodel.goodsId]) {
             checkmodel.goodsNumber++;
             return YES;
@@ -66,10 +67,10 @@
     return NO;
 }
 -(void)goodsRemoveFromeShoppingCartWithArray:(NSArray *)array{
-    [[ShopPingCart ShareShopping].shoppingArray removeObjectsInArray:array];
+    [[[ShopPingCart ShareShopping] mutableArrayValueForKey:@"shoppingArray"] removeObjectsInArray:array];
 }
 -(void)goodsRemoveFromeShoppingCartWithModel:(ShoppingModel*)model{
-    [[ShopPingCart ShareShopping].shoppingArray removeObject:model];
+    [[[ShopPingCart ShareShopping] mutableArrayValueForKey:@"shoppingArray"] removeObject:model];
     /*  
       移除一个 model  从数组中 
     NSMutableArray * array =[shoppingcat.shoppingArray copy];
@@ -186,6 +187,10 @@
     [archiver finishEncoding];
     //写入文件
     [data writeToFile:[ShopPingCart ShopPingCartPath] atomically:YES];
+}
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
+    
 }
 
 @end

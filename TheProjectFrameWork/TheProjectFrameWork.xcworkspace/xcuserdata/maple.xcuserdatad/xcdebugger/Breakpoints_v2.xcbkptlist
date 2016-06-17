@@ -53,13 +53,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TheProjectFrameWork/AppDelegate/AppDelegate.m"
-            timestampString = "487764491.122122"
+            filePath = "TheProjectFrameWork/Main(&#x4e3b;&#x9875;)/Public(&#x516c;&#x5171;&#x7c7b;)/Manager/ShopPingManager/ShopPingCart.m"
+            timestampString = "487826358.293346"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "-applicationDidBecomeActive:"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
+            landmarkName = "-observeValueForKeyPath:ofObject:change:context:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

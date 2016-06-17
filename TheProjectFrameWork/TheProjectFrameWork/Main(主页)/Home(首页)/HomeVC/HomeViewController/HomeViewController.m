@@ -42,7 +42,6 @@ static NSString * cellIdentifier = @"HomeTableViewCell";
     } errorBlock:^(NSString *error) {
         
     }];
-
     // Do any additional setup after loading the view.
 }
 -(void)viewWillAppear:(BOOL)animated{
